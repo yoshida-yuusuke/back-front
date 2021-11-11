@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/* -----------------------------------
+-------これはcommon.cssファイルです------
+------------------------------------- */
+
+/* ----CSS関数の定義----- */
+
+:root {
+  --main-color: #181238;
+  --sub-color: #faf3e5;
+  --accent-color: #df620e;
+  --title-color: #f39e65;
+  --btn-color: #df620e;
+  --naru-color: #779a34;
+  --tarai-color: #e98b2a;
+  --honkaku-color: #cc543a;
+  --txt-color: #0f0447;
+  --white-color: #fff;
+  --pkz-color: #000;
+}
+
+/* -------------------
+-----以下、本体装飾------
+---------------------- */
+
+body {
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+    "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  font-weight: bold;
+  color: var(--txt-color); /*css関数を使用した色定義方法*/
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.h2-font {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+  font-weight: normal;
+}
+
+/* ------PC用フォントサイズ----- */
+
+@media screen and (min-width: 1025px) {
+  .h2-font {
+    font-size: 30px;
+  }
+
+  /* 変更しました！！！！！ */
+    p {
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    font-weight: normal;
+  }
+}
+
+
+/* -------ボタン-------- */
+
+.btn-orange {
+  background-color: var(--btn-color);
+  color: var(--white-color);
+}
+
+.btn-blue {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}

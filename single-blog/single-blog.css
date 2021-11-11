@@ -1,0 +1,338 @@
+@charset "utf-8";
+/* タブレット版 */
+@media screen and (min-width: 600px) {
+}
+
+
+/* ここからパンくずリスト */
+.single-shop-pkz {
+  background-color: black;
+  height: 33px;
+  font-size: 12px;
+  font-weight: normal;
+  color:var(--sub-color);
+  padding: 0 45px;
+}
+.pkz-ul {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  vertical-align: middle;
+}
+.pkz-ul li {
+  padding-left: 2px;
+}
+.pkz-ul li + li:before {
+  content: "";
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  /* color: darkgray; */
+  margin-right: 4px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 1025px) {
+  .single-shop-pkz {
+    height: 40px;
+    font-size: 18px;
+    padding:0 20%;
+  }
+
+}
+
+
+/*-----------------------
+        トップの画像
+ ----------------------*/
+
+.single-top-img {
+  width: 100%;
+  position: relative;
+}
+
+.single-top-img-img {
+  height: 113px;
+  filter: brightness(50%);
+}
+
+.top-img-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+@media screen and (min-width: 1025px) {
+  .single-top-img-img {
+    height: 304px;
+  }
+}
+
+/*-------------------
+        コンテンツ
+ -------------------*/
+.single-cont-wrap {
+  padding: 20px 45px 0;
+}
+
+@media screen and (min-width: 600px) {
+  .single-cont-wrap {
+  padding: 60px 20% 0;
+}
+}
+/* 余白(wrapperの外側)  20% */
+
+
+/*------- タイトル・ライター -----------*/
+.single-writer-wrap {
+  display: flex;
+  margin-bottom: 37px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: 15px 10px 0;
+}
+
+.icon-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.writer-text {
+  margin: 10px 0;
+}
+
+.day {
+  line-height: 1.57;
+  font-size: 14px;
+}
+.writer-name {
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+@media screen and (min-width: 1025px) {
+  .icon {
+  width: 70px;
+  height: 70px;
+  /* margin: 15px 10px 0; */
+}
+
+.icon-img {
+  width: 70px;
+  height: 70px;
+}
+
+.writer-text {
+  margin: 15px 0;
+}
+
+
+.day {
+  /* line-height: 1.57; */
+  font-size: 20px;
+}
+.writer-name {
+  font-size: 20px;
+  /* line-height: 1.57; */
+}
+}
+
+
+
+
+/*---------------
+ ----記事内容----
+ ---------------*/
+.cont-img {
+  margin: 40px 0;
+}
+
+.cont-tag {
+  text-align: right;
+  margin: 40px 0;
+}
+
+.cont-tag-p {
+  font-size: 5px;
+  margin-bottom: 10px;
+}
+
+/* オレンジボタン */
+.orange-btn {
+  background-color: #df620e;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  /* height: 25px; */
+  padding: 10px;
+  /* height: 25px; */
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+/* 共有 */
+.share {
+  display: flex;
+  padding: 40px 0 0;
+}
+
+.good {
+  font-size: 12px;
+  border: 1px solid rgb(32, 32, 32);
+  border-radius: 5px;
+  /* color: rgb(238, 63, 92); */
+  color: gray;
+  width: 80px;
+  height: 25px;
+  text-align: center;
+}
+
+.twi,
+.fb,
+.insta{
+  width: 20px;
+  margin-left: 15px;
+}
+
+@media screen and (min-width: 1025px){
+    .cont-img {
+  margin: 50px 0;
+}
+
+.cont-tag {
+  margin: 100px 0 60px;
+}
+
+.cont-tag-p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.shop-detail-btn{
+  text-align: center;
+}
+/* オレンジボタン */
+.orange-btn {
+  font-size: 21px;
+  width: 350px;
+  height: 55px;
+  margin-bottom: 60px;
+}
+
+/* 共有 */
+.share {
+  padding-top: 0;
+}
+
+.good {
+  font-size: 20px;
+  width: 203px;
+  height: 47px;
+}
+
+.twi,
+.fb,
+.insta {
+  width: 50px;
+  margin-left: 15px;
+}
+
+}
+
+
+/*------------------
+----おすすめ記事----
+-------------------- */
+.recom-wrap {
+  padding: 40px 45px 48px;
+}
+
+.recom-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recom-title {
+  text-align: center;
+  margin-bottom:40px;
+}
+
+.recom-article {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.recom-article-img {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.recom-eye {
+  font-size: 10px;
+  padding: 5px 10px;
+  background-color: #779a34;
+  color: rgb(253, 253, 253);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.recom-good {
+  color: rgb(238, 63, 92);
+  font-size: 30px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.recom-article-title {
+  margin-bottom: 3px;
+}
+.recom-article-txt {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 600px) {
+.recom-wrap {
+  padding: 110px 20%;
+}
+}
+
+@media screen and (min-width: 1025px) {
+.recom-wrap {
+  padding: 110px 20%;
+}
+
+.recom-title {
+  margin-bottom:100px;
+}
+
+.recom-article {
+  width: 49%;
+  margin-bottom: 40px;
+}
+.recom-article-last{
+  width: 100%;
+}
+
+.recom-eye {
+  font-size: 25px;
+}
+
+.recom-article-txt {
+  font-size: 1em;
+}
+
+}
