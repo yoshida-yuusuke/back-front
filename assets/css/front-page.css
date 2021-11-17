@@ -1,0 +1,315 @@
+@charset "utf-8";
+
+/* -----------------------------------
+-------これはfront-page.cssファイルです------
+------------------------------------- */
+
+/* -------------------------
+-------ページ共通--------
+---------------------------- */
+
+h2 {
+  text-align: center;
+}
+
+.home-section {
+  padding: 40px 0px;
+}
+
+.home-intro,
+.home-spe {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.btn-blue {
+  border-radius: 20px;
+  padding: 9px 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* -------------------------
+-------ジャンボトロン--------
+---------------------------- */
+
+.section-mv {
+  position: relative;
+}
+
+.mv-container {
+  background-color: var(--white-color);
+  opacity: 50%;
+}
+
+.mv {
+  object-fit: cover;
+  height: 80vh;
+}
+
+.mv-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* -------------------------
+-------inntoro--------
+---------------------------- */
+
+.home-intro {
+  text-align: center;
+  background-color: var(--sub-color);
+}
+
+.catchcopy {
+  text-align: left;
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
+    "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  color: var(--txt-cplor);
+  display: inline-block;
+  margin: 0 auto;
+  font-feature-settings: "palt";
+  line-height: 1.6em;
+  letter-spacing: 0.1em;
+}
+
+.catchcopy-bg {
+  background: linear-gradient(transparent 70%, var(--title-color) 0%);
+}
+
+.home-intro-txt {
+  text-align: left;
+  padding: 40px 0;
+  font-weight: bold;
+}
+
+.home-intro-btn {
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+/* -------------------------
+-------------kind-----------
+---------------------------- */
+
+/* --------kind共通--------- */
+
+.home-slide-ul {
+  padding-top: 40px;
+  width: 100%;
+  height: 630px;
+}
+
+.home-slide-item {
+  position: relative;
+  width: 100%;
+  height: 33%;
+  background-size: cover;
+}
+
+.home-slide-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-slide-btn {
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: var(--white-color);
+}
+
+.home-slide-title {
+  font-size: 14px;
+}
+
+.home-slide-txt {
+  width: 100%;
+  padding-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.2em;
+  color: var(--white-color);
+  font-weight: bold;
+}
+
+/* --------tarai------------- */
+
+.home-slide-tarai {
+  text-align: left;
+  background-image: url(../img/bg_front_tarai.jpg);
+}
+
+.slide-tarai-cnt {
+  padding-left: 15px;
+  transform: translateY(40px);
+}
+
+/* --------naruto------------ */
+
+.home-slide-naru {
+  text-align: right;
+  background-image: url(../img/bg_front_naru.jpg);
+}
+
+.slide-naru-cnt {
+  transform: translate(-10px, 70px);
+}
+
+/* --------honkaku--------- */
+
+.home-slide-honkaku {
+  text-align: center;
+  background-image: url(../img/bg_front_honkaku.jpg);
+}
+
+.slide-honkaku-cnt {
+  transform: translateY(90px);
+}
+
+/* -------------------------
+-----------access-----------
+---------------------------- */
+
+.home-access {
+  text-align: center;
+}
+
+.btn-access {
+  display: inline-block;
+  padding: 17px 34px;
+  border-radius: 30px;
+}
+
+.home-access-title::after {
+  display: inline-block;
+  content: "";
+  vertical-align: top;
+  margin-left: 15px;
+  width: 18px;
+  height: 18px;
+  border-top: 3px solid var(--white-color);
+  border-right: 3px solid var(--white-color);
+  transform: rotate(135deg);
+}
+
+.home-access-title.close::after {
+  transform: rotate(-45deg);
+  vertical-align: bottom;
+}
+
+/* -------access open---------- */
+
+.home-access-wrap {
+  display: none;
+}
+
+.access-subtitle::before {
+  display: inline-block;
+  content: "";
+  padding-right: 10px;
+  height: 15px;
+  border-left: 1px solid var(--txt-color);
+  transform: rotate(-40deg);
+}
+
+.access-subtitle::after {
+  display: inline-block;
+  content: "";
+  padding-left: 10px;
+  height: 15px;
+  border-right: 1px solid var(--txt-color);
+  transform: rotate(40deg);
+}
+
+.home-map-img {
+  width: 100%;
+  height: 258px;
+  margin: 60px 0 70px;
+  background-color: #ababab;
+}
+
+.traffic {
+  padding-top: 30px;
+}
+
+dl {
+  padding: 15px 45px 0px;
+}
+
+dl:last-of-type {
+  padding-bottom: 98px;
+}
+
+dt {
+  float: left;
+  font-size: 12px;
+}
+
+dt::after {
+  content: "";
+  padding-left: 10px;
+}
+
+dd {
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.dt-padding {
+  padding: 5px 0 10px;
+}
+
+/* -------------------------
+-----------model-----------
+---------------------------- */
+
+.home-model {
+  position: relative;
+  height: 250px;
+  text-align: center;
+  margin-top: 40px;
+  background-image: url(../img/bg_front_model.jpg);
+  background-size: cover;
+  color: var(--white-color);
+}
+
+.home-model-txt {
+  text-align: left;
+  padding: 16px 20% 0;
+}
+
+.home-btn-model {
+  margin-top: 30px;
+}
+
+/* -------------------------
+-----------special-----------
+---------------------------- */
+
+.home-spe {
+  background-image: url(../img/bg_front_spe.jpg);
+  background-size: contain;
+}
+
+.home-spe-ul {
+  display: flex;
+  height: 285px;
+  margin: 24px 0 28px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.home-spe-item {
+  width: 47%;
+  height: 47%;
+}
+
+.home-spe-img {
+  height: 100%;
+}

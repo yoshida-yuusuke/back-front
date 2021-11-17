@@ -1,0 +1,294 @@
+@charset "utf-8";
+/* プロパティの順番を整えました！ */
+html{
+  scroll-behavior: smooth;
+}
+/*-------------
+タイトル画像
+--------------*/
+
+.page-header{
+  position: relative;
+}
+
+.page-header-img {
+  filter: brightness(50%);
+}
+
+.page-header-txt-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.top-img-title {
+  padding-bottom: 10px;
+  color:  var(--white-color);
+}
+
+.tag-wrap {
+  display: flex;
+}
+
+.tag {
+  margin-right: 15px;
+  color:  var(--white-color);
+  font-size: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 1025px) {
+.page-header-txt-wrap{
+  width: 60%;
+}
+
+.tag{
+  margin-right: 35px;
+  font-size: 22px;
+  padding-top: 10px;
+}
+}
+
+/*---------------
+コースの概要
+--------------*/
+.course-routr {
+  padding-top: 77px;
+  text-align: center;
+}
+.course-subtitle {
+  display: inline-block;
+  background: linear-gradient(transparent 70%, var(--title-color) 10%);
+}
+
+/*--------- 徳島のマップ ----------*/
+.tokushima-map-wrap {
+  position: relative;
+  z-index: 0;
+  height: 300px;
+  background-image: url(../img/logo/bg_single-course_tokushima_map.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.tokushima-map-ul-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 1;
+}
+
+.tokushima-map-ul {
+  min-width: 300px;
+  margin: 0 auto;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+  line-height: 3;
+}
+
+@media screen and (min-width: 1025px) {
+  .tokushima-map-wrap {
+    height: 600px;
+  }
+
+  .tokushima-map-ul {
+    min-width: 300px;
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: left;
+    line-height: 3;
+  }
+}
+
+/*---------------------
+ モデルコースコンテンツ
+ -------------------------*/
+
+.course-cont-wrap {
+  padding: 43px 0 75px;
+  text-align: center;
+}
+
+.course-number-sp {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 21px;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: var(--title-color);
+  color: white;
+  text-align: center;
+}
+
+.course-img {
+  display: block;
+  margin-top: 13px;
+}
+
+.course-2-img {
+  margin-left: auto;
+}
+
+.course-txt-wrap {
+  padding: 35px 45px 10px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+.course-spot-name {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.course-txt-group {
+  padding-bottom: 20px;
+}
+
+.btn-orange {
+  width: 100%;
+  height: 25px;
+  font-size: 14px;
+}
+
+/*-------- 移動アイコン ----------*/
+
+.move-icon-wrap {
+  display: inline-block;
+  transform: translate(15%, 0);
+}
+
+.move-icon-arrow-sp {
+  width: 50px;
+  object-fit: contain;
+}
+
+.move-icon-time {
+  float: right;
+  margin-left: 15px;
+  padding-top: 15%;
+}
+
+.course-1,
+.course-2,
+.course-3 {
+  padding: 28px 0 25px;
+}
+
+.course-2 {
+  background-color: var(--sub-color);
+}
+
+.course-3 {
+  margin-bottom: 100px;
+}
+
+.goal {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .course-number-pc,.move-icon-arrow-pc {
+    display: none;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .course-cont-wrap {
+    padding: 0 20% 150px;
+    text-align: left;
+  }
+  .course-img {
+    width: 70%;
+    min-height: 400px;
+  }
+
+  .course-title-wrap,.move-icon-arrow-sp {
+    display: none;
+  }
+  .course-txt-wrap {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    max-width: 600px;
+    width: 60%;
+    padding: 0 80px 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.081);
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+  }
+
+  .course-txt-wrap-2 {
+    left: 0;
+  }
+
+  .course-txt {
+    text-align: left;
+  }
+
+  .course-number-pc {
+    transform: translate(0, -50%);
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .course-spot-name {
+    font-size: 25px;
+  }
+
+  .course-txt-group {
+    transform: translate(0, -5%);
+    padding-bottom: 0;
+  }
+
+  .btn-orange {
+    width: auto;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 8px 50px;
+    font-size: 18px;
+  }
+
+  /*------- 移動アイコンpc ----------*/
+  .move-icon-wrap {
+    margin-top: 100px;
+  }
+  .move-icon-arrow-pc{
+    width: 100px;
+  }
+
+  .move-icon-time {
+    margin-left: 0;
+  }
+
+  .move-icon-time-right {
+    float: right;
+    margin-right: 15px;
+    padding-top: 15%;
+  }
+
+  .course-1,
+  .course-2,
+  .course-3 {
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+  .course-2 {
+     /* background-colorを無くす */
+    background-color: transparent;
+    text-align: right;
+  }
+
+  .course-3 {
+    margin-bottom: 150px;
+  }
+}

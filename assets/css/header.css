@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+.header {
+  height: 50px;
+  background-color: var(--main-color);
+}
+
+.header-sp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-pc {
+  display: none;
+}
+
+.header-fav-wrap {
+  width: 40px;
+  height: 40px;
+  margin: 3px 5px 0;
+  text-align: center;
+}
+
+.mypage-text {
+  color: var(--white-color);
+  font-size: 5px;
+  font-weight: normal;
+}
+
+.header-logo-wrap {
+  width: 50%;
+}
+
+/*==================================================
+　5-2-1 3本線が×に
+===================================*/
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn {
+  /*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openbtn span {
+  display: inline-block;
+  transition: all 0.4s; /*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  width: 45%;
+}
+
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+
+.openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+
+.openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0; /*真ん中の線は透過*/
+}
+
+.openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* --------sp版ハンバーガー中身---------- */
+
+.hamburger-inner-nav {
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+}
+
+.nav-sp-item {
+  height: 14%;
+}
+
+/* --------------------------------------
+-----------タブレット版ヘッダー------------
+---------------------------------------- */
+
+@media screen and (min-width: 600px) {
+  .header-sp {
+    height: 50px;
+  }
+
+  .header-fav-wrap {
+    width: 50px;
+    height: 50px;
+    margin: 3px 5px 0;
+    text-align: center;
+  }
+
+  .header-logo-wrap {
+    text-align: center;
+  }
+
+  .header-logo-img {
+    max-width: 330px;
+    max-height: 50px;
+  }
+}
+
+/* --------------------------------------
+-------------pc版ヘッダー-----------------
+---------------------------------------- */
+
+@media screen and (min-width: 1025px) {
+  .header-sp {
+    display: none;
+  }
+
+  .header-pc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 50px;
+  }
+
+  .header-logo-wrap {
+    width: 215px;
+    height: 30px;
+    /* padding-right: 300%; */
+  }
+
+  .nav-pc-ul {
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+  }
+
+  .nav-pc-item {
+    padding-right: 45px;
+  }
+
+  .header-fav-wrap {
+    width: 50px;
+    height: 50px;
+    margin: 3px 5px 0;
+    text-align: center;
+  }
+}

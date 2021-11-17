@@ -1,0 +1,261 @@
+@charset "utf-8";
+/* ページネーションレスポンシブ未実装 */
+/*-------------
+タイトル画像
+--------------*/
+
+.page-header {
+  position: relative;
+}
+
+.page-header-img {
+  filter: brightness(50%);
+}
+
+.page-header-txt-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.top-img-title {
+  padding-bottom: 10px;
+  color: var(--white-color);
+}
+
+/* お気に入り記事一覧のみ使用 */
+.page-header-txt-wrap-favorite {
+  width: auto;
+  display: inline-block;
+}
+
+/* お気に入り記事一覧のみ使用 */
+.favorite-catchcopy {
+  text-align: left;
+}
+
+.tag-wrap {
+  display: flex;
+}
+
+.tag {
+  margin-right: 15px;
+  color: var(--white-color);
+  font-size: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 1025px) {
+  .page-header-txt-wrap {
+    width: 60%;
+  }
+
+  /* お気に入り記事一覧のみ使用 */
+  .page-header-txt-wrap-favorite {
+    width: auto;
+    display: inline-block;
+  }
+
+  .tag {
+    margin-right: 35px;
+    font-size: 22px;
+    padding-top: 10px;
+  }
+}
+
+/*------------------
+----記事一覧----
+-------------------- */
+.archive-wrap {
+  padding: 40px 45px 48px;
+}
+
+/* お気に入り記事一覧のみ使用 */
+.favorite-title {
+  margin-bottom: 40px;
+}
+
+.archive-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.archive-article {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.archive-article-img {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+/* アイキャッチ（画像についてるタグ） */
+.article-eye {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 10px;
+  background-color: var(--naru-color);
+  color: rgb(253, 253, 253);
+  font-size: 10px;
+}
+
+.naruto {
+  background-color: var(--naru-color);
+}
+
+.tarai {
+  background-color: var(--tarai-color);
+}
+
+.honkaku {
+  background-color: var(--honkaku-color);
+}
+
+.article-good {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: var(--white-color);
+  /* color: rgb(238, 63, 92); */
+  font-size: 35px;
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
+}
+
+.article-link {
+  display: inline-block;
+}
+
+.article-title {
+  margin-bottom: 3px;
+}
+.article-txt {
+  font-size: 12px;
+}
+
+/* タブレット版 */
+@media screen and (min-width: 600px) {
+  .archive-wrap {
+    padding: 110px 20%;
+  }
+}
+
+/* pc版 */
+@media screen and (min-width: 1025px) {
+  .archive-article {
+    width: 48%;
+    margin-bottom: 50px;
+  }
+
+  .archive-article-big {
+    width: 100%;
+  }
+
+  .article-eye {
+    font-size: 25px;
+  }
+
+  .article-good {
+    font-size: 50px;
+  }
+
+  .article-txt {
+    font-size: 1em;
+  }
+}
+
+/*-------- ページナビゲーション ---------*/
+.pagenation-wrap {
+  margin-top: 15px;
+}
+
+.pagenation {
+  display: flex;
+  justify-content: center;
+}
+
+.pagenation-number {
+  padding: 5px 8px;
+  border: 1px solid var(--txt-color);
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.pagenation-number + .pagenation-number {
+  margin-left: 15px;
+}
+
+.pagenation:before,
+.pagenation:after {
+  content: "";
+  border-bottom: 3px solid;
+  border-right: 3px solid;
+  width: 13px;
+  height: 13px;
+  margin-right: 15px;
+  transform: translateY(5px) rotate(135deg);
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+}
+
+.pagenation:after {
+  transform: translateY(5px) rotate(-45deg);
+  margin-left: 15px;
+}
+
+@media screen and (min-width: 1025px) {
+  .pagenation-wrap {
+    margin-top: 100px;
+  }
+  .pagenation-number {
+    padding: 10px 15px;
+    border: 2px solid;
+    font-size: 18px;
+  }
+
+  .pagenation-number + .pagenation-number {
+    margin-left: 50px;
+  }
+
+  .pagenation:before,
+  .pagenation:after {
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+    width: 30px;
+    height: 30px;
+    margin-right: 50px;
+  }
+
+  .pagenation:after {
+    margin: 0 0 0 50px;
+  }
+}
+
+/*--------------------
+
+お気に入り一覧のみ使用
+
+----------------------------*/
+.favorite-recom-wrap {
+  padding: 40px 45px 48px;
+}
+
+.favorite-recom-title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.favorite-recom-title-p {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  .favorite-recom-wrap {
+    padding: 50px 20% 150px;
+  }
+}
