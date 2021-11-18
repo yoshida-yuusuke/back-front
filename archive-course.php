@@ -6,6 +6,7 @@
 <!-- header.phpをインクルードする -->
 <?php get_header(); ?>
 
+
 <!-- パンくずリスト -->
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
@@ -38,8 +39,8 @@
 					$count++;
 				?>
 
-					<?php //get_template_part('template-parts/loop', 'course');
-					?>
+
+					<!-- 5番目だったら、archive-article-bigのクラスを付与する -->
 					<div class="archive-article<?php if ($count % 5 == 0) echo " archive-article-big"; ?>">
 						<div class="archive-article-img">
 							<a href="<?php the_permalink(); ?>">
@@ -63,12 +64,16 @@
          ページネーション
         ---------------------->
 		<div class="pagenation-wrap">
-			<ul class="pagenation">
-				<li class="pagenation-number">1</li>
-				<li class="pagenation-number">2</li>
-				<li class="pagenation-number">3</li>
-				<li class="pagenation-number">4</li>
-			</ul>
+			<?php if (function_exists('wp_pagenavi')) {
+				wp_pagenavi(array('query' => $the_query));
+			} ?>
+			<!-- <ul class="pagenation">
+			<li class="pagenation-number">1</li>
+			<li class="pagenation-number">2</li>
+			<li class="pagenation-number">3</li>
+			<li class="pagenation-number">4</li>
+			</ul> -->
+
 		</div>
 	</div>
 

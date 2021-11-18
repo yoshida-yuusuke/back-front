@@ -174,21 +174,63 @@
   margin-top: 15px;
 }
 
-.pagenation {
+.pages{
+  display: none;
+}
+
+.pagenation ,.wp-pagenavi{
   display: flex;
   justify-content: center;
 }
 
-.pagenation-number {
-  padding: 5px 8px;
+
+.pagenation-number,.current,.page {
+  padding: 10px 15px 0 !important;
   border: 1px solid var(--txt-color);
   border-radius: 50%;
-  font-size: 12px;
+  font-size: 15px;
 }
 
-.pagenation-number + .pagenation-number {
+
+/* htmlバージョン */
+/* .pagenation-number + .pagenation-number {
+  margin-left: 15px;
+} */
+
+/* ワードプレスバージョン */
+.page + .page{
+  margin-right: 15px  !important;
+}
+
+/* 1ページ目 */
+.current + .page {
+  margin-left: 15px   !important;
+}
+
+/* ２ページ目以降 */
+.page + .current {
+  margin-left: 15px   !important;
+}
+
+.page + .nextpostslink{
   margin-left: 15px;
 }
+
+
+.previouspostslink + .page{
+  margin-left: 15px;
+}
+
+.page + .page{
+  margin-right: 15px;
+}
+
+.nextpostslink,.previouspostslink{
+  border: none !important;
+  font-size: 30px;
+}
+
+
 
 .pagenation:before,
 .pagenation:after {
@@ -199,8 +241,6 @@
   height: 13px;
   margin-right: 15px;
   transform: translateY(5px) rotate(135deg);
-  /* display: inline-block; */
-  /* vertical-align: middle; */
 }
 
 .pagenation:after {
