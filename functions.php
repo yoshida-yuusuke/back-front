@@ -28,14 +28,9 @@ function bistrocalme_scripts()
     //独自のリセットスタイルシートを読み込む
     // wp_enqueue_style('bistrocalme-reset', 'get_template_directory_uri() . '/assets/css/reset.css');
 
-    //独自のスタイルシートを読み込む
-    wp_enqueue_style('bistrocalme-stylesmin', get_template_directory_uri() . '/assets/css/styles.min.css');
-
     // JQueryライブラリを読み込む
-    wp_enqueue_script('jquery');
+    // wp_enqueue_script('jquery');
 
-    //独自のスクリプトを読み込む
-    wp_enqueue_script('bistro_calme-main', get_template_directory_uri() . '/assets/js/main.js', '', '1.0', true);
 
     // if (is_home()) {
     //     wp_enqueue_style('slick-carousel', 'https://cdn.jsdelivr.net/npm/@1.8.1/slick/slick.css', '', '1.0', true);

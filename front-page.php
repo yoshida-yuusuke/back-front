@@ -1,3 +1,4 @@
+<!-- header.phpをインクルードする -->
 <?php get_header(); ?>
 
 <main>
@@ -184,6 +185,7 @@
     </ul>
   </section>
 </main>
+
 <!-- footer.phpをインクルードする -->
 <?php get_footer(); ?>
 
@@ -191,10 +193,10 @@
     -------TOPへもどるボタンJSファイル-------
     ---------------------------- ---------->
 
-<script src="<?php echo get_template_directory_uri() ?>/assets/js/footer.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/footer.js"></script> -->
 
 <!-------------------------------------
     -------アコーディオンメニューJSファイル-------
     ---------------------------- ---------->
 
-<script src="<?php echo get_template_directory_uri() ?>/assets/js/front-page.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/front-page.js"></script> -->

@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 .header {
+  position: fixed;
+  width: 100%;
   height: 50px;
   background-color: var(--main-color);
 }
@@ -15,7 +17,7 @@
   display: none;
 }
 
-.header-fav-wrap {
+.header-fav-btn {
   width: 40px;
   height: 40px;
   margin: 3px 5px 0;
@@ -32,13 +34,11 @@
   width: 50%;
 }
 
-/*==================================================
-　5-2-1 3本線が×に
-===================================*/
-/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+/*------------------------------------------
+-------------ハンバーガーボタンの動き----------
+----------------------------------------------*/
+
 .openbtn {
-  /*ボタン内側の基点となるためrelativeを指定。
-追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
   position: relative;
   width: 50px;
   height: 50px;
@@ -92,13 +92,72 @@
 /* --------sp版ハンバーガー中身---------- */
 
 .hamburger-inner-nav {
+  position: fixed;
   width: 100%;
-  height: 80vh;
-  text-align: center;
+  z-index: 100;
+  text-align: left;
+  transform: translateX(100%);
+  transition: 0.5s;
+  /* transform: translateX(1025px); */
+}
+
+.nav-sp-ul {
+  height: 75vh;
 }
 
 .nav-sp-item {
-  height: 14%;
+  height: 14.2%;
+  padding-left: 30%;
+  border-top: 2px solid #707070;
+  font-size: 18px;
+  line-height: 3.7em;
+}
+
+.nav-sp-shop {
+  padding-left: 35%;
+}
+
+.nav-sp-shop::before {
+  display: inline-block;
+  content: "";
+  width: 13px;
+  height: 13px;
+  margin-right: 6px;
+  vertical-align: middle;
+  border-top: 2px solid var(--main-color);
+  border-right: 2px solid var(--main-color);
+  transform: rotate(45deg);
+}
+
+.snsul-sp-title {
+  display: block;
+  height: 20px;
+  padding-left: 5%;
+  font-size: 14px;
+  line-height: 1.6em;
+  letter-spacing: 0.2em;
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.hamburger-sns-ul {
+  display: flex;
+  height: 15vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.sp-sns-item {
+  width: 35px;
+  height: 35px;
+}
+
+.sp-sns-item:nth-of-type(even) {
+  margin: 0 50px;
+}
+
+.fadeIn {
+  transform: translateX(0);
 }
 
 /* --------------------------------------
@@ -110,7 +169,7 @@
     height: 50px;
   }
 
-  .header-fav-wrap {
+  .header-fav-btn {
     width: 50px;
     height: 50px;
     margin: 3px 5px 0;
@@ -132,7 +191,8 @@
 ---------------------------------------- */
 
 @media screen and (min-width: 1025px) {
-  .header-sp {
+  .header-sp,
+  .hamburger-inner-nav {
     display: none;
   }
 
@@ -160,7 +220,7 @@
     padding-right: 45px;
   }
 
-  .header-fav-wrap {
+  .header-fav-btn {
     width: 50px;
     height: 50px;
     margin: 3px 5px 0;
