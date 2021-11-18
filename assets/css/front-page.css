@@ -4,6 +4,9 @@
 -------これはfront-page.cssファイルです------
 ------------------------------------- */
 
+/* 11/17 青柳
+いじったところ：左右の余白パディング、徳島の麺事情ボタンの表記、ジャンボトロンレスポンシブ、特集レスポンシブ（突貫なので気に入らなければ直してください） */
+
 /* -------------------------
 -------ページ共通--------
 ---------------------------- */
@@ -16,17 +19,23 @@ h2 {
   padding: 40px 0px;
 }
 
-.home-intro,
-.home-spe {
-  padding-left: 45px;
-  padding-right: 45px;
-}
-
 .btn-blue {
   border-radius: 20px;
   padding: 9px 15px;
   font-size: 14px;
   font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  .home-intro {
+    padding: 40px 20% 40px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .home-section {
+    padding: 80px 0px;
+  }
 }
 
 /* -------------------------
@@ -35,22 +44,30 @@ h2 {
 
 .section-mv {
   position: relative;
-}
-
-.mv-container {
-  background-color: var(--white-color);
-  opacity: 50%;
-}
-
-.mv {
-  object-fit: cover;
   height: 80vh;
+  background-image: url(../img/mv.JPG);
+  background-size: cover;
 }
 
+/* div */
 .mv-logo {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  transform: translate(-50%, -50%);
+}
+
+.mv-logo-img {
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .mv-logo {
+    width: 450px;
+  }
 }
 
 /* -------------------------
@@ -58,6 +75,8 @@ h2 {
 ---------------------------- */
 
 .home-intro {
+  padding-left: 20%;
+  padding-right: 20%;
   text-align: center;
   background-color: var(--sub-color);
 }
@@ -86,7 +105,20 @@ h2 {
 
 .home-intro-btn {
   margin-bottom: 30px;
+  font-size: 16px;
   font-weight: normal;
+}
+
+@media screen and (min-width: 1025px) {
+  .home-intro-txt {
+    max-width: 810px;
+    padding: 120px 0;
+    margin: 0 auto;
+  }
+
+  .home-intro {
+    padding-top: 80px;
+  }
 }
 
 /* -------------------------
@@ -95,20 +127,23 @@ h2 {
 
 /* --------kind共通--------- */
 
-.home-slide-ul {
+.home-kind-ul {
   padding-top: 40px;
   width: 100%;
   height: 630px;
 }
 
-.home-slide-item {
+.home-kind-item {
   position: relative;
-  width: 100%;
+  max-width: 600px;
   height: 33%;
+  margin-left: auto;
+  margin-right: auto;
   background-size: cover;
 }
 
-.home-slide-link {
+.home-kind-link,
+.home-model-link {
   display: block;
   position: absolute;
   top: 0;
@@ -117,17 +152,17 @@ h2 {
   height: 100%;
 }
 
-.home-slide-btn {
+.home-kind-btn {
   padding: 5px 20px;
   border-radius: 20px;
   background-color: var(--white-color);
 }
 
-.home-slide-title {
+.home-kind-title {
   font-size: 14px;
 }
 
-.home-slide-txt {
+.home-kind-txt {
   width: 100%;
   padding-bottom: 10px;
   font-size: 20px;
@@ -138,36 +173,72 @@ h2 {
 
 /* --------tarai------------- */
 
-.home-slide-tarai {
+.home-kind-tarai {
   text-align: left;
   background-image: url(../img/bg_front_tarai.jpg);
 }
 
-.slide-tarai-cnt {
+.kind-tarai-cnt {
   padding-left: 15px;
   transform: translateY(40px);
 }
 
 /* --------naruto------------ */
 
-.home-slide-naru {
+.home-kind-naru {
   text-align: right;
   background-image: url(../img/bg_front_naru.jpg);
 }
 
-.slide-naru-cnt {
+.kind-naru-cnt {
   transform: translate(-10px, 70px);
 }
 
 /* --------honkaku--------- */
 
-.home-slide-honkaku {
+.home-kind-honkaku {
   text-align: center;
   background-image: url(../img/bg_front_honkaku.jpg);
 }
 
-.slide-honkaku-cnt {
+.kind-honkaku-cnt {
   transform: translateY(90px);
+}
+
+/* ----------pc版kindレイアウト---------------*/
+
+@media screen and (min-width: 1025px) {
+  .home-kind-ul {
+    height: auto;
+    padding: 100px 100px 0;
+  }
+
+  .home-kind-item {
+    max-width: 70%;
+    height: 400px;
+    margin: 10px 0;
+  }
+
+  .home-kind-naru {
+    margin-left: auto;
+  }
+
+  .home-kind-txt {
+    font-size: 30px;
+  }
+
+  .kind-tarai-cnt {
+    padding-left: 15px;
+    transform: translateY(180px);
+  }
+
+  .kind-naru-cnt {
+    transform: translate(-10px, 200px);
+  }
+
+  .kind-honkaku-cnt {
+    transform: translateY(230px);
+  }
 }
 
 /* -------------------------
@@ -201,10 +272,15 @@ h2 {
   vertical-align: bottom;
 }
 
-/* -------access open---------- */
+/* -------access 中身---------- */
 
 .home-access-wrap {
   display: none;
+}
+
+.home-map-img {
+  height: auto;
+  margin: 0 auto;
 }
 
 .access-subtitle::before {
@@ -225,9 +301,8 @@ h2 {
   transform: rotate(40deg);
 }
 
-.home-map-img {
+.home-map-wrap {
   width: 100%;
-  height: 258px;
   margin: 60px 0 70px;
   background-color: #ababab;
 }
@@ -255,6 +330,7 @@ dt::after {
 }
 
 dd {
+  padding-bottom: 15px;
   text-align: left;
   font-size: 12px;
   font-weight: normal;
@@ -262,6 +338,18 @@ dd {
 
 .dt-padding {
   padding: 5px 0 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .home-map-img {
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .home-map-img {
+    max-width: 1000px;
+  }
 }
 
 /* -------------------------
@@ -273,9 +361,16 @@ dd {
   height: 250px;
   text-align: center;
   margin-top: 40px;
+  margin-bottom: 40px;
   background-image: url(../img/bg_front_model.jpg);
   background-size: cover;
   color: var(--white-color);
+}
+@media screen and (min-width: 600px) {
+  .home-model {
+    margin: 80px 100px;
+    height: auto;
+  }
 }
 
 .home-model-txt {
@@ -292,24 +387,71 @@ dd {
 ---------------------------- */
 
 .home-spe {
+  padding-left: 30px;
+  padding-right: 30px;
   background-image: url(../img/bg_front_spe.jpg);
   background-size: contain;
 }
 
 .home-spe-ul {
   display: flex;
-  height: 285px;
-  margin: 24px 0 28px;
+  height: auto;
+  margin: 24px 0 20px;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-between;
 }
 
 .home-spe-item {
   width: 47%;
-  height: 47%;
+  height: auto;
+  padding-top: 15px;
 }
 
 .home-spe-img {
-  height: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .home-spe {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .home-spe-ul {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-spe-item {
+    width: 40%;
+    padding-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .home-spe-ul {
+    max-width: 1520px;
+    justify-content: space-between;
+  }
+
+  .home-spe-item {
+    width: 20%;
+  }
+}
+
+.background {
+  position: relative;
+  background-image: url(../img/publicdomainq-0032457zuu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.8);
 }

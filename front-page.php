@@ -3,13 +3,10 @@
 
 <main>
   <section class="section-mv">
-    <div class="mv-container">
-      <img class="mv" src="<?php echo get_template_directory_uri() ?>/assets/img/mv.JPG" alt="" />
+    <div class="mv-logo">
+      <img class="mv-logo-img" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_maincolor.png" alt="" />
     </div>
 
-    <h1 class="mv-logo">
-      <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo_front_mv.png" alt="" />
-    </h1>
   </section>
 
   <!-- ------------------------------------------
@@ -30,8 +27,10 @@
       徳島にはご当地うどんが２つもあるのです。<br />
       徳島に来て、これを食べにゃソンソン！
     </p>
-    <button class="btn-txt btn-blue home-intro-btn">
-      <a href="<?php echo home_url('/noodle/'); ?>">徳島の麺事情</a>
+    <button class=" btn-blue home-intro-btn" type="button" onclick="location.href='<?php echo home_url('/noodle/'); ?>'">
+
+      徳島の麺事情を知る！
+
     </button>
   </section>
 
@@ -42,47 +41,47 @@
   <section class="home-section home-kind">
     <h2 class="h2-font">徳島に在るうどんの種類</h2>
 
-    <ul class="home-slide-ul">
-      <li class="home-slide-tarai home-slide-item">
-        <div class="slide-tarai-cnt">
-          <p class="home-slide-txt">
+    <ul class="home-kind-ul">
+      <li class="home-kind-tarai home-kind-item">
+        <div class="kind-tarai-cnt">
+          <p class="home-kind-txt">
             もちもち<br />
             ほっかほか！<br />
             みんなで囲む<br />
             阿波の伝統料理
           </p>
-          <button class="home-slide-btn">
+          <button class="home-kind-btn">
             <h3 class="home-slide-title">たらいうどん</h3>
           </button>
         </div>
-        <a class="home-slide-link" href=" <?php echo home_url('/archives/shop_type/tarai'); ?>"></a>
+        <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/tarai'); ?>"></a>
       </li>
 
-      <li class="home-slide-naru home-slide-item">
-        <div class="slide-naru-cnt">
-          <p class="home-slide-txt">
+      <li class="home-kind-naru home-kind-item">
+        <div class="kind-naru-cnt">
+          <p class="home-kind-txt">
             ちゅるちゅる食感が<br />
             たまらない！<br />
             鳴門の愛され個性派うどん
           </p>
-          <button class="home-slide-btn">
-            <h3 class="home-slide-title">なるちゅるうどん</h3>
+          <button class="home-kind-btn">
+            <h3 class="home-kind-title">なるちゅるうどん</h3>
           </button>
         </div>
-        <a class="home-slide-link" href=" <?php echo home_url('/archives/shop_type/naruchuru'); ?>"></a>
+        <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/naruchuru'); ?>"></a>
       </li>
 
-      <li class="home-slide-honkaku home-slide-item">
-        <div class="slide-honkaku-cnt">
-          <p class="home-slide-txt">
+      <li class="home-kind-honkaku home-kind-item">
+        <div class="kind-honkaku-cnt">
+          <p class="home-kind-txt">
             うどん激戦区<br />
             徳島の職人こだわりザ・うどん
           </p>
-          <button class="home-slide-btn">
-            <h3 class="home-slide-title">本格派うどん</h3>
+          <button class="home-kind-btn">
+            <h3 class="home-kind-title">本格派うどん</h3>
           </button>
         </div>
-        <a class="home-slide-link" href="<?php echo home_url('/archives/shop_type/honkakuha'); ?>"></a>
+        <a class="home-kind-link" href="<?php echo home_url('/archives/shop_type/honkakuha'); ?>"></a>
       </li>
     </ul>
   </section>
@@ -98,10 +97,10 @@
 
     <!-- ------------------------------------------
 ------------県外からのアクセス中身-----------------
--------------------------------------B------>
+------------------------------------------->
 
     <div class="home-access-wrap box">
-      <div class="home-map-img"><img src="" alt="地図" /></div>
+      <div class="home-map-img"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_access.jpg" alt="地図" /></div>
       <h3 class="access-subtitle">各駅から徳島駅まで</h3>
 
       <h4 class="traffic">自転車</h4>
@@ -160,8 +159,9 @@
       </p>
       <button class="home-btn-model btn-blue">ここから見る</button>
     </div>
-    <a class="home-slide-link" href=" <?php echo home_url('/archives/course'); ?>"></a>
+    <a class="home-model-link" href=" <?php echo home_url('/archives/course'); ?>"></a>
   </section>
+
 
   <!-- ------------------------------------------
 -----------------------特集----------------------
@@ -171,16 +171,16 @@
     <h2 class="h2-font">特集</h2>
     <ul class="home-spe-ul flex">
       <li class="home-spe-item">
-        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_front_spe001.jpg" alt="" /></a>
+        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_sappari.jpg" alt="" /></a>
       </li>
       <li class="home-spe-item">
-        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_front_spe002.JPG" alt="" /></a>
+        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_oomori.jpg" alt="" /></a>
       </li>
       <li class="home-spe-item">
-        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_front_spe003.JPG" alt="" /></a>
+        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_koseiha.jpg" alt="" /></a>
       </li>
       <li class="home-spe-item">
-        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_front_spe004.JPG" alt="" /></a>
+        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_sidemenu.jpg" alt="" /></a>
       </li>
     </ul>
   </section>
@@ -188,15 +188,3 @@
 
 <!-- footer.phpをインクルードする -->
 <?php get_footer(); ?>
-
-<!-------------------------------------
-    -------TOPへもどるボタンJSファイル-------
-    ---------------------------- ---------->
-
-<!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/footer.js"></script> -->
-
-<!-------------------------------------
-    -------アコーディオンメニューJSファイル-------
-    ---------------------------- ---------->
-
-<!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/front-page.js"></script> -->

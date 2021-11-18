@@ -182,10 +182,10 @@
         </div>
       </div>
 
-      <div id="page-top" class="js-scroll-top">TOPへ</div>
-    </footer>
+      <!-- -----------------topへ戻るボタン-------------------- -->
 
-    <div id="page-top" class="js-scroll-top">TOPへ</div>
+
+      <button id="page-top" class="js-scroll-top">TOPへ</button>
 
     </footer>
 
