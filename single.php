@@ -44,63 +44,46 @@
             </a>
           </div>
         </div>
-
         <!-------------------
         -----記事内容-------
         --------------------->
-
         <!-- 記事→article -->
         <div class="article-wrap">
           <!-- テキスト記述欄 -->
           <div class="single-blog-cont-txt">
-            <p>
-              大食いのお店に行ってきました！<br/>
-              家族で食べに行ったのですが、５玉を３人で食べました、、<br/>
-              とてもお腹いっぱいになったので、次からは小サイズにしようと思います！！
-            </p>
-          </div>
-          <!-- 画像 -->
-          <div class="cont-img">
-            <img src="img/img_single-blog.JPG" alt="特集記事詳細の記事画像です" />
-          </div>
-          <!-- テキスト記述欄 -->
-          <div class="single-blog-cont-txt">
-            <p>
-              テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-            </p>
+          <?php the_content();?>
           </div>
           <div class="cont-tag">
             <small class="cont-tag-txt">image:©️__________</small>
-            <small class="cont-tag-txt"
-              >＃タグ ＃タグ ＃タグ ＃タグ ＃タグ</small
-            >
+            <small class="cont-tag-txt">
+            <!-- タグ表示 -->
+              <?php
+                $posttags = get_the_tags();
+                $tags = get_tags();
+                if ( $posttags ) {
+                foreach( $posttags as $tag) {
+                echo '<p>' . '#'.$tag->name . '</p>';
+                echo "\t";
+                  }
+                }
+                ?>
+              </small>
           </div>
         </div>
         <div class="shop-detail-btn">
-          <a href="single-shop.html">
+          <a href="<?php get_permalink('つなげたいページのIDを入力する');?>">
             <button class="btn-orange">店舗の詳細はこちら</button>
           </a>
         </div>
         <ul class="share">
-          <li>
-            <button class="good">いいね❤︎</button>
+          <liclass="good">
+          <?php wpfp_link() ?>
           </li>
           <li>
-            <a href=""
-              ><img src="img/logo/icon_twi.png" alt="ツイッターのアイコンです" class="twi"
-            /></a>
-          </li>
-          <li>
-            <a href=""><img src="img/logo/icon_fb.png" alt="Facebookのアイコンです" class="fb" /></a>
-          </li>
-          <li>
-            <a href="">
-              <img src="img/logo/icon_insta.png" alt="Instagramのアイコンです" class="insta"
-            /></a>
+            <?php echo do_shortcode('[addtoany]'); ?>
           </li>
         </ul>
       </section>
-
       <!----------------------
        ----- おすすめ記事-----
     ------------------------->
@@ -110,80 +93,70 @@
           <p class="recom-title-p">こちらの記事もおすすめです</p>
         </div>
         <div class="recom-cont">
-          <div class="recom-article">
-            <div class="recom-article-img">
-              <a href="single-shop.html">
-                <img src="img/img_single-blog.JPG" alt="おすすめ記事のサムネイルです" />
-                <div class="recom-eye">なるちゅる</div>
-                <button class="recom-good">❤︎</button>
-              </a>
-            </div>
-            <a href="single-shop.html" class="article-link">
-              <p class="recom-article-title">記事タイトル</p>
-              <p class="recom-article-txt">テキストテキスト</p>
-            </a>
-          </div>
+　　　　<?php
+            //メニューの投稿タイプ
+            //taxonomyの取得
+            $taxonomy_name  = get_query_var('taxonomy');
+            $count = 0;
+            //ランダム表示
+            $args = array(
+                'post_type' => 'post',
+                'paged' => $paged,
+                'orderby' => 'rand',
+                'posts_per_page' => 5,
+            );
+            $the_query = new WP_Query($args);
+            if ($the_query->have_posts()) :?>
 
-          <div class="recom-article">
-            <div class="recom-article-img">
-              <a href="single-shop.html">
-                <img src="img/img_single-blog.JPG" alt="おすすめ記事のサムネイルです" />
-                <div class="recom-eye">なるちゅる</div>
-                <button class="recom-good">❤︎</button>
-              </a>
+        <?php while ($the_query->have_posts()):$the_query->the_post(); ?>
+        <?php $count++; ?>
+            <div class="recom-article">
+                <?php if ($count = 5) {
+                    get_template_part('template-parts/loop', 'speical5');
+                    } else {
+                    get_template_part('template-parts/loop', 'speical');
+                };?>
             </div>
-            <a href="single-shop.html" class="article-link">
-              <p class="recom-article-title">記事タイトル</p>
-              <p class="recom-article-txt">テキストテキスト</p>
-            </a>
-          </div>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php else : '検索結果がありませんでした'; ?>
+        <?php endif; ?>
+    </div>
+    <?php
+			//メニューの投稿タイプ
+			$args = array(
+				'post_type' => 'course',
+				'posts_per_page' => -1,
+			);
+			$the_query = new WP_Query($args);
+			if ($the_query->have_posts()) :
+				$count = 0;
+			?>
+				<?php while ($the_query->have_posts()) : $the_query->the_post();
+					$count++;
+				?>
 
-          <div class="recom-article">
-            <div class="recom-article-img">
-              <a href="single-shop.html">
-                <img src="img/img_single-blog.JPG" alt="おすすめ記事のサムネイルです" />
-                <div class="recom-eye">なるちゅる</div>
-                <button class="recom-good">❤︎</button>
-              </a>
-            </div>
-            <a href="single-shop.html" class="article-link">
-              <p class="recom-article-title">記事タイトル</p>
-              <p class="recom-article-txt">テキストテキスト</p>
-            </a>
-          </div>
+					<!-- 5番目だったら、archive-article-bigのクラスを付与する -->
+					<div class="archive-article<?php if ($count % 5 == 0) echo " archive-article-big"; ?>">
+						<div class="archive-article-img">
+							<a href="<?php the_permalink(); ?>">
+								<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="記事のサムネイル画像です" />
+							</a>
+							<!-- <button class="article-good">❤︎</button> -->
+						</div>
+						<a href="<?php the_permalink(); ?>" class="article-link">
+							<p class="article-title"><?php the_title(); ?></p>
+							<p class="article-txt"><?php the_excerpt(); ?></p>
+						</a>
+					</div>
 
-          <div class="recom-article">
-            <div class="recom-article-img">
-              <a href="single-shop.html">
-                <img src="img/img_single-blog.JPG" alt="おすすめ記事のサムネイルです" />
-                <div class="recom-eye">なるちゅる</div>
-                <button class="recom-good">❤︎</button>
-              </a>
-            </div>
-            <a href="single-shop.html" class="article-link">
-              <p class="recom-article-title">記事タイトル</p>
-              <p class="recom-article-txt">テキストテキスト</p>
-            </a>
-          </div>
-
-          <div class="recom-article recom-article-last">
-            <div class="recom-article-img">
-              <a href="single-shop.html">
-                <img src="img/img_single-blog.JPG" alt="おすすめ記事のサムネイルです" />
-                <div class="recom-eye">なるちゅる</div>
-                <button class="recom-good">❤︎</button>
-              </a>
-            </div>
-            <a href="single-shop.html" class="article-link">
-              <p class="recom-article-title">記事タイトル</p>
-              <p class="recom-article-txt">テキストテキスト</p>
-            </a>
-          </div>
+				<?php endwhile; ?>
+			<?php endif; ?>
         </div>
         <!-- 記事内容(recom-cont)終わり -->
       </section>
       <!-- おすすめ記事recom-wrap終わり -->
     </main>
-    <footer></footer>
+    <?php get_footer()?>
   </body>
 </html>
