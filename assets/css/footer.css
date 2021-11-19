@@ -231,7 +231,7 @@
   .backTop-top {
     position: absolute;
     left: 0;
-    top: 0px;
+    top: 0;
     width: 100%;
     opacity: 0;
     visibility: hidden;
@@ -259,7 +259,7 @@
   }
   @keyframes slideIn {
     0% {
-      transform: translateY(50px);
+      transform: translateY(30px);
       opacity: 0;
     }
     100% {

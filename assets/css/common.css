@@ -16,7 +16,7 @@
   --tarai-color: #e98b2a;
   --honkaku-color: #cc543a;
   --txt-color: #0f0447;
-  --white-color: #fff;
+  --white-color: #fffffa;
   --pkz-color: #000;
 }
 
@@ -25,6 +25,7 @@
 ---------------------- */
 
 body {
+  background-color: var(--white-color);
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",
     "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   font-weight: bold;
@@ -48,9 +49,11 @@ p {
   font-weight: normal;
 }
 
-a:hover,
-button:hover {
-  opacity: 0.5;
+@media screen and (min-width: 1025px) {
+  a:hover,
+  button:hover {
+    opacity: 0.5;
+  }
 }
 
 /* ------PC用フォントサイズ----- */
@@ -114,13 +117,19 @@ button:hover {
   vertical-align: middle;
 }
 
+@media screen and (min-width: 600px) {
+  .pkz {
+    margin-top: 65px; /*ヘッダー分下におろす*/
+  }
+}
+
 /* -------パンくずpc用 ---------*/
 
 @media screen and (min-width: 1025px) {
   .pkz {
     height: 40px;
-    font-size: 18px;
     padding: 0 10%;
+    font-size: 18px;
   }
 }
 
