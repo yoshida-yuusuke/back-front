@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php $none = false; ?>
-
+<!-- モデルコース名が入る？ただカスタムフィールドで作るんじゃないのか？ -->
 <h1>モデルコース</h1>
 
 
@@ -31,8 +31,17 @@
                 <?php if (get_field('spot-type' . $i) != 'None') : ?>
 
                     <!-- 店舗指定 -->
-                    店舗名：<?php the_field('spot-type' . $i); ?><br />
-                    <!-- 画像指定(店舗及び観光地)できるようにならなければならない？ -->
+                    <!-- 店舗名：<?php the_field('spot-type' . $i); ?><br /> -->
+
+
+                    <!-- テキスト関連出力コード -->
+                    <!-- 下のコードをコンテンツ班と話し合って出力先の位置をなんとなく決める。詳しい位置はCSS・javascriptであてる？ -->
+
+
+
+                    <br />
+                    <!-- テキスト関連ここまで？？ -->
+
                     <?php
                     $image = get_field('Introduction-image' . $i);
                     $url = $image['sizes']['medium'];
@@ -40,6 +49,15 @@
                     $height = $image['sizes']['medium-height'];
                     ?>
                     <img src="<?php echo $url ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" /><br />
+
+                    <!-- ロケーション名テキスト出力？？？ -->
+                    <?php the_field('location-name' . $i); ?><br />
+                    <!-- キャッチフレーズ出力？？？ -->
+                    <?php the_field('catchphrase' . $i); ?><br />
+                    <!-- ロケーション説明出力 -->
+                    <?php the_field('location' . $i); ?><br />
+                    <!-- サイト内もしくは外部リンク出力 -->
+                    <?php the_field('link' . $i); ?><br />
 
                     <!-- デバッグ用のコード -->
                     <!-- <?php echo get_field('access-type' . $i); ?> -->
@@ -55,9 +73,15 @@
                     <?php elseif (get_field('access-type' . $i) == 'Goal') : ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/model/goalflag.png" alt="">
                     <?php endif; ?>
+
+                    <!-- 移動時間出力 -->
+                    <?php the_field('time' . $i); ?><br />
+
+
                     <!-- eleseifとここにブレーク文NONEの場合にという事を書く? -->
                     <!-- Noneだったらブレークする -->
                 <?php elseif (get_field('spot-type' . $i) == 'None') : ?>
+
 
 
                     <!-- for文のbreak判定のためにelseifに入った場合,変数にbreakのためにtrueを入れる -->
