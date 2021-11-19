@@ -345,54 +345,56 @@
 					<!-----------flexbox-------------->
 					<ul class="recom-ul">
 
-						<!---------記事li開始------------>
-						<li class="recom-li">
-
-							<?php
-							//メニューの投稿タイプ
-							//taxonomyの取得
 
 
-							//カテゴリ(地域)の取得
-							$areas = get_the_terms(get_the_ID(), 'shop_area');
-							$taxonomy_name = '';
-							foreach ($areas as $area) :
-								$area->slug;
-								$taxonomy_name = $area->slug;
-							endforeach;
+						<?php
+						//メニューの投稿タイプ
+						//taxonomyの取得
 
 
-							//同じ地域ランダム表示
-							$args = array(
-								'post_type' => 'shop',
-								'orderby' => 'rand',
-								'posts_per_page' => 4,
-								'tax_query' => array(
-									array(
-										'taxonomy' => 'shop_area',
-										'field' => 'slug',
-										'terms' => $taxonomy_name
-									)
+						//カテゴリ(地域)の取得
+						$areas = get_the_terms(get_the_ID(), 'shop_area');
+						$taxonomy_name = '';
+						foreach ($areas as $area) :
+							$area->slug;
+							$taxonomy_name = $area->slug;
+						endforeach;
+
+
+						//同じ地域ランダム表示
+						$args = array(
+							'post_type' => 'shop',
+							'orderby' => 'rand',
+							'posts_per_page' => 4,
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'shop_area',
+									'field' => 'slug',
+									'terms' => $taxonomy_name
 								)
-							);
+							)
+						);
 
-							$the_query = new WP_Query($args);
-							if ($the_query->have_posts()) :
-							?>
-								<!-- <div class="col-md-3"> -->
-								<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+						$the_query = new WP_Query($args);
+						if ($the_query->have_posts()) :
+						?>
+							<!-- <div class="col-md-3"> -->
+							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
+								<!---------記事li開始------------>
+								<li class="recom-li">
 
 									<?php get_template_part('template-parts/loop', 'shop'); ?>
 
-								<?php endwhile; ?>
-								<!-- </div> -->
-								<?php wp_reset_postdata(); ?>
-							<?php else : '検索結果がありませんでした'; ?>
+								</li>
+							<?php endwhile; ?>
+							<!-- </div> -->
+							<?php wp_reset_postdata(); ?>
+						<?php else : '検索結果がありませんでした'; ?>
 
-							<?php endif; ?>
+						<?php endif; ?>
 
-						</li>
+
 
 
 
