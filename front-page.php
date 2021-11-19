@@ -103,47 +103,49 @@
       <div class="home-map-img"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_access.jpg" alt="地図" /></div>
       <h3 class="access-subtitle">各駅から徳島駅まで</h3>
 
-      <h4 class="traffic">自転車</h4>
-      <dl>
-        <dt>岡山駅</dt>
-        <dd>長尾街道経由6時間</dd>
-        <br />
-        <dt>高松駅</dt>
-        <dd>国道11号経由3.5時間</dd>
-      </dl>
-      <h4 class="traffic">車</h4>
-      <dl>
-        <dt>岡山駅</dt>
-        <dd>瀬戸中央自動車道&nbsp;と&nbsp;高松自動車道2時間</dd>
-        <br />
-        <dt>高松駅</dt>
-        <dd>高松自動車道1時間</dd>
-        <br />
-        <dt>大阪駅</dt>
-        <dd>神戸淡路鳴門自動車道経由2時間</dd>
-        <br />
-        <dt>舞子駅</dt>
-        <dd>神戸淡路鳴門自動車道経由1.5時間</dd>
-      </dl>
-      <h4 class="traffic">電車・バス</h4>
-      <dl>
-        <dt>岡山駅</dt>
-        <dd>JR瀬戸大橋線・JRうずしお経由2時間</dd>
-        <br />
-        <dt>高松駅</dt>
-        <dd>JRうずしお経由1時間</dd>
-        <br />
-        <dt>大阪駅</dt>
-        <dd>東海道山陽本線、神戸空港線経由2.5時間</dd>
-        <br />
-        <dt>舞子駅</dt>
-        <dd>神戸空港線経由1.5時間</dd>
-      </dl>
-      <h4 class="traffic">フェリー</h4>
-      <dl>
-        <dt class="dt-padding">和歌山港</dt>
-        <dd>南海フェリー経由タクシーまたはバス移動で2.5時間</dd>
-      </dl>
+      <div class="access-wrap-pc">
+        <h4 class="traffic">自転車</h4>
+        <dl>
+          <dt>岡山駅</dt>
+          <dd>長尾街道経由6時間</dd>
+          <br />
+          <dt>高松駅</dt>
+          <dd>国道11号経由3.5時間</dd>
+        </dl>
+        <h4 class="traffic">車</h4>
+        <dl>
+          <dt>岡山駅</dt>
+          <dd>瀬戸中央自動車道&nbsp;と&nbsp;高松自動車道2時間</dd>
+          <br />
+          <dt>高松駅</dt>
+          <dd>高松自動車道1時間</dd>
+          <br />
+          <dt>大阪駅</dt>
+          <dd>神戸淡路鳴門自動車道経由2時間</dd>
+          <br />
+          <dt>舞子駅</dt>
+          <dd>神戸淡路鳴門自動車道経由1.5時間</dd>
+        </dl>
+        <h4 class="traffic">電車・バス</h4>
+        <dl>
+          <dt>岡山駅</dt>
+          <dd>JR瀬戸大橋線・JRうずしお経由2時間</dd>
+          <br />
+          <dt>高松駅</dt>
+          <dd>JRうずしお経由1時間</dd>
+          <br />
+          <dt>大阪駅</dt>
+          <dd>東海道山陽本線、神戸空港線経由2.5時間</dd>
+          <br />
+          <dt>舞子駅</dt>
+          <dd>神戸空港線経由1.5時間</dd>
+        </dl>
+        <h4 class="traffic">フェリー</h4>
+        <dl>
+          <dt class="dt-padding">和歌山港</dt>
+          <dd>南海フェリー経由タクシーまたはバス移動で2.5時間</dd>
+        </dl>
+      </div>
     </div>
   </section>
 

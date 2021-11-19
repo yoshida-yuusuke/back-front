@@ -142,6 +142,10 @@ h2 {
   background-size: cover;
 }
 
+.home-kind-item:hover {
+  opacity: 0.5;
+}
+
 .home-kind-link,
 .home-model-link {
   display: block;
@@ -274,6 +278,10 @@ h2 {
 
 /* -------access 中身---------- */
 
+.home-model:hover {
+  opacity: 0.5;
+}
+
 .home-access-wrap {
   display: none;
 }
@@ -349,6 +357,33 @@ dd {
 @media screen and (min-width: 1025px) {
   .home-map-img {
     max-width: 1000px;
+  }
+
+  .access-wrap-pc {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  .traffic {
+    padding-top: 30px;
+    font-size: 20px;
+  }
+
+  dl {
+    padding-top: 20px;
+  }
+
+  dt {
+    font-size: 18px;
+  }
+
+  dd {
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  .dt-padding {
+    padding: 0;
   }
 }
 

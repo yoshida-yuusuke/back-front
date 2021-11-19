@@ -98,7 +98,6 @@
 /* -------------------------
 ---------pc版---------------
 ---------------------------- */
-
 @media screen and (min-width: 1025px) {
   .footer {
     font-size: 18px;
@@ -149,52 +148,127 @@
 -------TOPへ戻るボタン------
 -------------------------- */
 
-.js-scroll-top {
+.backTop {
+  display: none;
+}
+
+.backTop-sp {
   position: fixed;
-  right: 0;
+  width: 60px;
+  height: 60px;
   bottom: 0;
-  z-index: 1000;
-  background-color: var(--btn-color);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: var(--white-color);
-  line-height: 50px;
-  text-align: center;
+  right: 10px;
 }
 
-.js-scroll-top:hover {
-  cursor: pointer;
-  opacity: 0.7;
+.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s;
 }
 
-#page-top.UpMove {
-  animation: UpAnime 0.5s forwards;
-}
-@keyframes UpAnime {
-  from {
+@media screen and (min-width: 1025px) {
+  .backTop-sp {
+    display: none;
+  }
+
+  .backTop {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    width: 80px;
+    height: 80px;
     opacity: 0;
-    transform: translateY(100px);
+    visibility: hidden;
+    transition: opacity 0.8s;
+    z-index: 15;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* -------下に下がる動き----------*/
-
-#page-top.DownMove {
-  animation: DownAnime 0.5s forwards;
-}
-@keyframes DownAnime {
-  from {
+  /*このクラスが付与されると表示する*/
+  .active {
     opacity: 1;
-    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.8s;
   }
-  to {
+
+  /* 囲い */
+  .backTop-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  /* 基本のボタン */
+  .backTop-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* hoverしたとき現れる画像 */
+  .backTop-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .backTop-bottom-2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 7;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .backTop-top {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 6;
+    object-fit: contain;
+  }
+
+  .backTop:hover .backTop-btn {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .backTop:hover .backTop-bottom {
     opacity: 1;
-    transform: translateY(100px);
+    visibility: visible;
+  }
+  .backTop:hover .backTop-bottom-2 {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .backTop:hover .backTop-top {
+    opacity: 1;
+    visibility: visible;
+    animation: slideIn 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+    }
+    50%,
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -218,7 +292,7 @@
 .searchForm-js {
   /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
   position: fixed;
-  z-index: 999;
+  z-index: 10;
   /*ナビのスタート位置と形状*/
   bottom: -100px;
   left: 0;
