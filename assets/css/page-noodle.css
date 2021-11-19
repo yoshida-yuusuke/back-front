@@ -291,7 +291,7 @@
 
 /* 左アイコンのイメージ配置 画像100~200pxくらいでok */
 .bln:before {
-  background-image: url(../img/neko.PNG);
+  background-image: url(../img/icon_noodle.PNG);
   border-radius: 50%;
   margin-left: 20px;
 }
