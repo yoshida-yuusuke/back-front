@@ -1,11 +1,152 @@
 <!-- header.phpをインクルードする -->
 <?php get_header(); ?>
 
+<!-- パンくずリスト -->
+<?php get_template_part('template-parts/breadcrumb'); ?>
+
+<!------- メイン ------->
+<main class="main">
+
+    <!------- ビジュアル ------->
+    <div class="noodle-top-img-wrap">
+        <img class="noodle-top-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_noodle.jpg" alt="トップイメージ" />
+    </div>
+    <!---------- noodle-intro ---------->
+    <section class="noodle-intro">
+        <h2 class="h2-font">
+            <span class="line-bg">徳島の麺類事情</span>
+        </h2>
+        <div class="noodle-intro-wrap">
+            <div class="noodle-tokushima-img-wrap">
+                <img class="noodle-tokushima-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_noodle_1.png" alt="徳島のうどん" />
+            </div>
+            <div class="noodle-intro-txt">
+                <p class="bold">むかしむかしせっせと働く阿波の民がおりました。</p>
+                <p class="bold">「つるりと食べられるものがいい。」</p>
+                <p class="bold">
+                    そんな想いから徳島のうどん文化は発展していき、「なるちゅるうどん」と「たらいうどん」が生まれました。
+                </p>
+                <p class="bold">
+                    そんな古くから愛されてきたうどんの魅力を紹介するために「阿波うどん運動」が始まりました。<br />このサイトを見て少しでも食べたいと思っていただけたらうれしいです。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!---------- noodle-about ---------->
+    <section class="noodle-about">
+        <div class="noodle-deco-img-wrap">
+            <img class="noodle-deco-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_noodle.jpg" alt="おいしいうどん" />
+        </div>
+
+        <h3 class="h3-font">「たらい」と「なるちゅる」</h3>
+        <p class="bold">
+            あまり聞き馴染みのないこのうどんたちは、徳島の地元民に長く愛されてきました。
+        </p>
+        <p class="bold">徳島でしか味わうことができないうどんを、紹介します。</p>
+    </section>
+
+    <!---------- なるちゅる説明 ---------->
+    <section class="noodle-naruchuru">
+        <div class="noodle-naruchuru-wrap">
+            <h3 class="h3-font">なるちゅるうどん とは</h3>
+            <p class="bold">どのうどんともちがう、「ちゅるちゅる」の魅力</p>
+            <p class="bold">
+                なるちゅるうどんは、発祥には諸説ありますが、古くから鳴門で愛されてきたご当地の個性派うどん。<br />
+                2000年代、徳島の写真家である中野氏が、そのちゅるちゅるとした触感から「なるちゅる」と命名、その呼び名が定着しました。
+            </p>
+            <p class="bold">
+                特徴は細く不揃いの、ちぢれたやわらかい麺。<br />
+                煮干しを使ってあっさりとした、すこし甘みも感じる優しいおだし。<br />
+                トッピングはネギと刻んだ油揚げ、鳴門名産のちくわやワカメ。<br />
+                とってもシンプルで、毎日食べても飽きない優しいうどんです。
+            </p>
+        </div>
+        <p class="bold-2">
+            一口食べれば、あなたも<br />「ちゅるちゅる」の<br />意味が分かります。
+        </p>
+        <div class="noodle-arrow-img-wrap">
+            <img class="noodle-arrow-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_page-noodle_arrow.png" alt="矢印" />
+        </div>
+        <button onclick="location.href='archives/shop_type/naruchuru'" class="btn-blue">
+            なるちゅるうどんの店舗一覧へ
+        </button>
+    </section>
+
+    <!---------- たらい説明 ---------->
+    <section class="noodle-tarai">
+        <div class="noodle-tarai-wrap">
+            <h3 class="h3-font">たらいうどん とは</h3>
+            <p class="bold">
+                たらいうどんは、徳島県阿波市に伝わる、江戸時代末期から愛されてきた郷土料理です。
+            </p>
+            <p class="bold">
+                特徴は、その名の通り大きなたらいに入っていること。これをみんなで囲んで食べるのです。<br />
+                昔、木こりたちが仕事納めなどの際に、振る舞いご飯として食べていたのがが始まりだそう。
+            </p>
+            <p class="bold">
+                大きなたらいに、ゆで汁ごと入った太めのもっちり釜揚げうどん。<br />湯気が立ちのぼるあつあつの麺を、うまみの詰まった出汁つゆをつけて食べます。
+            </p>
+            <p class="bold">
+                たらいのフチで麺を湯切りしながら食べるのがコツ。<br />
+                出汁つゆは卵が入っていたりとお店によって味わいが変わり、様々なうどんを楽しめます。
+            </p>
+        </div>
+        <p class="bold-2">探してみましょう。<br />あなたの好きな味</p>
+        <div class="noodle-arrow-img-wrap">
+            <img class="noodle-arrow-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_page-noodle_arrow.png" alt="矢印" />
+        </div>
+        <button onclick="location.href='archives/shop_type/tarai'" class="btn-blue">
+            たらいうどんの店舗一覧へ
+        </button>
+    </section>
+
+    <!---------- 徳島の麺なかまたち（はしやすめ） ---------->
+    <section class="noodle-kind">
+        <h3 class="h3-font">徳島の麺なかまたち</h3>
+
+        <!--吹き出し-->
+        <div class="bln">
+            <div class="says">
+                <p class="says-txt">
+                    徳島ラーメン説明テキストテキストテキストテキストテキスト
+                </p>
+            </div>
+        </div>
+        <div class="bln">
+            <div class="says">
+                <p class="says-txt">
+                    徳島ラーメン説明テキストテキストテキストテキストテキスト
+                </p>
+            </div>
+        </div>
+        <div class="bln">
+            <div class="says">
+                <p class="says-txt">
+                    徳島ラーメン説明テキストテキストテキストテキストテキスト
+                </p>
+            </div>
+        </div>
+        <!--吹き出しおわり-->
+    </section>
+</main>
+
+<!-- header.phpをインクルードする -->
+<?php get_footer(); ?>
+
+
+
+
+
+
+
+<!-- ここからPHP -->
+
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
 
         <h2 class="pageTitle"><?php the_title(); ?><span><?php echo strtoupper($post->post_name); ?></span></h2>
-        <?php get_template_part('template-parts/breadcrumb'); ?>
+
 
         <main class="main">
             <div class="container">
@@ -19,27 +160,10 @@
                     <div class="col-12 col-md-3">
                         <div class="address">
                             <div class="address_map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.332798729691!2d139.7333802!3d35.6934272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c5e412329bb%3A0x7db38e6732953dc!2z44CSMTYyLTA4NDYg5p2x5Lqs6YO95paw5a6_5Yy65biC6LC35bem5YaF55S677yS77yR4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1566456578905!5m2!1sja!2sjp" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+
                             </div>
                             <table class="address_table">
-                                <tbody>
-                                    <tr>
-                                        <th>所在地</th>
-                                        <td>東京都新宿区市谷左内町21-13</td>
-                                    </tr>
-                                    <tr>
-                                        <th>電話番号</th>
-                                        <td>03-1234-5678</td>
-                                    </tr>
-                                    <tr>
-                                        <th>営業時間</th>
-                                        <td>17:00～翌2:00(L.O.翌1:00)</td>
-                                    </tr>
-                                    <tr>
-                                        <th>定休日</th>
-                                        <td>日曜日<br>※営業時間・定休日は変更となる場合がございます。</td>
-                                    </tr>
-                                </tbody>
+
                             </table>
                         </div>
                     </div>
@@ -48,6 +172,3 @@
         </main>
     <?php endwhile; ?>
 <?php endif; ?>
-
-<!-- header.phpをインクルードする -->
-<?php get_footer(); ?>
