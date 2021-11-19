@@ -175,45 +175,42 @@
 					<h2 class="h2-font index-mark2 shop-space-bottom">店の特徴メーター</h2>
 					<div class="shop-meter-cont">
 						<?php if (get_field('mood') == 'mood1') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_1.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_1.png" alt="">
 						<?php elseif (get_field('mood') == 'mood2') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_2.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_2.png" alt="">
 						<?php elseif (get_field('mood') == 'mood3') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_3.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_3.png" alt="">
 						<?php elseif (get_field('mood') == 'mood4') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_4.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_4.png" alt="">
 						<?php else : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_5.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_5.png" alt="">
 						<?php endif; ?>
 
 						<!--麺メーター-->
 						<?php if (get_field('men') == 'men1') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_1.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_1.png" alt="">
 						<?php elseif (get_field('men') == 'men2') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_2.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_2.png" alt="">
 						<?php elseif (get_field('men') == 'men3') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_3.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_3.png" alt="">
 						<?php elseif (get_field('men') == 'men4') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_4.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_4.png" alt="">
 						<?php else : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_5.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_5.png" alt="">
 						<?php endif; ?>
 
 						<!--つゆメーター-->
 						<?php if (get_field('tuyu') == 'tuyu1') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_1.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_1.png" alt="">
 						<?php elseif (get_field('tuyu') == 'tuyu2') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_2.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_2.png" alt="">
 						<?php elseif (get_field('tuyu') == 'tuyu3') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_3.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_3.png" alt="">
 						<?php elseif (get_field('tuyu') == 'tuyu4') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_4.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_4.png" alt="">
 						<?php else : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_5.jpg" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/つゆメーター/tuyu_meter_5.png" alt="">
 						<?php endif; ?>
-
-
-
 					</div>
 				</section>
 
@@ -328,88 +325,61 @@
 		?>
 			</main>
 
-
-
-
-
-
-
-			<!---------------------------------------------------
-        ------------＝＝＝＝＝＝＝-------おすすめ店舗---------＝＝＝＝＝＝＝ー-------------
-        ----------------------------------------------------->
-			<aside class=" single-shop-recom shop-container shop-sec">
-				<div class="shop-recom-innner">
-					<h3 class="shop-recom-h3 shop-space-bottom">近くのオススメ店舗</h3>
-
-
-					<!-----------flexbox-------------->
-					<ul class="recom-ul">
-
-
-
-						<?php
-						//メニューの投稿タイプ
-						//taxonomyの取得
-
-
-						//カテゴリ(地域)の取得
-						$areas = get_the_terms(get_the_ID(), 'shop_area');
-						$taxonomy_name = '';
-						foreach ($areas as $area) :
-							$area->slug;
-							$taxonomy_name = $area->slug;
-						endforeach;
-
-
-						//同じ地域ランダム表示
-						$args = array(
-							'post_type' => 'shop',
-							'orderby' => 'rand',
-							'posts_per_page' => 4,
-							'tax_query' => array(
-								array(
-									'taxonomy' => 'shop_area',
-									'field' => 'slug',
-									'terms' => $taxonomy_name
-								)
-							)
-						);
-
-						$the_query = new WP_Query($args);
-						if ($the_query->have_posts()) :
-						?>
-							<!-- <div class="col-md-3"> -->
-							<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-
-								<!---------記事li開始------------>
-								<li class="recom-li">
-
-									<?php get_template_part('template-parts/loop', 'shop'); ?>
-
-								</li>
-							<?php endwhile; ?>
-							<!-- </div> -->
-							<?php wp_reset_postdata(); ?>
-						<?php else : '検索結果がありませんでした'; ?>
-
-						<?php endif; ?>
-
-
-
-
-
-
-
-
-
-					</ul>
-					<!----------/-flexbox-------------->
-
+			<!----------------------
+       ----- おすすめ記事-----
+    ------------------------->
+			<!-- おすすめ→recom -->
+			<section class="recom-wrap">
+				<div class="recom-title">
+					<h2 class="recom-title-p">こちらの記事もおすすめです</h2>
 				</div>
-			</aside>
-</div>
+				<div class="recom-cont">
+
+					<?php
+					//メニューの投稿タイプ
+					//taxonomyの取得
+
+
+					//カテゴリ(地域)の取得
+					$areas = get_the_terms(get_the_ID(), 'shop_area');
+					$taxonomy_name = '';
+					foreach ($areas as $area) :
+						$area->slug;
+						$taxonomy_name = $area->slug;
+					endforeach;
+
+
+					//同じ地域ランダム表示
+					$args = array(
+						'post_type' => 'shop',
+						'orderby' => 'rand',
+						'posts_per_page' => 4,
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'shop_area',
+								'field' => 'slug',
+								'terms' => $taxonomy_name
+							)
+						)
+					);
+
+					$the_query = new WP_Query($args);
+					if ($the_query->have_posts()) :
+					?> <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<div class="recom-article">
+
+								<?php get_template_part('template-parts/loop', 'shop'); ?>
+							</div>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php else : '検索結果がありませんでした'; ?>
+
+					<?php endif; ?>
+				</div>
+			</section>
 
 
 
-<!-- header.phpをインクルードする -->
-<?php get_footer(); ?>
+			<!-- header.phpをインクルードする -->
+			<?php get_footer(); ?>
