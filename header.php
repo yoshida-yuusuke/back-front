@@ -24,19 +24,18 @@
   <?php } elseif (is_page('writer')) { ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/page-writer.css" rel="stylesheet">
   <?php } elseif (is_post_type_archive('shop')) {  ?>
-    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive-shop.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <?php } elseif (is_post_type_archive('course')) { ?>
-    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive-course.css" rel="stylesheet">
   <?php } elseif (is_singular('course')) {  ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/single-course.css" rel="stylesheet">
   <?php } elseif (is_singular('shop')) {  ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/single-shop.css" rel="stylesheet">
   <?php } elseif (is_tax('shop_type')) {  ?>
-    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
-  <?php } elseif (is_404()) { ?>
-    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
-  <?php } ?>
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/taxsonomy-shop_type.css" rel="stylesheet">
+  <?php }
+  ?>
 
   <?php
   // wp_head()アクションを実行する
@@ -57,7 +56,9 @@
 
       <div class="header-logo-wrap">
         <h1>
-          <img class=header-logo-img" src="<?php echo get_template_directory_uri() ?>/assets/img/logo-wh-small.png" alt="阿波うどん運動" />
+          <a href="<?php echo home_url(); ?>">
+            <img class=header-logo-img" src="<?php echo get_template_directory_uri() ?>/assets/img/logo-wh-small.png" alt="阿波うどん運動" />
+          </a>
         </h1>
       </div>
 
@@ -113,7 +114,7 @@
 
     <section class="header-pc">
       <div class="header-logo-wrap">
-        <a href="#">
+        <a href="<?php echo home_url(); ?>">
           <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-wh-small.png" alt="阿波うどん運動" />
         </a>
       </div>
@@ -137,10 +138,3 @@
       </nav>
     </section>
   </header>
-
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
-  <!--自作のJS-->
-  <!-- <script src="<?php echo get_template_directory_uri() ?>/assets/js/header.js"></script> -->
-
-  <!-- </body>
-</html> -->

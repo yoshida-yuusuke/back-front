@@ -3,7 +3,9 @@
     <footer class="footer">
       <div class="footer-flex-pc">
         <div class="footer-logo">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-wh-small.png" alt="" />
+          <a href="<?php echo home_url(); ?>">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-wh-small.png" alt="">
+          </a>
         </div>
         <div class="footer-navsns-wrap">
           <ul class="footer-nav">
@@ -184,8 +186,22 @@
 
       <!-- -----------------topへ戻るボタン-------------------- -->
 
+      <!--------------- sp版 --------------------->
+      <div id="page-top" class="backTop-sp js-backTop">
+        <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_sp.png" alt="TOPへ戻る">
+      </div>
 
-      <button id="page-top" class="js-scroll-top">TOPへ</button>
+
+      <!-- -----------------pc版---------------->
+      <div id="page-top" class="backTop js-backTop">
+        <div class="backTop-wrap">
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_01.png" alt="TOPへ戻る" class="backTop-btn" />
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_02.png" alt="TOPへ戻る" class="backTop-bottom" />
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_03.png" alt="TOPへ戻る" class="backTop-bottom-2" />
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_hover.png" alt="" class="backTop-top" />
+        </div>
+      </div>
+
 
     </footer>
 
@@ -211,7 +227,7 @@
       <!--------フロントJS読み込み（アコーディオン）---------->
       <script src="<?php echo get_template_directory_uri() ?>/assets/js/front-page.js"></script>
     <?php } elseif (is_singular('shop')) {  ?>
-      <!---------スライダーライブラリ読み込み------------>
+      <!------スライダーライブラリ、店舗詳細読み込み------->
       <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
       <script src="<?php echo get_template_directory_uri() ?>/assets/js/single-shop.js"></script>
     <?php }
