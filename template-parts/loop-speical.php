@@ -1,21 +1,13 @@
-<!-- <article class="news"> -->
-<article id="post-<?php the_ID(); ?>" <?php post_class('news'); ?>>
-    <div class="news_pic">
-        <a href="<?php the_permalink(); ?>">
-            <?php if (has_post_thumbnail()) : ?>
-                <?php the_post_thumbnail('medium'); ?>
-            <?php else : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-            <?php endif; ?>
-        </a>
+<!-- <div class="archive-article"> -->
+<a href="<?php the_permalink(); ?>">
+    <div class="archive-article-img">
+        <?php if (has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail('medium'); ?>
+        <?php else : ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-spe.jpg" alt="記事のサムネイル画像です" class="thumb-radius">
+        <?php endif; ?>
     </div>
-    <div class="news_meta">
-        <time class="news_time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y年m月d日'); ?>
-        </time>
-    </div>
-    <h2 class="news_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-    <div class=" news_desc">
-        <?php the_excerpt(); ?>
-        <p><a href="<?php the_permalink(); ?>">[続きを読む]</a></p>
-    </div>
-</article>
+    <p class="article-title"><?php the_title(); ?></p>
+    <p class="article-txt"><?php the_excerpt(); ?></p>
+</a>
+<!-- </div> -->

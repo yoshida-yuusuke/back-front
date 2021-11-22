@@ -174,23 +174,24 @@
   margin-top: 15px;
 }
 
-.pages{
+.pages {
   display: none;
 }
 
-.pagenation ,.wp-pagenavi{
+.pagenation,
+.wp-pagenavi {
   display: flex;
   justify-content: center;
 }
 
-
-.pagenation-number,.current,.page {
+.pagenation-number,
+.current,
+.page {
   padding: 10px 15px 0 !important;
   border: 1px solid var(--txt-color);
   border-radius: 50%;
   font-size: 15px;
 }
-
 
 /* htmlバージョン */
 /* .pagenation-number + .pagenation-number {
@@ -198,39 +199,37 @@
 } */
 
 /* ワードプレスバージョン */
-.page + .page{
-  margin-right: 15px  !important;
+.page + .page {
+  margin-right: 15px !important;
 }
 
 /* 1ページ目 */
 .current + .page {
-  margin-left: 15px   !important;
+  margin-left: 15px !important;
 }
 
 /* ２ページ目以降 */
 .page + .current {
-  margin-left: 15px   !important;
+  margin-left: 15px !important;
 }
 
-.page + .nextpostslink{
+.page + .nextpostslink {
   margin-left: 15px;
 }
 
-
-.previouspostslink + .page{
+.previouspostslink + .page {
   margin-left: 15px;
 }
 
-.page + .page{
+.page + .page {
   margin-right: 15px;
 }
 
-.nextpostslink,.previouspostslink{
+.nextpostslink,
+.previouspostslink {
   border: none !important;
   font-size: 30px;
 }
-
-
 
 .pagenation:before,
 .pagenation:after {
@@ -298,4 +297,10 @@
   .favorite-recom-wrap {
     padding: 50px 20% 150px;
   }
+}
+
+/* -----------記事のサムネイル角丸------------- */
+.archive-article-img {
+  overflow: hidden;
+  border-radius: 5px;
 }
