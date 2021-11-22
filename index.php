@@ -29,18 +29,19 @@
       <?php endwhile; ?>
     <?php endif; ?>
   </div>
-</div>
-<!-- 記事内容(archive-list)終わり -->
+  <!-- 記事内容(archive-list)終わり -->
 
-<!----------------------
+  <!----------------------
         ページネーション
         ---------------------->
-<div class="pagenation-wrap">
-  <?php if (function_exists('wp_pagenavi')) {
-    wp_pagenavi();
-  }
-  ?>
+  <div class="pagenation-wrap">
+    <?php if (function_exists('wp_pagenavi')) {
+      wp_pagenavi();
+    }
+    ?>
+  </div>
 </div>
+
 <!-- ----------------------------------------------
 -------以上に各ページのマークアップをお願いします。-------
 --------------------------------------------------->

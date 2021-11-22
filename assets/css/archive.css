@@ -77,16 +77,16 @@
   margin-bottom: 40px;
 }
 
- /* 404のみ使用 */
-.notfound-title{
+/* 404のみ使用 */
+.notfound-title {
   margin-bottom: 30px;
 }
 
- /* 404のみ使用 */
-.archive-list_title{
-font-weight: bold;
-margin-bottom: 20px;
-width: 100%;
+/* 404のみ使用 */
+.archive-list_title {
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .archive-list {
@@ -153,7 +153,7 @@ width: 100%;
 /* タブレット版 */
 @media screen and (min-width: 600px) {
   .archive-wrap {
-    padding: 110px 20%;
+    padding: 80px 20%;
   }
 }
 
@@ -261,7 +261,7 @@ width: 100%;
 
 @media screen and (min-width: 1025px) {
   .pagenation-wrap {
-    margin-top: 100px;
+    margin-top: 30px;
   }
   .pagenation-number {
     padding: 10px 15px;
