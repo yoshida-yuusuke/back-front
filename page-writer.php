@@ -7,44 +7,148 @@
         <h2 class="pageTitle"><?php the_title(); ?><span><?php echo strtoupper($post->post_name); ?></span></h2>
         <?php get_template_part('template-parts/breadcrumb'); ?>
 
-        <main class="main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-9">
-                        <div class="content">
-                            <?php the_content(); ?>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-3">
-                        <div class="address">
-                            <div class="address_map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3240.332798729691!2d139.7333802!3d35.6934272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c5e412329bb%3A0x7db38e6732953dc!2z44CSMTYyLTA4NDYg5p2x5Lqs6YO95paw5a6_5Yy65biC6LC35bem5YaF55S677yS77yR4oiS77yR77yT!5e0!3m2!1sja!2sjp!4v1566456578905!5m2!1sja!2sjp" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                            </div>
-                            <table class="address_table">
-                                <tbody>
-                                    <tr>
-                                        <th>所在地</th>
-                                        <td>東京都新宿区市谷左内町21-13</td>
-                                    </tr>
-                                    <tr>
-                                        <th>電話番号</th>
-                                        <td>03-1234-5678</td>
-                                    </tr>
-                                    <tr>
-                                        <th>営業時間</th>
-                                        <td>17:00～翌2:00(L.O.翌1:00)</td>
-                                    </tr>
-                                    <tr>
-                                        <th>定休日</th>
-                                        <td>日曜日<br>※営業時間・定休日は変更となる場合がございます。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+        <!-------------------------------------
+-------------ページヘッダー------------
+--------------------------------------->
+        <div class="page-writer-top">
+            <div class="writer-top page-header-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tl_page-writer_top.jpg" alt="" class="writer-top-img">
+                <div class="top-logo writer-container">
+                    <h2 class="top-title">わたしたちについて</h2>
                 </div>
             </div>
+        </div>
+
+        <!-----------------------------------
+----------------メイン---------------
+------------------------------------>
+        <div class="writer-container">
+
+            <!------------- 全体紹介------------------->
+            <div class="writer-intro writer-group">
+                <p class="writer-intro-txt"> <?php the_content(); ?>
+                </p>
+            </div>
+
+            <!------------- メンバーリスト一覧------------------->
+            <div class="writer-member writer-group">
+                <ul class="member-ul">
+
+                    <!------------- メンバーごとli開始------------------->
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_yoshida.jpeg" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_hayashi.png" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_motoki.png" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_sato.jpg" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_yoshida.jpeg" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_hayashi.png" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_motoki.png" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_sato.jpg" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_yoshida.jpeg" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_hayashi.png" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+
+                    <li class="member-li">
+                        <div class="member-avater">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_motoki.png" alt="" class="member-img">
+                        </div>
+                        <div class="member-cont">
+                            <p class="member-name">ハンドルネーム</p>
+                            <p class="member-txt">執筆者情報テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        </div>
+        </div>
+        </div>
         </main>
     <?php endwhile; ?>
 <?php endif; ?>
