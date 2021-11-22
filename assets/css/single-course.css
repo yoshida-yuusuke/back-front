@@ -1,13 +1,13 @@
 @charset "utf-8";
 /* プロパティの順番を整えました！ */
-html{
+.coruse-wrap {
   scroll-behavior: smooth;
 }
 /*-------------
 タイトル画像
 --------------*/
 
-.page-header{
+.page-header {
   position: relative;
 }
 
@@ -25,7 +25,7 @@ html{
 
 .top-img-title {
   padding-bottom: 10px;
-  color:  var(--white-color);
+  color: var(--white-color);
 }
 
 .tag-wrap {
@@ -34,21 +34,21 @@ html{
 
 .tag {
   margin-right: 15px;
-  color:  var(--white-color);
+  color: var(--white-color);
   font-size: 10px;
   text-align: center;
 }
 
 @media screen and (min-width: 1025px) {
-.page-header-txt-wrap{
-  width: 60%;
-}
+  .page-header-txt-wrap {
+    width: 60%;
+  }
 
-.tag{
-  margin-right: 35px;
-  font-size: 22px;
-  padding-top: 10px;
-}
+  .tag {
+    margin-right: 35px;
+    font-size: 22px;
+    padding-top: 10px;
+  }
 }
 
 /*---------------
@@ -68,7 +68,7 @@ html{
   position: relative;
   z-index: 0;
   height: 300px;
-  background-image: url(../img/logo/bg_single-course_tokushima_map.jpg);
+  background-image: url(../img/tokushima_pc_x2.jpg);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -196,7 +196,8 @@ html{
 }
 
 @media screen and (max-width: 1024px) {
-  .course-number-pc,.move-icon-arrow-pc {
+  .course-number-pc,
+  .move-icon-arrow-pc {
     display: none;
   }
 }
@@ -210,7 +211,8 @@ html{
     min-height: 400px;
   }
 
-  .course-title-wrap,.move-icon-arrow-sp {
+  .course-title-wrap,
+  .move-icon-arrow-sp {
     display: none;
   }
   .course-txt-wrap {
@@ -261,7 +263,7 @@ html{
   .move-icon-wrap {
     margin-top: 100px;
   }
-  .move-icon-arrow-pc{
+  .move-icon-arrow-pc {
     width: 100px;
   }
 
@@ -283,7 +285,7 @@ html{
   }
 
   .course-2 {
-     /* background-colorを無くす */
+    /* background-colorを無くす */
     background-color: transparent;
     text-align: right;
   }
@@ -291,4 +293,8 @@ html{
   .course-3 {
     margin-bottom: 150px;
   }
+}
+
+.course-cont-wrap :nth-child(2) {
+  text-align: right;
 }

@@ -1,15 +1,13 @@
 <?php get_header() ?>
 
-<main>
+<!-- パンくずリスト -->
+<?php get_template_part('template-parts/breadcrumb'); ?>
 
-  <div class="pkz">
-    <ul class="pkz-ul">
-      <li><?php get_template_part('template-parts/breadcrumb'); ?></li>
-    </ul>
-  </div>
+<!------- メイン ------->
+<main class="main">
   <!--------------------
-          トップの画像
-        --------------------->
+        トップの画像
+    --------------------->
   <div class="page-header">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_single-blog.JPG" alt="特集詳細のイメージ画像です" class="page-header-img" />
     <h2 class="h2-font top-img-title"><?php the_title() ?></h2>
@@ -24,8 +22,8 @@
        ------------------------>
   <section class="single-blog-cont-wrap">
     <div class="single-blog-title">
-      <h2 class="h2-font">食べきったら10円引き！勝負せよ、大食い特集</h2>
-      <p>キャッチコピー</p>
+      <h2 class="h2-font"><?php the_title() ?></h2>
+      <!-- <p>キャッチコピー</p> -->
     </div>
     <!-- ライター記述欄 -->
     <div class="single-blog-writer-wrap">
@@ -53,10 +51,13 @@
       <div class="single-blog-cont-txt">
         <?php the_content(); ?>
       </div>
+
+
       <div class="cont-tag">
+        <!-- 画像のソース -->
         <small class="cont-tag-txt">image:©️__________</small>
+        <!-- タグ -->
         <small class="cont-tag-txt">
-          <!-- タグ表示 -->
           <?php
           $posttags = get_the_tags();
           $tags = get_tags();
@@ -70,20 +71,32 @@
         </small>
       </div>
     </div>
-    <div class="shop-detail-btn">
-      <a href="<?php get_permalink('つなげたいページのIDを入力する'); ?>">
-        <button class="btn-orange">店舗の詳細はこちら</button>
-      </a>
-    </div>
+
+    <!-- 店舗の詳細はこちらボタン -->
+
+    <!-- ここをコンテンツ班にカスタムHTMLにしてもらう -->
+    <!-- <div class="shop-detail-btn">
+        <button type="button" onclick="location.href='<?//php get_permalink('つなげたいページのIDを入力する'); ?>'" class="btn-orange">店舗の詳細はこちら</button>
+    </div> -->
+    <!-- ここまで -->
+
+    <!-- いいね、sns -->
     <ul class="share">
-      <liclass="good">
+      <!-- いいねボタン -->
+      <li class="good">
         <?php wpfp_link() ?>
-        </li>
-        <li>
-          <?php echo do_shortcode('[addtoany]'); ?>
-        </li>
+      </li>
+      <!-- タグ -->
+      <li>
+        <?php echo do_shortcode('[addtoany]'); ?>
+      </li>
     </ul>
+
   </section>
+
+
+
+
   <!----------------------
        ----- おすすめ記事-----
     ------------------------->
