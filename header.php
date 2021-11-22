@@ -29,6 +29,8 @@
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_post_type_archive('course')) { ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
+  <?php } elseif (is_category('special')) { ?>
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_singular('course')) {  ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/single-course.css" rel="stylesheet">
   <?php } elseif (is_singular('shop')) {  ?>
@@ -39,7 +41,7 @@
   <?php } elseif (is_404()) { ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } ?>
-  ?>
+
 
   <?php
   // wp_head()アクションを実行する

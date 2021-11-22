@@ -1,36 +1,49 @@
 <?php get_header(); ?>
-
-<h2 class="pageTitle"><?php single_tag_title(); ?></h2>
+<!-- パンくずリスト -->
 <?php get_template_part('template-parts/breadcrumb'); ?>
-<?php $posttags = get_the_tags();
-if ($posttags) {
-foreach($posttags as $tag) {
-echo '#'.$tag->name . ' ';
-}
-}
-?>
-<main class="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-9">
-                <div class="row">
-                    <!-- メインループの開始 -->
-                    <?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : the_post(); ?>
-                            <div class="col-md-4">
-                                <?php get_template_part('template-parts/loop', 'speical'); ?>
-                            </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </div>
-                <?php if (function_exists('wp_pagenavi')) {
-                    wp_pagenavi();
-                } ?>
-            </div>
 
-        </div>
-    </div>
-</main>
+<!--------------------
+          トップの画像
+        --------------------->
+<div class="page-header">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-spe.jpg" alt="モデルコースのイメージ画像です" class="page-header-img" />
+  <div class="page-header-txt-wrap">
+    <h2 class="h2-font top-img-title">カテゴリー一覧</h2>
+    <ul class="tag-wrap">
+      <!-- このページのタグはベタ打ちする -->
+      <li class="tag">#タグ</li>
+      <li class="tag">#タグ</li>
+      <li class="tag">#タグ</li>
+      <li class="tag">#タグ</li>
+      <li class="tag">#タグ</li>
+    </ul>
+  </div>
+</div>
+
+<div class="archive-wrap">
+  <div class="archive-list">
+    <?php if (have_posts()) : ?>
+      <?php while (have_posts()) : the_post(); ?>
+        <div class="archive-article">
+          <?php get_template_part('template-parts/loop', 'speical'); ?></div>
+      <?php endwhile; ?>
+    <?php endif; ?>
+  </div>
+</div>
+<!-- 記事内容(archive-list)終わり -->
+
+<!----------------------
+        ページネーション
+        ---------------------->
+<div class="pagenation-wrap">
+  <?php if (function_exists('wp_pagenavi')) {
+    wp_pagenavi();
+  }
+  ?>
+</div>
+<!-- ----------------------------------------------
+-------以上に各ページのマークアップをお願いします。-------
+--------------------------------------------------->
 
 <!-- header.phpをインクルードする -->
 <?php get_footer(); ?>
