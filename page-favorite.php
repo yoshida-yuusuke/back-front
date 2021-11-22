@@ -26,20 +26,27 @@
         </div>
     </div>
 
-    <section class="archive-wrap">
-        <div class="favorite-title">
+    <section class="recom-wrap">
+        <div class="recom-title">
             <h2 class="h2-font">あなたのお気に入り記事</h2>
             <p>20件の記事をお気に入りしました。</p>
         </div>
-        <div class="archive-list">
+        <div class="recom-cont">
+
             <?php
+            //メニューの投稿タイプ
+            //taxonomyの取得
+
+
             //ユーザーがお気に入りにした記事のIDを取得
             $favorite_post_ids = wpfp_get_user_meta();
 
+            //ユーザーがお気に入りにした店舗紹介記事のIDを取得
             $args = array(
                 'post_type' => 'shop',
                 'post__in' => $favorite_post_ids, //お気に入り記事のID
             );
+
             // 記事の取得
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()) :
@@ -48,38 +55,40 @@
                 <?php while ($the_query->have_posts()) : $the_query->the_post();
                     $count++;
                 ?>
-                    <!-- 5番目だったら、archive-article-bigのクラスを付与する -->
-                    <div class="archive-article<?php if ($count % 5 == 0) echo " archive-article-big"; ?>">
-                        <div class="archive-article-img">
-                            <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="記事のサムネイル画像です" />
-                                $terms = get_the_terms(get_the_ID(), 'shop_type');
-
-                                <!-- if ($terms == 'naruchuru') {
-                                    echo '<div class="article-eye naruto">' . $category[0] . '</div>';
-                                } elseif ($taxonomy_name == 'tarai') {
-                                    echo '<div class="article-eye tarai">' . $category[1] . '</div>';
-                                } else {
-                                    echo '<div class="article-eye honkaku">' . $category[2] . '</div>';
-                                } ?> -->
-                                <div class="article-eye honkaku">本格うどん</div>
-                            </a>
-                            <button class="article-good">❤︎</button>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="article-link">
-                            <p class="article-title"><?php the_title(); ?></p>
-                            <p class="article-txt"><?php the_excerpt(); ?></p>
-                        </a>
+                    <div class="recom-article">
+                        <?php get_template_part('template-parts/loop', 'shop'); ?>
                     </div>
-
                 <?php endwhile; ?>
-            <?php else : ?>
-                echo '登録がありません';
-            <?php endif ?>
+                <?php wp_reset_postdata(); ?>
+            <?php elseif ($the_query->have_posts()) : ?>
+                $count = 0;
+                //ユーザーがお気に入りにした特集記事のIDを取得
+                $args = array(
+                'post_type' => 'special',
+                'post__in' => $favorite_post_ids, //お気に入り記事のID
+                );
 
-            <?php wp_reset_postdata();
-            ?>
+                // 記事の取得
+                $the_query = new WP_Query($args);
+                if ($the_query->have_posts()) :
+                $count++;
+                <?php while ($the_query->have_posts()) : $the_query->the_post();
+                    $count++;
+                ?>
+                    <div class="recom-article">
+                        <?php get_template_part('template-parts/loop', 'special'); ?>
+                    </div>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php else : '検索結果がありませんでした'; ?>
+            <?php endif; ?>
+        </div>
     </section>
+
+
+
+
+
     <!----------------------
          ページネーション
         ---------------------->
@@ -93,7 +102,6 @@
 			<li class="pagenation-number">3</li>
 			<li class="pagenation-number">4</li>
 			</ul> -->
-
     </div>
     </div>
 
