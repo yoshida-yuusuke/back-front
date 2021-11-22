@@ -36,7 +36,9 @@
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/single-shop.css" rel="stylesheet">
   <?php } elseif (is_tax('shop_type')) {  ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/taxsonomy-shop_type.css" rel="stylesheet">
-  <?php }
+  <?php } elseif (is_404()) { ?>
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
+  <?php } ?>
   ?>
 
   <?php
