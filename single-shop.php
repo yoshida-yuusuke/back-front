@@ -175,28 +175,28 @@
 					<h2 class="h2-font index-mark2 shop-space-bottom">店の特徴メーター</h2>
 					<div class="shop-meter-cont">
 						<?php if (get_field('mood') == 'mood1') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_1.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_1_x2.png" alt="">
 						<?php elseif (get_field('mood') == 'mood2') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_2.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_2_x2.png" alt="">
 						<?php elseif (get_field('mood') == 'mood3') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_3.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_3_x2.png" alt="">
 						<?php elseif (get_field('mood') == 'mood4') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_4.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_4_x2.png" alt="">
 						<?php else : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_5.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/雰囲気メーター/hunniki_meter_5_x2.png" alt="">
 						<?php endif; ?>
 
 						<!--麺メーター-->
 						<?php if (get_field('men') == 'men1') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_1.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_1_x2.png" alt="">
 						<?php elseif (get_field('men') == 'men2') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_2.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_2_x2.png" alt="">
 						<?php elseif (get_field('men') == 'men3') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_3.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_3_x2.png" alt="">
 						<?php elseif (get_field('men') == 'men4') : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_4.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_4_x2.png" alt="">
 						<?php else : ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_5.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/麺メーター/menn_meter_5_x2.png" alt="">
 						<?php endif; ?>
 
 						<!--つゆメーター-->
