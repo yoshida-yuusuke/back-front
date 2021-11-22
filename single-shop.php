@@ -4,16 +4,9 @@
 <div class="shingle-shop-wrap">
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
-
 			<!------------ ページヘッダー -------------------->
 			<div class="single-shop-top">
-				<div class="pkz">
-					<ul class="pkz-ul">
-						<li>
-							<?php get_template_part('template-parts/breadcrumb'); ?>
-						</li>
-					</ul>
-				</div>
+				<?php get_template_part('template-parts/breadcrumb'); ?>
 				<div class="shop-top">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/tl_single_shop_top.jpg" alt="" class="shop-top-img">
 					<div class="top-logo shop-container">
@@ -25,7 +18,6 @@
 								echo '<li class="top-ul-tag">#' . $term->name . '</li>';
 							endforeach;
 							?>
-
 						</ul>
 					</div>
 				</div>
