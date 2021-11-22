@@ -6,11 +6,24 @@
 
 <!------- メイン ------->
 <main class="main">
+    <!--------------------
+		トップの画像
+	--------------------->
+    <div class="page-header">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_page-favorite.jpg" alt="404のイメージ画像です" class="page-header-img" />
+        <div class="page-header-txt-wrap page-header-txt-wrap-favorite">
+            <h2 class="h2-font top-img-title favorite-catchcopy">
+                徳島で見つける、<br />
+                あなた好みのうどん。
+            </h2>
+        </div>
+    </div>
 
     <!------- ビジュアル ------->
-    <div class="noodle-top-img-wrap">
-        <img class="noodle-top-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_noodle.jpg" alt="トップイメージ" />
-    </div>
+    <!-- <div class="noodle-top-img-wrap">
+        <img class="noodle-top-img" src="<?php //echo get_template_directory_uri();
+                                            ?>/assets/img/img_noodle.jpg" alt="トップイメージ" />
+    </div> -->
     <!---------- noodle-intro ---------->
     <section class="noodle-intro">
         <h2 class="h2-font">
@@ -44,6 +57,11 @@
             あまり聞き馴染みのないこのうどんたちは、徳島の地元民に長く愛されてきました。
         </p>
         <p class="bold">徳島でしか味わうことができないうどんを、紹介します。</p>
+        <div class="next_arrow">
+            <p>・</p>
+            <p>・</p>
+            <p>・</p>
+        </div>
     </section>
 
     <!---------- なるちゅる説明 ---------->
@@ -106,24 +124,24 @@
         <h3 class="h3-font">徳島の麺なかまたち</h3>
 
         <!--吹き出し-->
-        <div class="bln">
+        <div class="bln ramen">
             <div class="says">
                 <p class="says-txt">
-                    徳島ラーメン説明テキストテキストテキストテキストテキスト
+                    徳島ラーメンは、甘辛い豚バラ肉と生卵のトッピングが特徴のラーメン。お店によって主に茶系・白系・黄系のスープに分類されます。
                 </p>
             </div>
         </div>
-        <div class="bln">
+        <div class="bln iya-soba">
             <div class="says">
                 <p class="says-txt">
-                    徳島ラーメン説明テキストテキストテキストテキストテキスト
+                    祖谷そばは、太く短い麺が特徴。つなぎとなる小麦粉などをほとんど使用しないためそば粉の割合が多く、そば本来の風味が楽しめます。
                 </p>
             </div>
         </div>
-        <div class="bln">
+        <div class="bln handa-somen">
             <div class="says">
                 <p class="says-txt">
-                    徳島ラーメン説明テキストテキストテキストテキストテキスト
+                    半田そうめんは、うどんとそうめんの間のような太めのめんが特徴。のどごしが良くコシが強いもちもち麺は、つゆとよく絡みます。
                 </p>
             </div>
         </div>

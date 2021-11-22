@@ -87,6 +87,35 @@
 /* ----------トップイメージ -----------*/
 /*-------------------------------------*/
 
+
+/*-------------
+タイトル画像
+--------------*/
+
+.page-header {
+  position: relative;
+}
+
+.page-header-img {
+  filter: brightness(50%);
+}
+
+.page-header-txt-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.top-img-title {
+  padding-bottom: 10px;
+  color: var(--white-color);
+}
+
+
+
+
 .noodle-top-img-wrap {
   height: 248px;
 }
@@ -110,6 +139,11 @@
   font-size: 18px;
   /* font-weight: 700; */
 }
+
+.next_arrow{
+  text-align: center;
+}
+
 @media screen and (min-width: 600px) {
   .noodle-intro {
     padding: 0 20%;
@@ -158,9 +192,9 @@
 }
 
 /*----- 本文 -----*/
-.noodle-intro .bold {
+/* .noodle-intro .bold {
   color: #0f447c;
-}
+} */
 
 /*-------------------------------------*/
 /*----------- noodle-about ------------*/
@@ -170,15 +204,15 @@
 .noodle-about .bold {
   padding: 20px 45px;
 }
-.noodle-about .bold:nth-last-of-type(1) {
-  padding-bottom: 50px;
+.next_arrow {
+  padding:20px 0 50px;
 }
 @media screen and (min-width: 600px) {
   .noodle-about .bold {
     padding: 20px 20%;
   }
-  .noodle-about .bold:nth-last-of-type(1) {
-    padding-bottom: 120px;
+  .next_arrow{
+    padding:50px 0 120px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -227,6 +261,7 @@
 .noodle-tarai {
   text-align: center;
 }
+
 .noodle-tarai-wrap {
   padding: 0 45px;
   text-align: left;
@@ -249,11 +284,12 @@
   width: 100%;
   padding: 40px 0 60px;
   overflow: hidden;
-  background-color: var(--main-color);
+  background-image: url(../img/bg_front_spe.jpg);
   margin: 0 auto;
 }
+
 .noodle-kind .h3-font {
-  color: var(--white-color);
+  /* color: var(--white-color); */
   padding: 10px 0 30px;
 }
 
@@ -290,8 +326,18 @@
 } */
 
 /* 左アイコンのイメージ配置 画像100~200pxくらいでok */
-.bln:before {
-  background-image: url(../img/icon_noodle.PNG);
+.ramen:before {
+  background-image: url(../img/ramen_1.png);
+  border-radius: 50%;
+  margin-left: 20px;
+}
+.iya-soba:before {
+  background-image: url(../img/iyasoba×2.png);
+  border-radius: 50%;
+  margin-left: 20px;
+}
+.handa-somen:before {
+  background-image: url(../img/handasoumen_x2.png);
   border-radius: 50%;
   margin-left: 20px;
 }
@@ -299,19 +345,14 @@
 /* 吹き出し中の文章アウトライン */
 .says {
   position: relative;
-  margin: 0 10px 0 25px;
   max-width: calc(100% - 135px);
+  margin: 0 10px 0 25px;
   padding: 0.6rem 1.1rem;
   border: solid 2px var(--white-color);
   border-radius: 1.2rem;
   background-color: var(--white-color);
+  box-shadow: gray 2px 2px 2px;
 }
-/* @media (max-width: 480px) {
-  .says {
-    max-width: calc(100% - 170px);
-    margin: 1rem;
-  }
-} */
 
 /* 吹き出し口 尖ってるところのあしらい */
 .says::before {
