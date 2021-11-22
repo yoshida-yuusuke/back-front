@@ -77,6 +77,18 @@
   margin-bottom: 40px;
 }
 
+ /* 404のみ使用 */
+.notfound-title{
+  margin-bottom: 30px;
+}
+
+ /* 404のみ使用 */
+.archive-list_title{
+font-weight: bold;
+margin-bottom: 20px;
+width: 100%;
+}
+
 .archive-list {
   display: flex;
   flex-wrap: wrap;
