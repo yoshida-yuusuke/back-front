@@ -22,7 +22,7 @@
 							<?php
 							$terms = get_the_terms(get_the_ID(), 'shop_tag');
 							foreach ($terms as $term) :
-								echo '<li class="top-ul-tag">' . $term->name . '</li>';
+								echo '<li class="top-ul-tag">#' . $term->name . '</li>';
 							endforeach;
 							?>
 
@@ -219,97 +219,93 @@
 					<h2 class="h2-font index-mark2 shop-space-bottom">基本情報</h2>
 
 					<!--------flexbox----------->
-					<div class="shop-basic-flex">
+					<!-- <div class="shop-basic-flex"> -->
 
-						<!-------------基本情報------------------->
-						<table class="shop-basic-table shop-space-bottom">
-							<tr>
-								<th>店名</th>
-								<td><?php the_field('name') ?></td>
-							</tr>
-							<tr>
-								<th>電話番号</th><!-- 表示できません -->
-								<td><a href="tel:<?php the_field('TEL') ?>"><?php the_field('TEL') ?></a></td>
-							</tr>
-							<tr>
-								<th>予約可否</th>
-								<td><?php if (get_field('yoyaku')) : ?>
-										予約出来ます
-									<?php else : ?>
-										予約できません
-									<?php endif; ?></td>
-							</tr>
-							<tr>
-								<th>住所</th>
-								<td><?php the_field('address') ?></td>
-							</tr>
-							<tr>
-								<th>アクセス</th>
-								<td><?php the_field('access') ?></td>
-							</tr>
-							<tr>
-								<th>営業時間</th>
-								<td><?php the_field('time') ?></td>
-							</tr>
-							<tr>
-								<th>支払方法</th>
-								<td><?php the_field('pay') ?></td>
-							</tr>
-							<tr>
-								<th>席数</th>
-								<td><?php the_field('seat') ?></td>
-							</tr>
-							<tr>
-								<th>喫煙・喫煙</th>
-								<td><?php the_field('smoke') ?></td>
-							</tr>
-							<tr>
-								<th>駐車場</th>
-								<td><?php the_field('space') ?></td>
-							</tr>
-							<tr>
-								<th>サイト</th>
-								<td>
-									<a href="<?php the_field('HP_SNS') ?>" target="_blank" rel="noopener noreferrer"><?php the_field('HP_SNS') ?></a>
-								</td>
-							</tr>
-						</table>
+					<!-------------基本情報------------------->
+					<table class="shop-basic-table shop-space-bottom">
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">店名</th>
+							<td class="shop-basic-table-td"><?php the_field('name') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">電話番号</th>
+							<td class="shop-basic-table-td"><a href="tel:<?php the_field('TEL') ?>"><?php the_field('TEL') ?></a></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">予約可否</th>
+							<td class="shop-basic-table-td"><?php if (get_field('yoyaku')) : ?>
+									予約出来ます
+								<?php else : ?>
+									予約できません
+								<?php endif; ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">住所</th>
+							<td class="shop-basic-table-td"><?php the_field('address') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">アクセス</th>
+							<td class="shop-basic-table-td"><?php the_field('access') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">営業時間</th>
+							<td class="shop-basic-table-td"><?php the_field('time') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">支払方法</th>
+							<td class="shop-basic-table-td"><?php the_field('pay') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">席数</th>
+							<td class="shop-basic-table-td"><?php the_field('seat') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">喫煙・喫煙</th>
+							<td class="shop-basic-table-td"><?php the_field('smoke') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">駐車場</th>
+							<td class="shop-basic-table-td"><?php the_field('space') ?></td>
+						</tr>
+						<tr class="shop-basic-table-tr">
+							<th class="shop-basic-table-th">サイト</th>
+							<td class="shop-basic-table-td">
+								<a href="<?php the_field('HP_SNS') ?>" target="_blank" rel="noopener noreferrer"><?php the_field('HP_SNS') ?></a>
+							</td>
+						</tr>
+					</table>
 
-						<!-----------------地図 ----------------->
-						<div class="shop-map">
-							<?php the_field('map') ?>
-						</div>
+					<!-----------------地図 ----------------->
+					<div class="shop-map">
+						<?php the_field('map') ?>
 					</div>
+					<!-- </div> -->
 					<!--/flexbox--->
 				</section>
 
-				<!------------ #食べレポInstagram埋め込み領域 ------------------>
+				<!------------ #食べレポ ------------------>
 				<section class="shop-report shop-sec">
 					<h2 class="h2-font index-mark2 shop-space-bottom">＃食べレポ</h2>
+
+					<!--------Instagram記事埋め込み---------->
 					<div class="shop-report-cont">
-						<a href="" target="_blank" rel="noopener noreferrer">
-							<?php the_field('taberepo'); ?>
-
-						</a>
+						<?php the_field('taberepo'); ?>
 					</div>
 
-					<!---------- いいねボタン、SNSリンクアイコン ---------->
-					<div class="shop-report-sns">
-						<ul class="sns-btn-wrap shop-space-bottom">
-							<li class="shop-good">
-								<button class="shop-good-btn"><?php wpfp_link() ?></button>
-							</li>
-
-							<!-- <li class="shop-fb shop-sns"><a href="" target="_blank" rel="noopener noreferrer"><img src="./img/logo/icon_fb.png" alt=""></a></li>
-							<li class="shop-twi shop-sns"><a href="" target="_blank" rel="noopener noreferrer"><img src="./img/logo/icon_twi.png" alt=""></a></li>
-							<li class="shop-pint shop-sns"><a href="" target="_blank" rel="noopener noreferrer"><img src="./img/logo/icon_pnta.png" alt=""></a></li>
-							<li class="shop-line shop-sns"><a href="" target="_blank" rel="noopener noreferrer"><img src="./img/logo/icon_insta3.png" alt=""></a></li> -->
-						</ul>
-					</div>
+					<ul class="sns-btn-wrap shop-space-bottom">
+						<!----お気に入りボタン----->
+						<li class="shop-good">
+							<button class="shop-good-btn"><?php wpfp_link() ?></button>
+						</li>
+						<!---snsシェアアイコン--->
+						<li class="shop-sns">
+							<?php echo do_shortcode('[addtoany]'); ?>
+						</li>
+					</ul>
 				</section>
 
 				<!------------------ 一覧に戻るボタン -------------------------->
-				<div class="shop-link-group shop-sec">
+				<div class="shop-archiveback">
 
 					<?php $udontype = ""; ?>
 					<?php foreach ($terms as $term) {
