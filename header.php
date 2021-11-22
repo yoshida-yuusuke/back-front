@@ -28,14 +28,14 @@
   <?php } elseif (is_post_type_archive('shop')) {  ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_post_type_archive('course')) { ?>
-    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive-course.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_singular('course')) {  ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/single-course.css" rel="stylesheet">
   <?php } elseif (is_singular('shop')) {  ?>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/single-shop.css" rel="stylesheet">
   <?php } elseif (is_tax('shop_type')) {  ?>
-    <link href="<?php echo get_template_directory_uri() ?>/assets/css/taxsonomy-shop_type.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_404()) { ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } ?>
