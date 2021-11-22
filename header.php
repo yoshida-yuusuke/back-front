@@ -23,8 +23,10 @@
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/page-privacy.css" rel="stylesheet">
   <?php } elseif (is_page('writer')) { ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/page-writer.css" rel="stylesheet">
+  <?php } elseif (is_page('favorite')) { ?>
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_post_type_archive('shop')) {  ?>
-    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive-shop.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_post_type_archive('course')) { ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive-course.css" rel="stylesheet">
   <?php } elseif (is_singular('course')) {  ?>
