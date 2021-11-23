@@ -115,13 +115,11 @@
                   </td>
                 </tr>
               </table>
-              $tags = get_terms('shop_tag');
               <!-- ------------テーブル分岐終わり--------------- -->
 
               <ul class="search-form-ul">
                 <?php
                 $tags = get_terms('shop_tag');
-                // $tags = get_terms(array('hide_empty' => false));
                 foreach ($tags as $tag) :
                   $checked = "";
                 ?>
