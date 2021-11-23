@@ -55,7 +55,7 @@
     -------------------------------------------------- -->
 
       <div id="searchForm-js" class="searchForm-js">
-        <div class="search-form-tab">店舗検索</div>
+        <div class="search-form-tab"><span class="serch-title">店舗検索</span></div>
 
         <div class="search-form">
           <form id="entryForm" action="#" method="post">
@@ -115,12 +115,13 @@
                   </td>
                 </tr>
               </table>
-
+              $tags = get_terms('shop_tag');
               <!-- ------------テーブル分岐終わり--------------- -->
 
               <ul class="search-form-ul">
                 <?php
-                $tags = get_terms(array('hide_empty' => false));
+                $tags = get_terms('shop_tag');
+                // $tags = get_terms(array('hide_empty' => false));
                 foreach ($tags as $tag) :
                   $checked = "";
                 ?>
@@ -131,7 +132,7 @@
                   </li>
                 <?php endforeach; ?>
 
-                <li class="search-form-tag">
+                <!-- <li class="search-form-tag">
                   <label>
                     <input type="checkbox" name="tag" value="テキスト" />テキスト
                   </label>
@@ -155,7 +156,7 @@
                   <label>
                     <input type="checkbox" name="tag" value="テキスト" />テキスト
                   </label>
-                </li>
+                </li> -->
                 <!-- <li class="search-form-tag">
                   <label>
                     <input type="checkbox" name="tag" value="テキスト" />テキスト

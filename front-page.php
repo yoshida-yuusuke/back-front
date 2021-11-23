@@ -39,39 +39,51 @@
 ---------------------------------------------->
 
   <section class="home-section home-kind">
-    <h2 class="h2-font">徳島に在るうどんの種類</h2>
+    <h2 class="h2-font section-kind-title">徳島にあるうどんの種類</h2>
 
     <ul class="home-kind-ul">
-      <li class="home-kind-tarai home-kind-item">
-        <div class="kind-tarai-cnt">
-          <p class="home-kind-txt">
-            もちもち<br />
-            ほっかほか！<br />
-            みんなで囲む<br />
-            阿波の伝統料理
-          </p>
-          <button class="home-kind-btn">
-            <h3 class="home-slide-title">たらいうどん</h3>
-          </button>
+      <li class="kind-item-flex">
+        <div class="home-kind-tarai home-kind-item ">
+          <div class="kind-tarai-cnt">
+            <p class="home-kind-txt">
+              もちもち<br />
+              ほっかほか！<br />
+              みんなで囲む<br />
+              阿波の伝統料理
+            </p>
+            <h3 class="home-slide-title"><button class="home-kind-btn">
+                たらいうどん
+              </button></h3>
+          </div>
+          <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/tarai'); ?>"></a>
         </div>
-        <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/tarai'); ?>"></a>
+
+        <div class="kind-pict-tarai kind-pict"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_tarai.png" alt="阿波土柱"></div>
+        </div>
       </li>
 
-      <li class="home-kind-naru home-kind-item">
-        <div class="kind-naru-cnt">
-          <p class="home-kind-txt">
-            ちゅるちゅる食感が<br />
-            たまらない！<br />
-            鳴門の愛され個性派うどん
-          </p>
-          <button class="home-kind-btn">
-            <h3 class="home-kind-title">なるちゅるうどん</h3>
-          </button>
-        </div>
-        <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/naruchuru'); ?>"></a>
-      </li>
+      <div class="kind-item-flex">
 
-      <li class="home-kind-honkaku home-kind-item">
+        <div class="kind-pict-naruto kind-pict"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_naruto.png" alt="鳴門海峡"></div>
+
+        <li class=" home-kind-naru home-kind-item ">
+          <div class="kind-naru-cnt">
+            <p class="home-kind-txt">
+              ちゅるちゅる食感が<br />
+              たまらない！<br />
+              鳴門の愛され個性派うどん
+            </p>
+            <h3 class="home-slide-title"><button class="home-kind-btn">
+                なるちゅるうどん
+              </button></h3>
+          </div>
+          <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/naruchuru'); ?>"></a>
+        </li>
+
+      </div>
+
+
+      <li class="home-kind-honkaku home-kind-item ">
         <div class="kind-honkaku-cnt">
           <p class="home-kind-txt">
             うどん激戦区<br />
@@ -91,9 +103,11 @@
 ---------------------------------------------->
 
   <section class="home-section home-access accordion-area">
-    <button class="btn-access btn-orange">
-      <h2 class="h2-font home-access-title">県外からのアクセス</h2>
-    </button>
+    <h2 class="h2-font home-access-title">
+      <button class="btn-access btn-orange">
+        <span class="access-btn-txt">県外からのアクセス</span>
+      </button>
+    </h2>
 
     <!-- ------------------------------------------
 ------------県外からのアクセス中身-----------------
@@ -157,7 +171,7 @@
     <h2 class="h2-font">モデルコース</h2>
     <div class="home-model-wrap">
       <p class="home-model-txt">
-        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        徳島とうどんを満喫する６つのモデルコースをご紹介
       </p>
       <button class="home-btn-model btn-blue">ここから見る</button>
     </div>
@@ -176,13 +190,13 @@
         <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_sappari.jpg" alt="" /></a>
       </li>
       <li class="home-spe-item">
-        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_oomori.jpg" alt="" /></a>
+        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_koseiha.jpg" alt="" /></a>
       </li>
       <li class="home-spe-item">
-        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_koseiha.jpg" alt="" /></a>
+        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_sidemenu.jpg" alt="" /></a>
       </li>
       <li class="home-spe-item">
-        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_sidemenu.jpg" alt="" /></a>
+        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_henro.jpg" alt="" /></a>
       </li>
     </ul>
   </section>

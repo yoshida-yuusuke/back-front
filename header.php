@@ -56,7 +56,7 @@
     ----------------------------------------- -->
 
     <section class="header-sp">
-      <button class="header-fav-btn" type="button" onclick="location.href='#'">
+      <button class="header-fav-btn" type="button" onclick="location.href='<?php echo home_url('/favorite/') ?>'">
         <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon_header_mypage.png" alt="" />
       </button>
 

@@ -64,7 +64,7 @@
 }
 
 .footer-sns-item:nth-child(even) {
-  margin: 0 8px;
+  margin: 0 30px;
 }
 
 .copyright-wrap {
@@ -265,7 +265,7 @@
     100% {
       transform: translateY(0);
     }
-    50%,
+    30%,
     100% {
       opacity: 1;
     }
@@ -285,6 +285,31 @@
   font-weight: bold;
   background-color: var(--white-color);
   color: var(--txt-color);
+  box-shadow: 2px 0 3px rgba(100, 100, 100, 0.5);
+}
+
+.serch-title::after {
+  display: inline-block;
+  content: "";
+  vertical-align: middle;
+  margin-top: 3px;
+  margin-left: 5px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--txt-color);
+  border-right: 2px solid var(--txt-color);
+  transform: rotate(-45deg);
+  transition: 0.5s;
+}
+
+.serch-title.active::after {
+  vertical-align: text-top;
+  transform: rotate(135deg);
+  transition: 0.5s;
+}
+
+.search-form {
+  box-shadow: 100px 0 3px rgba(100, 100, 100, 0.5);
 }
 
 /* ----------検索フォーム動き--------- */
@@ -355,11 +380,12 @@
   padding-bottom: 30px;
   padding-left: 30px;
   text-align: left;
+  font-size: 14px;
 }
 
 .search-form-tag {
   display: inline-block;
-  padding: 2px;
+  padding: 5px;
   font-weight: bold;
 }
 
