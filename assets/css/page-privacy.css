@@ -1,1 +1,128 @@
 @charset "utf-8";
+
+/* -------------------------------------
+-----------shingle-shop 共通------------
+--------------------------------------*/
+
+/* ---------ブレイクポイント--------- */
+@media screen and (min-width: 600px) {
+}
+@media screen and (min-width: 1025px) {
+}
+
+/* -------全体の横余白---Padding---- */
+.writer-container {
+  padding: 0 45px;
+}
+@media screen and (min-width: 600px) {
+  .writer-container {
+    padding: 0 20% 30px;
+  }
+}
+
+/* --セクションごとの上余白-Padding-- */
+.writer-group {
+  padding-top: 35px;
+}
+@media screen and (min-width: 600px) {
+  .writer-group {
+    padding-top: 45px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .writer-group {
+    padding-top: 80px;
+  }
+}
+
+/* --その他下層グループの下余白-margin-- */
+.writer-space-bottom {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 600px) {
+  .writer-space-bottom {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .writer-space-bottom {
+    margin-bottom: 45px;
+  }
+}
+
+/* ------------------------------------
+-----------ページ別ヘッダー------------
+-------------------------------------- */
+.page-writer-top {
+  color: var(--white-color);
+}
+
+/* -------------topimg---------------- */
+.writer-top {
+  position: relative;
+}
+.writer-top-img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+}
+
+/*------------top内のテキスト--------- */
+.top-logo {
+  padding-top: 29px;
+}
+
+/*-------------タイトル---------------- */
+.top-title {
+  font-size: 20px;
+  line-height: 1.6;
+}
+@media screen and (min-width: 1025px) {
+  .top-logo {
+    padding-top: 80px;
+  }
+  .top-title {
+    font-size: 40px;
+  }
+}
+
+/* ---------------------------------------
+------------------main--------------------
+/* ---------------------------------------
+----------------全体紹介文----------------
+--------------------------------------- */
+@media screen and (min-width: 1025px) {
+  .writer-intro-txt {
+    font-size: 24px;
+  }
+}
+
+/* -------------------------------------
+----------メンバーリスト一覧------------
+--------------------------------------- */
+@media screen and (min-width: 1025px) {
+  .writer-member {
+    padding: 50px 0;
+  }
+}
+
+/*-----------レスポンシブflex---------- */
+.member-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.member-li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0;
+  padding: 12px 0;
+}
+@media screen and (min-width: 1025px) {
+  .member-li {
+    width: 46.5%;
+    padding: 80px 0 0;
+  }
+}

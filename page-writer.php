@@ -3,8 +3,6 @@
 
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
-
-        <h2 class="pageTitle"><?php the_title(); ?><span><?php echo strtoupper($post->post_name); ?></span></h2>
         <?php get_template_part('template-parts/breadcrumb'); ?>
 
         <!-------------------------------------
@@ -14,7 +12,8 @@
             <div class="writer-top page-header-img">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tl_page-writer_top.jpg" alt="" class="writer-top-img">
                 <div class="top-logo writer-container">
-                    <h2 class="top-title">わたしたちについて</h2>
+                    <h2 class="top-title"><?php the_title(); ?></h2>
+                    <!-- <h2 class="pageTitle"><?php the_title(); ?><span><?php echo strtoupper($post->post_name); ?></span></h2> -->
                 </div>
             </div>
         </div>
