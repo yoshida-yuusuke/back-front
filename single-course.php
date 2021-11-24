@@ -27,7 +27,7 @@
 <main class="main">
   <!---------------------
           topの画像
-        -------------------->
+        --------------------->
   <div class="page-header">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_single-course_fune.jpg" alt="モデルコースのイメージ画像です" class="page-header-img" />
     <div class="page-header-txt-wrap">
@@ -82,7 +82,7 @@
 
         <a id="corse-<?php echo $i; ?>"></a>
 
-        <section class="course-<?php echo $i; ?>" id="course-<?php echo $i; ?>">
+        <section class="course-<?php echo $clsnum; ?>" id="course-<?php echo $i; ?>">
           <div class="course-title-wrap">
             <p class="course-number-sp"><?php echo $i; //(SP限定)丸数字
                                         ?></p>
