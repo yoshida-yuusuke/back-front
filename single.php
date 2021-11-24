@@ -10,16 +10,18 @@
     --------------------->
   <div class="page-header">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_single-blog.JPG" alt="特集詳細のイメージ画像です" class="page-header-img" />
-    <h2 class="h2-font top-img-title"><?php the_title() ?></h2>
+    <h2 class="h2-font top-img-title blog-cont">徳島で見つける、
+      あなた好みのうどん。</h2>
+    <!-- <?php if (have_posts()) : ?>
+      <?php while (have_posts()) : ?>
+        <?php the_post(); ?>
+      <?php endwhile; ?>
+    <?php endif; ?> -->
   </div>
-  <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : ?>
-      <?php the_post(); ?>
-    <?php endwhile; ?>
-  <?php endif; ?>
+
   <!-----------------------
-             コンテンツ
-       ------------------------>
+            コンテンツ
+      ------------------------>
   <section class="single-blog-cont-wrap">
     <div class="single-blog-title">
       <h2 class="h2-font"><?php the_title() ?></h2>
@@ -72,30 +74,23 @@
       </div>
     </div>
 
-    <!-- 店舗の詳細はこちらボタン -->
-
-    <!-- ここをコンテンツ班にカスタムHTMLにしてもらう -->
-    <!-- <div class="shop-detail-btn">
-        <button type="button" onclick="location.href='<?//php get_permalink('つなげたいページのIDを入力する'); ?>'" class="btn-orange">店舗の詳細はこちら</button>
-    </div> -->
-    <!-- ここまで -->
-
-    <!-- いいね、sns -->
-    <ul class="share">
-      <!-- いいねボタン -->
-      <li class="good">
-        <?php wpfp_link() ?>
+    <!----------リンクアイコン一覧------------->
+    <ul class="sns-btn-wrap">
+      <!----お気に入りボタン----->
+      <li class="shop-good">
+        <button class="shop-good-btn"><?php wpfp_link() ?></button>
       </li>
-      <!-- タグ -->
-      <li>
+      <!---snsシェアアイコン--->
+      <li class="shop-sns">
         <?php echo do_shortcode('[addtoany]'); ?>
       </li>
     </ul>
 
+    <!------------------ 一覧に戻るボタン -------------------------->
+    <div class="shop-archiveback">
+      <button class="btn-orange shop-archiveback-btn" type="button" onclick="location.href='<?php echo esc_url(home_url()) ?>/archives/category/special'">店舗一覧に戻る </button>
+    </div>
   </section>
-
-
-
 
   <!----------------------
        ----- おすすめ記事-----

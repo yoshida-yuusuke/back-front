@@ -10,21 +10,24 @@
 }
 
 .page-header-img {
-  height: 113px;
+  /* height: 113px; */
   filter: brightness(50%);
 }
 
 .top-img-title {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   color: white;
 }
 
-@media screen and (min-width: 1025px) {
-  .page-header-img {
-    height: 304px;
+.blog-cont {
+  padding: 0 45px 0;
+}
+/* タブレット以上 */
+@media screen and (min-width: 600px) {
+  .blog-cont {
+    padding: 0 20% 0;
   }
 }
 
@@ -48,10 +51,12 @@
   margin-bottom: 37px;
 }
 
-.icon,.icon-img {
+.icon,
+.icon-img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .icon {
@@ -62,13 +67,15 @@
   margin: 10px 0;
 }
 
-.day,.writer-name {
+.day,
+.writer-name {
   font-size: 14px;
   line-height: 1.57;
 }
 
 @media screen and (min-width: 1025px) {
-  .icon,.icon-img {
+  .icon,
+  .icon-img {
     width: 70px;
     height: 70px;
   }
@@ -77,7 +84,8 @@
     margin: 15px 0;
   }
 
-  .day,.writer-name {
+  .day,
+  .writer-name {
     font-size: 20px;
   }
 }
@@ -85,6 +93,11 @@
 /*---------------
  ----記事内容----
  ---------------*/
+.article-wrap img {
+  width: auto;
+  height: auto;
+}
+
 .cont-img {
   margin: 40px 0;
 }
@@ -108,186 +121,77 @@
   font-size: 14px;
 }
 
-/*---- いいね・sns ----*/
-.share {
+/*---------------------------
+------リンクアイコン一覧------
+---------------------------*/
+
+.sns-btn-wrap {
   display: flex;
-  padding: 20px 0;
+  justify-content: space-between;
+  max-width: 300px;
+  margin-top: 30px;
+  align-items: center;
 }
 
-.good {
-  width: 80px;
-  height: 25px;
+/* ---------お気に入りボタン---------- */
+.shop-good {
+  width: 85px;
+  height: 30px;
+}
+.shop-good-btn {
+  width: 100%;
+  height: 100%;
   border: 1px solid rgb(32, 32, 32);
   border-radius: 5px;
-  /* color: rgb(238, 63, 92); */
   color: gray;
   font-size: 12px;
   text-align: center;
 }
 
-.twi,
-.fb,
-.insta {
-  width: 20px;
-  margin-left: 15px;
-}
-
-/* タブレット版 */
-@media screen and (min-width: 600px) {
-.good{
-  width: 150px;
-  height: 35px;
-  font-size: 15px;
-}
-
-.twi,
-.fb,
-.insta {
-  width: 35px;
-}
-}
-
-/* pc版 */
 @media screen and (min-width: 1025px) {
-  .cont-img {
-    margin: 50px 0;
+  .sns-btn-wrap {
+    max-width: 800px;
+    margin-top: 60px;
+    justify-content: space-around;
   }
-
-  .cont-tag {
-    margin: 100px 0 60px;
-  }
-
-  .cont-tag-txt {
-    margin-bottom: 20px;
-    font-size: 18px;
-  }
-
-  /*--- オレンジボタン ---*/
-  .shop-detail-btn {
-    text-align: center;
-  }
-
-  .btn-orange {
-    width: 350px;
-    height: 55px;
-    margin-bottom: 60px;
-    font-size: 21px;
-  }
-
-  /*---- いいね・sns -----*/
-  .share {
-    padding-top: 0;
-  }
-
-  .good {
+  /* .shop-sns {
+    width: 52px;
+    height: 53px;
+  } */
+  .shop-good {
     width: 203px;
     height: 47px;
-    font-size: 20px;
   }
-
-  .twi,
-  .fb,
-  .insta {
-    width: 50px;
+  .shop-good-btn {
+    font-size: 21px;
   }
 }
-
-/*------------------
-----おすすめ記事----
--------------------- */
-.recom-wrap {
-  padding: 40px 45px 48px;
-  background-color:var(--sub-color);
-}
-
-.recom-cont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.recom-title {
-  margin-bottom: 40px;
+/* ----------一覧に戻るボタン----------- */
+.shop-archiveback {
   text-align: center;
 }
-
-.recom-title-p {
-  font-weight: bold;
-}
-
-.recom-article {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.article-link{
-  display: inline-block;
-}
-
-.recom-article-img {
-  position: relative;
-  margin-bottom: 5px;
-}
-
-/* アイキャッチ（画像についてるタグ） */
-.recom-eye {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 5px 10px;
-  background-color: #779a34;
-  color: rgb(253, 253, 253);
-  font-size: 10px;
-}
-
-.recom-good {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  color: var(--white-color);
-  /* color: rgb(238, 63, 92); */
-  font-size: 30px;
-}
-
-.recom-article-title {
-  margin-bottom: 3px;
-}
-.recom-article-txt {
+/* --------店舗一覧に戻るボタン------- */
+.shop-archiveback-btn {
+  width: 177px;
+  height: 49px;
   font-size: 12px;
+  margin: 30px auto 40px;
 }
 
-/* タブレット版 */
-@media screen and (min-width: 600px) {
-  .recom-wrap {
-    padding: 110px 20%;
-  }
-}
-
-/* pc版 */
 @media screen and (min-width: 1025px) {
-  .recom-title {
-    margin-bottom: 100px;
+  .shop-archiveback-btn {
+    width: 315px;
+    height: 60px;
+    font-size: 20px;
   }
-
-  .recom-article {
-    width: 49%;
-    margin-bottom: 40px;
-  }
-
-  .recom-article-last {
-    width: 100%;
-  }
-
-  .recom-eye {
-    font-size: 25px;
-  }
-
-  .recom-good {
-  font-size: 50px;
 }
 
-  .recom-article-txt {
-    font-size: 1em;
-  }
+/* --------おすすめ記事------- */
+.news_meta,
+.news_title {
+  line-height: 2;
+}
+
+.news_title {
+  font-size: 20px;
 }
