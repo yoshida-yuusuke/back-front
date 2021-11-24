@@ -166,3 +166,58 @@ function randomise_with_pagination($orderby)
 
     return $orderby;
 }
+
+
+
+
+
+
+
+//
+//指定した「うどんの種類」の店舗投稿についているタグ一覧を取得する関数
+//
+function getTerms_UdonType($udontype)
+{
+
+    $ret_arr = array();
+    $args = array(
+        'post_type' => array('shop'), // 取得する投稿タイプのスラッグ
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'shop_type',
+                'field' => 'slug',
+                'terms' => $udontype,
+            )
+        )
+    );
+    $my_posts = get_posts($args);
+
+    foreach ($my_posts as $post) : setup_postdata($post);
+        $terms = get_the_terms($post->ID, 'shop_tag');
+        if (!empty($terms)) {
+            foreach ($terms as $term) :
+                if (!my_array_unique($ret_arr, $term)) {
+                    array_push($ret_arr, $term);
+                }
+            endforeach;
+        }
+    endforeach;
+
+    wp_reset_postdata();
+
+    return $ret_arr;
+}
+//$arrの配列内に、$termと同じ名称のタグがあるかどうか
+function my_array_unique($arr, $term)
+{
+    $unique_flg = false;
+    if (is_array($arr)) {
+        foreach ($arr as $arr_elem) :
+            if (strcmp($arr_elem->name, $term->name) == 0) {
+                $unique_flg = true;
+                break;
+            }
+        endforeach;
+    }
+    return $unique_flg;
+}
