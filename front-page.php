@@ -78,27 +78,27 @@
               </button></h3>
           </div>
           <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/naruchuru'); ?>"></a>
-</div>
-
-</li>
-
-<li class="kind-item-flex">
-
-      <div class="home-kind-honkaku home-kind-item slide-in">
-        <div class="kind-honkaku-cnt">
-          <p class="home-kind-txt">
-            うどん激戦区<br />
-            徳島の職人こだわりザ・うどん
-          </p>
-            <h3 class="home-kind-title"><button class="home-kind-btn">本格派うどん
-          </button></h3>
         </div>
-        <a class="home-kind-link" href="<?php echo home_url('/archives/shop_type/honkakuha'); ?>"></a>
-</div>
 
-<div class="kind-pict-honkaku kind-pict slide-in"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_honkaku02.png" alt="阿波踊り"></div>
+      </li>
 
-</li>
+      <li class="kind-item-flex">
+
+        <div class="home-kind-honkaku home-kind-item slide-in">
+          <div class="kind-honkaku-cnt">
+            <p class="home-kind-txt">
+              うどん激戦区<br />
+              徳島の職人こだわりザ・うどん
+            </p>
+            <h3 class="home-kind-title"><button class="home-kind-btn">本格派うどん
+              </button></h3>
+          </div>
+          <a class="home-kind-link" href="<?php echo home_url('/archives/shop_type/honkakuha'); ?>"></a>
+        </div>
+
+        <div class="kind-pict-honkaku kind-pict slide-in"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_honkaku02.png" alt="阿波踊り"></div>
+
+      </li>
 
     </ul>
 
@@ -192,20 +192,27 @@
   <section class="home-section home-spe">
     <h2 class="h2-font">特集</h2>
     <ul class="home-spe-ul flex">
-      <li class="home-spe-item">
-        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_sappari.jpg" alt="" /></a>
-      </li>
-      <li class="home-spe-item">
-        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_koseiha.jpg" alt="" /></a>
-      </li>
-      <li class="home-spe-item">
-        <a href="<?php echo get_permalink(128); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_sidemenu.jpg" alt="" /></a>
-      </li>
-      <li class="home-spe-item">
-        <a href="<?php echo get_permalink(157); ?>"><img class="home-spe-img" src="<?php echo get_template_directory_uri() ?>/assets/img/thumb_blog_henro.jpg" alt="" /></a>
-      </li>
+      <!-- メインループの開始 -->
+      <!-- ユーザーがお気に入りにした店舗紹介記事のIDを取得 -->
+      <?php
+      $args = array(
+        'posts_per_page' => 4, //お気に入り記事数
+        'post_type' => 'post',
+        'orderby' => 'date',
+      ); ?>
+      <!-- 記事の取得 -->
+      <?php $the_query = new WP_Query($args); ?>
+      <?php if ($the_query->have_posts()) :
+        while ($the_query->have_posts()) : $the_query->the_post(); ?>
+          <li class="home-spe-item">
+            <a href="<?php the_permalink(); ?>">
+              <?php the_post_thumbnail('full'); ?> </a>
+          </li>
+        <?php endwhile; ?>
+      <?php endif; ?>
     </ul>
   </section>
+
 </main>
 
 <!-- footer.phpをインクルードする -->
