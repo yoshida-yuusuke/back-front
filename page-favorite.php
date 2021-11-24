@@ -2,8 +2,7 @@
 <?php get_header(); ?>
 
 <!-- パンくずリスト -->
-<li> <?php get_template_part('template-parts/breadcrumb'); ?></li>
-
+<?php get_template_part('template-parts/breadcrumb'); ?>
 <main class="main">
     <!-- ---------------------------------------------
 -------以下に各ページのマークアップをお願いします。-------

@@ -68,11 +68,6 @@
 /*------------------
 ----記事一覧----
 -------------------- */
-
-img {
-  height: auto;
-}
-
 .archive-wrap {
   padding: 40px 45px 48px;
 }
@@ -320,4 +315,9 @@ img {
 .archive-article-img {
   overflow: hidden;
   border-radius: 5px;
+}
+
+/* -----------背景画像の修正------------- */
+.favo-bgcolor {
+  background-color: transparent;
 }
