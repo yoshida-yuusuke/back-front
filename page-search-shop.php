@@ -21,57 +21,63 @@ if ($shop_type_slug != "") {
 if ($shop_area_slug != "") {
     $shop_area_name = get_term_by('slug', $shop_area_slug, 'shop_area')->name;
 }
-// 1:タグ条件？？？？
-//is_set の方がよいとの指摘、配列かどうかしか見てないんじゃないかとの指摘
-if (is_array($get_tags)) {
-    echo '<p>タグ:';
-    foreach ($get_tags as $value) {
-        // $s_term = get_term_by('slug', $value, 'post_tag');
-        // echo $s_term->name;
-        // 今の値が最後の値じゃない場合はエコーだせという命令
-        if ($value !== end($get_tags)) {
-            echo ', ';
-        }
-    }
-    echo '</p>';
-}
 // 検索の変数指定
 $do_search = true;
 ?>
 
-<div style="font-size:17px;margin-top:3rem">
+<!-- ★★ここから追加★★ -->
+<!------- メイン ------->
+<main class="main">
+    <!-- パンくずリスト -->
+    <?php get_template_part('template-parts/breadcrumb'); ?>
+    <!--------------------
+		トップの画像
+	--------------------->
+    <div class="page-header">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_page-favorite.jpg" alt="検索結果のイメージ画像です" class="page-header-img" />
+        <div class="page-header-txt-wrap page-header-txt-wrap-favorite">
+            <h2 class="h2-font top-img-title favorite-catchcopy">
+                徳島で見つける、<br />
+                あなた好みのうどん。
+            </h2>
+        </div>
+    </div>
+    <!-- ★★ここまで追加★★ -->
 
-    <h2>検索結果一覧</h2>
-
-    <br><br>
-
-    <b>【検索条件】</b>&nbsp;
     <?php
+    $str_cond = "";
     if ($shop_type_slug != "") {
         //前の画面で選択されていたうどんの種類を表示
         //送られてきた店舗名はいつもひとつだけなのか？
-        echo "<b>種類：</b>" . $shop_type_name . "&nbsp;";
+        $str_cond = $str_cond . "<b>種類：</b>" . $shop_type_name . "&nbsp;";
     }
     if ($shop_area_slug != "") {
         //前の画面で選択されていた地域を表示
         //送られてきたエリア名はいつもひとつだけなのか？
-        echo "<b>地域：</b>" . $shop_area_name . "&nbsp;";
+        $str_cond = $str_cond . "<b>地域：</b>" . $shop_area_name . "&nbsp;";
     }
+    if (is_array($get_tags)) {
+        $str_cond = $str_cond . '<b>タグ：</b>';
+        foreach ($get_tags as $value) {
+            $s_term = get_term_by('slug', $value, 'shop_tag');
+            $str_cond = $str_cond . $s_term->name . ",";
+        }
+    }    
     ?>
-
-    <br><br>
 
     <?php
     //ここから検索のパラメーターを準備する
 
     //A. 種類と地域の両方が選択されている場合
     // if文の追加、各セクターごとに条件分岐を作る。下に追加しているがそれの読み解き
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
     if ($get_tags) {
         $args = array(
             'post_type' => 'shop', //カスタム投稿「shop」
             'post_status' => 'publish', //公開された投稿のみ
             'orderby' =>  'date', //日付の順に並べる
             'order' =>  'DESC', //降順に並べる
+            'paged' => $paged,
 
             //タクソノミー「shop_type」と「shop_area」のAND検索
             'tax_query' => array(
@@ -100,6 +106,7 @@ $do_search = true;
             'post_status' => 'publish', //公開された投稿のみ
             'orderby' =>  'date', //日付の順に並べる
             'order' =>  'DESC', //降順に並べる
+            'paged' => $paged,
 
             //タクソノミー「shop_type」と「shop_area」のAND検索
             'tax_query' => array(
@@ -130,6 +137,7 @@ $do_search = true;
                 'post_status' => 'publish', //公開された投稿のみ
                 'orderby' =>  'date', //日付の順に並べる
                 'order' =>  'DESC', //降順に並べる
+                'paged' => $paged,
 
                 //タクソノミー「shop_type」の検索
                 'tax_query' => array(
@@ -155,6 +163,7 @@ $do_search = true;
                 'post_status' => 'publish', //公開された投稿のみ
                 'orderby' =>  'date', //日付の順に並べる
                 'order' =>  'DESC', //降順に並べる
+                'paged' => $paged,
 
                 //タクソノミー「shop_type」の検索
                 'tax_query' => array(
@@ -178,6 +187,7 @@ $do_search = true;
                 'post_status' => 'publish', //公開された投稿のみ
                 'orderby' =>  'date', //日付の順に並べる
                 'order' =>  'DESC', //降順に並べる
+                'paged' => $paged,
 
                 //タクソノミー「shop_area」の検索
                 'tax_query' => array(
@@ -200,6 +210,7 @@ $do_search = true;
                 'post_status' => 'publish', //公開された投稿のみ
                 'orderby' =>  'date', //日付の順に並べる
                 'order' =>  'DESC', //降順に並べる
+                'paged' => $paged,
 
                 //タクソノミー「shop_area」の検索
                 'tax_query' => array(
@@ -222,6 +233,7 @@ $do_search = true;
                 'post_status' => 'publish', //公開された投稿のみ
                 'orderby' =>  'date', //日付の順に並べる
                 'order' =>  'DESC', //降順に並べる
+                'paged' => $paged,
 
                 //タグ「shop_tag」の検索
                 'tax_query' => array(
@@ -240,119 +252,100 @@ $do_search = true;
     ?>
 
 
+<section class="recom-wrap favo-bgcolor">
 
     <?php
     //検索実行
-    if ($do_search) {
+    if ($do_search) {?>
+
+        <div class="recom-title">
+            <h2 class="h2-font">検索結果</h2>
+        </div>
+        <?php
+        // 記事の取得
         $the_query = new WP_Query($args);
-        if ($the_query->have_posts()) {
-            while ($the_query->have_posts()) {
-                $the_query->the_post(); ?>
-                <section class="menu">
-                    <a href="<?php the_permalink(); ?>">
-                        <figure class="menu_pic">
-                            <!-- 投稿にアイキャッチがあるかどうかの判定 -->
-                            <?php if (has_post_thumbnail()) : ?>
-                                <!-- 投稿にアイキャッチがある場合、出力、画像サイズ指定 -->
-                                <?php the_post_thumbnail('medium'); ?>
-                            <?php else : ?>
-                                <!-- されているかされているか像指定して引っ張ってきている？とりあえずNoimage指定？ -->
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                            <?php endif; ?>
-                        </figure>
-                        <!-- 記事タイトル引っ張ってきて表示 -->
-                        <h3 class="menu_title"><?php the_title(); ?></h3>
-                        <div class="menu_desc">
-                            <!-- 投稿文引っ張ってきて表示 -->
-                            <?php the_excerpt(); ?>
-                        </div>
-                    </a>
-                </section>
-    <?php
-                echo "<br>";
-            }
-        } else {
-            echo "検索結果がありませんでした。";
-        }
-        wp_reset_postdata();
-    } else {
-        echo "検索条件が指定されていません。";
+        if ($the_query->have_posts()) :
+            $count = 0;
+        ?>
+            <p><b>指定した条件</b><br><?php echo $str_cond;?></p><br>
+
+            <div class="recom-cont">
+
+                <?php while ($the_query->have_posts()) : $the_query->the_post();
+                    $count++;
+                ?>
+                    <div class="recom-article">
+                        <?php get_template_part('template-parts/loop', 'shop'); ?>
+                    </div>
+                <?php endwhile; ?>
+
+            </div>
+           
+
+        <!----------------------
+                ページネーション
+                ---------------------->
+                <?php if (function_exists('wp_pagenavi')) {?>
+                <div class="pagenation-wrap">
+                <?php if ($analyze == true) {
+                        wp_pagenavi(array('query' => $the_query));
+                    }?>
+                </div>
+            <?php } ?>
+
+
+            <?php wp_reset_postdata(); ?>
+        <?php else : echo '<p>検索結果がありませんでした</p>'; ?>
+            <?php $analyze = false; ?>
+        <?php endif; ?>
+
+
+    <?php } else {
+        echo "<p>検索条件が指定されていません。</p>";
         // 検索条件が指定されてない場合の変数代入
         $analyze = false;
     }
     ?>
+</section>
+
+</main>
 
 
-</div>
-<!-- 星の上が検索結果、星の下以降がランダム表示 -->
-☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆<br>
+<?php if( $analyze == false ): ?>
 
-<!-- ページネーション設定 -->
-<!-- function-existsは関数が定義されているかどうか判定している -->
-<!--$analyze = trueの場合のみページナビを表示するようにする。  -->
-<!-- $analyze = false、検索条件なしだと処理が行われずページナビが表示されない -->
-<?php if (function_exists('wp_pagenavi')) {
-    if ($analyze == true) {
-        wp_pagenavi(array('query' => $the_query));
-    }
-}
-?>
-<?php
+			<!----------------------
+       ----- おすすめ記事-----
+    ------------------------->
+			<!-- おすすめrecom -->
+			<section class="recom-wrap shop-recom">
+				<div class="recom-title">
+					<h2 class="recom-title-p">こちらの記事もおすすめです</h2>
+				</div>
+				<div class="recom-cont">
 
-// ランダム表示の設定
-$args_rand = array(
-    'post_type' => 'shop',
-    'orderby' => 'rand',
-    'posts_per_page' => 3,
-);
-// ランダム表示時の見出し
+					<?php
+                    $args_rand = array(
+                        'post_type' => 'shop',
+                        'orderby' => 'rand',
+                        'posts_per_page' => 3,
+                    );
 
-echo "こちらもおススメ！！！";
+					$the_query = new WP_Query($args_rand);
+					if ($the_query->have_posts()) :
+					?> <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<div class="recom-article">
 
-if ($do_search) {
-    $the_query_rand = new WP_Query($args_rand);
+								<?php get_template_part('template-parts/loop', 'shop'); ?>
+							</div>
 
-    if ($the_query_rand->have_posts()) {
-        while ($the_query_rand->have_posts()) {
-            $the_query_rand->the_post();
-            //とりあえずタイトル（店名）だけ出力
-            // ここにサムネイル表記を書いていく
-?>
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php else : '検索結果がありませんでした'; ?>
 
-            <section class="menu">
+					<?php endif; ?>
+				</div>
+			</section>
 
-                <a href="<?php the_permalink(); ?>">
-                    <figure class="menu_pic">
-                        <!-- 投稿にアイキャッチがあるかどうかの判定 -->
-                        <?php if (has_post_thumbnail()) : ?>
-                            <!-- 投稿にアイキャッチがある場合、出力、画像サイズ指定 -->
-                            <?php the_post_thumbnail('medium'); ?>
-                        <?php else : ?>
-                            <!-- 画像指定して引っ張ってきている？とりあえずNoimage指定？ -->
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
-                        <?php endif; ?>
-                    </figure>
-                    <!-- 記事タイトル引っ張ってきて表示 -->
-                    <h3 class="menu_title"><?php the_title(); ?></h3>
-                    <div class="menu_desc">
-                        <!-- 投稿文引っ張ってきて表示 -->
-                        <?php the_excerpt(); ?>
-                    </div>
-                </a>
-            </section>
-<?php
-            echo "<br>";
-        }
-    } else {
-        echo "検索結果がありません";
-    }
-}
-wp_reset_postdata();
-
-
-
-?>
-
-
+<?php endif; ?>            
 
 <?php get_footer(); ?>
