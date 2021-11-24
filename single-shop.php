@@ -252,7 +252,7 @@
 							<td class="shop-basic-table-td"><?php the_field('seat') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">喫煙・喫煙</th>
+							<th class="shop-basic-table-th">禁煙・喫煙</th>
 							<td class="shop-basic-table-td"><?php the_field('smoke') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
@@ -316,8 +316,8 @@
 			<!----------------------
        ----- おすすめ記事-----
     ------------------------->
-			<!-- おすすめ→recom -->
-			<section class="recom-wrap">
+			<!-- おすすめrecom -->
+			<section class="recom-wrap shop-recom">
 				<div class="recom-title">
 					<h2 class="recom-title-p">こちらの記事もおすすめです</h2>
 				</div>
