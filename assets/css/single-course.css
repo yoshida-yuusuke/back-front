@@ -114,6 +114,10 @@
   text-align: center;
 }
 
+.course-title-wrap{
+  text-align: center;
+}
+
 .course-number-sp {
   width: 30px;
   height: 30px;
@@ -295,6 +299,16 @@
   }
 }
 
-.course-cont-wrap :nth-child(2) {
-  text-align: right;
+@media screen and (min-width: 1025px) {
+  .course-cont-wrap :nth-child(2) {
+    text-align: right;
+  }
+
+}
+
+
+.flag{
+transform: translate(-40%, 0);
+margin-top: 100px;
+  width: 30%;
 }
