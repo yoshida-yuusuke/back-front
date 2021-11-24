@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* プロパティの順番を整えました！ */
 .coruse-wrap {
   scroll-behavior: smooth;
 }
@@ -68,7 +67,7 @@
   position: relative;
   z-index: 0;
   height: 300px;
-  background-image: url(../img/tokushima_pc_x2.jpg);
+  background-image: url(../img/bg_single-course_tokushima_touka_x2.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -88,6 +87,9 @@
   font-size: 12px;
   font-weight: normal;
   text-align: left;
+}
+
+.tokushima-map-ul p {
   line-height: 3;
 }
 
@@ -111,6 +113,10 @@
 
 .course-cont-wrap {
   padding: 43px 0 75px;
+  text-align: center;
+}
+
+.course-title-wrap {
   text-align: center;
 }
 
@@ -193,6 +199,12 @@
   justify-content: space-between;
   width: 20%;
   margin: 0 auto;
+}
+
+.flag {
+  transform: translate(-40%, 0);
+  width: 30%;
+  margin-top: 100px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -293,8 +305,10 @@
   .course-3 {
     margin-bottom: 150px;
   }
-}
 
-.course-cont-wrap :nth-child(2) {
-  text-align: right;
+  .flag {
+    transform: translate(100%, 0);
+    width: 50%;
+    margin-top: 300px;
+  }
 }

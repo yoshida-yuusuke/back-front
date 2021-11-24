@@ -32,12 +32,15 @@
 			</h2>
 
 
+			<!-- 各種類のうどんからタグを持ってくる -->
 			<ul class="tag-wrap">
-				<li class="tag">#タグ</li>
-				<li class="tag">#タグ</li>
-				<li class="tag">#タグ</li>
-				<li class="tag">#タグ</li>
-				<li class="tag">#タグ</li>
+				<?php
+				$terms = getTerms_UdonType($term_var);
+				foreach ($terms as $term) {
+					echo '<li class="tag">#' . $term->name . '</li>';
+				}
+				?>
+
 			</ul>
 
 		</div>
@@ -76,11 +79,26 @@
 						<div class="archive-article-img">
 							<a href="<?php the_permalink(); ?>">
 								<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" alt="記事のサムネイル画像です" />
+
 								<!-- アイキャッチです -->
-								<div class="article-eye naruto">なるちゅる</div>
+								<?php
+								$cats = get_the_terms(get_the_ID(), 'shop_type');
+								$taxonomy_name = '';
+								foreach ($cats as $cat) :
+									$cat->slug;
+									$taxonomy_name = $cat->slug;
+								endforeach;
+								$category = array('なるちゅる', 'たらい', '本格派');
+								//termに対応したインデックス配列を表示
+								if ($taxonomy_name == 'naruchuru') {
+									echo '<div class="article-eye naruto">' . $category[0] . '</div>';
+								} elseif ($taxonomy_name == 'tarai') {
+									echo '<div class="article-eye tarai">' . $category[1] . '</div>';
+								} else {
+									echo '<div class="article-eye honkaku">' . $category[2] . '</div>';
+								} ?>
 							</a>
-							<!-- いいねボタンです -->
-							<button class="article-good">❤︎</button>
+
 						</div>
 						<a href="<?php the_permalink(); ?>" class="article-link">
 							<p class="article-title"><?php the_title(); ?></p>
@@ -95,23 +113,6 @@
 
 		</div>
 
-
-
-
-		<!-- <div class="archive-article">
-			<div class="archive-article-img">
-				<a href="single-shop.html">
-					<img src="img/img_archive-shop_naruto.JPG" alt="記事のサムネイル画像です" />
-					<div class="article-eye naruto">なるちゅる</div>
-				</a>
-				<button class="article-good">❤︎</button>
-			</div>
-			<a href="single-shop.html" class="article-link">
-				<p class="article-title">記事タイトル</p>
-				<p class="article-txt">テキストテキスト</p>
-			</a>
-		</div> -->
-
 		<!-- 記事内容(archive-list)終わり -->
 
 		<!----------------------
@@ -122,12 +123,6 @@
 			<?php if (function_exists('wp_pagenavi')) {
 				wp_pagenavi(array('query' => $the_query));
 			} ?>
-			<!-- <ul class="pagenation">
-				<li class="pagenation-number">1</li>
-				<li class="pagenation-number">2</li>
-				<li class="pagenation-number">3</li>
-				<li class="pagenation-number">4</li>
-			</ul>-->
 		</div>
 	</div>
 </main>
