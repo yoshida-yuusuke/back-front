@@ -78,7 +78,12 @@
 					<div class="archive-article<?php if ($count % 5 == 0) echo " archive-article-big"; ?>">
 						<div class="archive-article-img">
 							<a href="<?php the_permalink(); ?>">
-								<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" alt="記事のサムネイル画像です" />
+								<?php $img = get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>
+								<?php if (!empty($img)) { ?>
+									<img src="<?php echo $img; ?>" alt="記事のサムネイル画像です" />
+								<?php } else { ?>
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/thumb_noimage.jpg">
+								<?php } ?>
 
 								<!-- アイキャッチです -->
 								<?php
