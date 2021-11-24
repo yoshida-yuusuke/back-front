@@ -264,6 +264,15 @@
   }
 }
 /* ---------角丸設定---------- */
+.gallery-img {
+  /* border-radius: 10px 0 0 10px; */
+}
+/*.choice-btn-img {
+  border-radius: 50px;
+}
+.choice-btn-li.slick-slide.slick-active .choice-btn-img img {
+  border-radius: 50px;
+} */
 
 /* ハンコ設定 */
 .gallery-hanko-wrap {
@@ -293,10 +302,10 @@
 }
 @media screen and (min-width: 1025px) {
   .gallery-hanko-img {
-    top: -95px;
-    right: 260px;
-    width: 120px;
-    height: 120px;
+    top: -155px;
+    right: 37.5%;
+    width: 90px;
+    height: 90px;
     z-index: 50;
   }
 }
@@ -322,6 +331,10 @@
 /* --------------------------------------
 -------------基本情報、地図--------------
 --------------------------------------- */
+.shop-basic {
+}
+/* .shop-basic-flex {
+} */
 
 /* ------------基本情報---------------- */
 .shop-basic-table {
@@ -412,6 +425,9 @@
 /* -------------------------------------
 --------#食べレポ、snsシェアボタン------
 --------------------------------------- */
+.shop-report {
+  /* position: relative; */
+}
 
 /* ---------Instagram埋め込み領域------ */
 @media screen and (max-width: 728px) {

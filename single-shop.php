@@ -15,7 +15,11 @@
 							<?php
 							$terms = get_the_terms(get_the_ID(), 'shop_tag');
 							foreach ($terms as $term) :
-								echo '<li class="top-ul-tag">#' . $term->name . '</li>';
+								if (!empty($terms)) {
+									foreach ($terms as $term) :
+										echo '<li class="top-ul-tag">#' . $term->name . '</li>';
+									endforeach;
+								}
 							endforeach;
 							?>
 						</ul>
@@ -160,8 +164,12 @@
 					<div class="gallery-hanko-wrap">
 						<div class="gallery-hanko-img">
 							<?php $image = get_field('stamp');
-							$url = $image['sizes']['medium']; ?>
-							<img src="<?php echo $url ?>" class="hanko">
+							?>
+							<?php
+							if (is_array($image)) {
+								$url = $image['sizes']['medium']; ?>
+								<img src="<?php echo $url ?>" class="hanko">
+							<?php }; ?>
 						</div>
 					</div>
 
@@ -223,15 +231,24 @@
 					<!-------------基本情報------------------->
 					<table class="shop-basic-table shop-space-bottom">
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">店名</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("name");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('name') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">電話番号</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("TEL");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><a href="tel:<?php the_field('TEL') ?>"><?php the_field('TEL') ?></a></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">予約可否</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("yoyaku");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php if (get_field('yoyaku')) : ?>
 									予約出来ます
 								<?php else : ?>
@@ -239,35 +256,59 @@
 								<?php endif; ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">住所</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("address");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('address') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">アクセス</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("access");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('access') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">営業時間</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("time");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('time') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">支払方法</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("pay");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('pay') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">席数</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("seat");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('seat') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">禁煙・喫煙</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("smoke");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('smoke') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">駐車場</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("space");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td"><?php the_field('space') ?></td>
 						</tr>
 						<tr class="shop-basic-table-tr">
-							<th class="shop-basic-table-th">サイト</th>
+							<th class="shop-basic-table-th"><?php $field = get_field_object("HP_SNS");
+															// ラベルを表示
+															echo $field["label"];
+															?></th>
 							<td class="shop-basic-table-td">
 								<a href="<?php the_field('HP_SNS') ?>" target="_blank" rel="noopener noreferrer"><?php the_field('HP_SNS') ?></a>
 							</td>
@@ -305,19 +346,16 @@
 
 				<!------------------ 一覧に戻るボタン -------------------------->
 				<div class="shop-archiveback">
-
-					<?php $udontype = ""; ?>
-					<?php foreach ($terms as $term) {
+					<?php
+					$terms_type = get_the_terms(get_the_ID(), 'shop_type');
+					$udontype = ""; ?>
+					<?php foreach ($terms_type as $term) {
 						$udontype = $term->slug;
 					} ?>
-					<button class="btn-orange shop-archiveback-btn" type="button" onclick="location.href=" <?php $udontype = ""; ?>">
-						店舗一覧に戻る
-					</button>
+					<button class="btn-orange shop-archiveback-btn" type="button" onclick="location.href='<?php echo esc_url(home_url()) . "/archives/shop_type/" . $udontype; ?>'">店舗一覧に戻る </button>
 				</div>
-			<?php endwhile;
-			?>
-		<?php endif;
-		?>
+			<?php endwhile; ?>
+		<?php endif; ?>
 			</main>
 
 			<!----------------------
