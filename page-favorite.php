@@ -2,12 +2,7 @@
 <?php get_header(); ?>
 
 <!-- パンくずリスト -->
-
-<div class="pkz">
-    <ul class="pkz-ul">
-        <li> <?php get_template_part('template-parts/breadcrumb'); ?></li>
-    </ul>
-</div>
+<li> <?php get_template_part('template-parts/breadcrumb'); ?></li>
 
 <main class="main">
     <!-- ---------------------------------------------
@@ -26,7 +21,7 @@
         </div>
     </div>
 
-    <section class="recom-wrap">
+    <section class="recom-wrap favo-bgcolor">
         <div class="recom-title">
             <h2 class="h2-font">あなたのお気に入り記事</h2>
             <p>20件の記事をお気に入りしました。</p>
@@ -70,15 +65,9 @@
         ---------------------->
     <div class="pagenation-wrap">
         <?php if (function_exists('wp_pagenavi')) {
-            wp_pagenavi(array('query' => $the_query));
-        } ?>
-        <!-- <ul class="pagenation">
-			<li class="pagenation-number">1</li>
-			<li class="pagenation-number">2</li>
-			<li class="pagenation-number">3</li>
-			<li class="pagenation-number">4</li>
-			</ul> -->
-    </div>
+            wp_pagenavi();
+        }
+        ?>
     </div>
 
 </main>
