@@ -4,11 +4,14 @@
         <?php
         //うどんの種類
         $cats = get_the_terms(get_the_ID(), 'shop_type');
-        $taxonomy_name = '';
-        foreach ($cats as $cat) :
-            $cat->slug;
-            $taxonomy_name = $cat->slug;
-        endforeach;
+        if ($cats) {
+            foreach ($cats as $cat) :
+                $cat->slug;
+                $taxonomy_name = $cat->slug;
+            endforeach;
+        } else {
+            $taxonomy_name = '';
+        }
         ?>
         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" alt="サムネイル画像です" />
         <?php $category = array('なるちゅる', 'たらい', '本格派');
@@ -17,7 +20,7 @@
             echo '<div class="recom-eye eye-naru">' . $category[0] . '</div>';
         } elseif ($taxonomy_name == 'tarai') {
             echo '<div class="recom-eye eye-tarai">' . $category[1] . '</div>';
-        } else {
+        } elseif ($taxonomy_name == 'honkakuha') {
             echo '<div class="recom-eye eye-honkaku">' . $category[2] . '</div>';
         } ?>
         <button class="recom-good">❤︎</button>

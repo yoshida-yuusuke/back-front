@@ -37,14 +37,13 @@
             //メニューの投稿タイプ
             //taxonomyの取得
 
-
             //ユーザーがお気に入りにした記事のIDを取得
             $favorite_post_ids = wpfp_get_user_meta();
 
             //ユーザーがお気に入りにした店舗紹介記事のIDを取得
             $args = array(
-                'post_type' => 'shop',
-                'post__in' => $favorite_post_ids, //お気に入り記事のID
+                'post_type' => array('shop', 'post'),   //店舗と特集記事
+                'post__in' => $favorite_post_ids,       //お気に入り記事のID
             );
 
             // 記事の取得
@@ -60,37 +59,14 @@
                     </div>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
-            <?php elseif ($the_query->have_posts()) : ?>
-                $count = 0;
-                //ユーザーがお気に入りにした特集記事のIDを取得
-                $args = array(
-                'post_type' => 'special',
-                'post__in' => $favorite_post_ids, //お気に入り記事のID
-                );
-
-                // 記事の取得
-                $the_query = new WP_Query($args);
-                if ($the_query->have_posts()) :
-                $count++;
-                <?php while ($the_query->have_posts()) : $the_query->the_post();
-                    $count++;
-                ?>
-                    <div class="recom-article">
-                        <?php get_template_part('template-parts/loop', 'special'); ?>
-                    </div>
-                <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
             <?php else : '検索結果がありませんでした'; ?>
             <?php endif; ?>
         </div>
     </section>
 
 
-
-
-
     <!----------------------
-         ページネーション
+        ページネーション
         ---------------------->
     <div class="pagenation-wrap">
         <?php if (function_exists('wp_pagenavi')) {

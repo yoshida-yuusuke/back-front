@@ -53,7 +53,6 @@ p {
   a:hover,
   button:hover {
     opacity: 0.5;
-    transition: 0.3s;
   }
 }
 
@@ -206,7 +205,15 @@ p {
   color: var(--white-color);
   font-size: 10px;
 }
-
+.eye-naru {
+  background-color: var(--naru-color);
+}
+.eye-tarai {
+  background-color: var(--tarai-color);
+}
+.eye-honkaku {
+  background-color: var(--honkaku-color);
+}
 .recom-good {
   position: absolute;
   right: 5px;
