@@ -101,10 +101,6 @@
 								</li>
 							</ul>
 
-
-
-
-
 							<ul class="choice-btn">
 								<li class="choice-btn-li">
 									<?php
@@ -159,7 +155,18 @@
 						</div>
 						<!--/slider-->
 					</div>
-					<p class="shop-detall-txt  "><?php the_content(); ?></p>
+
+					<!-------- バッチの設定 --------->
+					<div class="gallery-hanko-wrap">
+						<div class="gallery-hanko-img">
+							<?php $image = get_field('stamp');
+							$url = $image['sizes']['medium']; ?>
+							<img src="<?php echo $url ?>" class="hanko">
+						</div>
+					</div>
+
+
+					<p class="shop-detall-txt "><?php the_content(); ?></p>
 				</section>
 
 				<!---------------------- 店の特徴メーター領域 ---------------------->
