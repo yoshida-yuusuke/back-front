@@ -172,12 +172,13 @@ p {
 }
 
 .recom-title {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .recom-title-p {
   font-weight: bold;
+  font-size: 18px;
 }
 
 .recom-article {
@@ -192,6 +193,8 @@ p {
 .recom-article-img {
   position: relative;
   margin-bottom: 5px;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 /* ---------アイキャッチ（画像についてるタグ）--------- */
@@ -225,6 +228,7 @@ p {
 
 .recom-article-title {
   margin-bottom: 3px;
+  font-weight: bold;
 }
 .recom-article-txt {
   font-size: 12px;
@@ -234,14 +238,20 @@ p {
 
 @media screen and (min-width: 600px) {
   .recom-wrap {
-    padding: 110px 20%;
+    margin-top: 30px;
+    padding: 70px 20%;
   }
 }
 
 /* ------------pc版---------------- */
 @media screen and (min-width: 1025px) {
   .recom-title {
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+
+  .recom-title-p {
+    font-size: 24px;
   }
 
   .recom-article {
