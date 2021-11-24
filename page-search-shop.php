@@ -1,15 +1,17 @@
 <?php get_header(); ?>
 
+<!-- 検索条件の変数指定 -->
+<?php $analyze = true; ?>
+
 <!-- 送信後の検索結果を作る -->
-<!-- $argsがvardumpで動くかどうかチェック -->
-<!-- $argsの中身が数十件でるんだったqueryをループで実行する必要があるのではないか？という指摘 -->
-<!-- 各A,B,C,Dで$argsが書き換えられた後に他の所に入ったら書き換えられるのでは？という指摘 -->
+
 <?php
 //送信で送られてきた、検索条件で選択された「種類」と「地域」の値（スラッグ）を取得する
 $shop_type_slug = ($_GET["shop_type"] != "" ? $_GET["shop_type"] : "");
 $shop_area_slug = ($_GET["shop_area"] != "" ? $_GET["shop_area"] : "");
 // 新たに引っ張ってきた変数
-$get_tags = $_GET['shop_tag'];
+$get_tags
+    = (!empty($_GET["shop_tag"]) ? $_GET["shop_tag"] : "");
 // $shop_tag_slug[] = ($_GET["shop_tag"] != "" ? $_GET["shop_tag"] : "");
 
 //スラッグからカテゴリー（タクソノミー）の名前を取得する
@@ -33,7 +35,7 @@ if (is_array($get_tags)) {
     }
     echo '</p>';
 }
-// 検索のフラグ？
+// 検索の変数指定
 $do_search = true;
 ?>
 
@@ -121,7 +123,7 @@ $do_search = true;
     //B. 種類だけ選択されている場合
     // ここのif文の意味？
     if ($shop_type_slug != "" && $shop_area_slug === "") {
-            // if文の追加、各セクターごとに条件分岐を作る。下に追加しているがそれの読み解き
+        // if文の追加、各セクターごとに条件分岐を作る。下に追加しているがそれの読み解き
         if ($get_tags) {
             $args = array(
                 'post_type' => 'shop', //カスタム投稿「shop」
@@ -169,7 +171,7 @@ $do_search = true;
     }
     //C. 地域だけ選択されている
     if ($shop_type_slug === "" && $shop_area_slug != "") {
-            // if文の追加、各セクターごとに条件分岐を作る。下に追加しているがそれの読み解き
+        // if文の追加、各セクターごとに条件分岐を作る。下に追加しているがそれの読み解き
         if ($get_tags) {
             $args = array(
                 'post_type' => 'shop', //カスタム投稿「shop」
@@ -237,33 +239,120 @@ $do_search = true;
     }
     ?>
 
-    ?>
+
 
     <?php
     //検索実行
-    $the_query = new WP_Query($args);
-    // 一つ目のVAR_DUMP($ARGS)をここに？
-    if ($the_query->have_posts()) {
-        // 条件がTRUEである限り、ループするのならば、have_postsとthe＿postはどう違う？
-        while ($the_query->have_posts()) {
-            $the_query->the_post();
-            //とりあえずタイトル（店名）だけ出力
-            // ２つ目のVAR_DUMP($ARGS)をここに？
-            the_title();
-            echo "<br>";
+    if ($do_search) {
+        $the_query = new WP_Query($args);
+        if ($the_query->have_posts()) {
+            while ($the_query->have_posts()) {
+                $the_query->the_post(); ?>
+                <section class="menu">
+                    <a href="<?php the_permalink(); ?>">
+                        <figure class="menu_pic">
+                            <!-- 投稿にアイキャッチがあるかどうかの判定 -->
+                            <?php if (has_post_thumbnail()) : ?>
+                                <!-- 投稿にアイキャッチがある場合、出力、画像サイズ指定 -->
+                                <?php the_post_thumbnail('medium'); ?>
+                            <?php else : ?>
+                                <!-- されているかされているか像指定して引っ張ってきている？とりあえずNoimage指定？ -->
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                            <?php endif; ?>
+                        </figure>
+                        <!-- 記事タイトル引っ張ってきて表示 -->
+                        <h3 class="menu_title"><?php the_title(); ?></h3>
+                        <div class="menu_desc">
+                            <!-- 投稿文引っ張ってきて表示 -->
+                            <?php the_excerpt(); ?>
+                        </div>
+                    </a>
+                </section>
+    <?php
+                echo "<br>";
+            }
+        } else {
+            echo "検索結果がありませんでした。";
         }
-    }else{
-        echo"検索結果がありません１";
+        wp_reset_postdata();
+    } else {
+        echo "検索条件が指定されていません。";
+        // 検索条件が指定されてない場合の変数代入
+        $analyze = false;
     }
-    wp_reset_postdata();
-else{
-    echo"検索結果がありません2";
-}
-
     ?>
 
 
 </div>
+<!-- 星の上が検索結果、星の下以降がランダム表示 -->
+☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆<br>
+
+<!-- ページネーション設定 -->
+<!-- function-existsは関数が定義されているかどうか判定している -->
+<!--$analyze = trueの場合のみページナビを表示するようにする。  -->
+<!-- $analyze = false、検索条件なしだと処理が行われずページナビが表示されない -->
+<?php if (function_exists('wp_pagenavi')) {
+    if ($analyze == true) {
+        wp_pagenavi(array('query' => $the_query));
+    }
+}
+?>
+<?php
+
+// ランダム表示の設定
+$args_rand = array(
+    'post_type' => 'shop',
+    'orderby' => 'rand',
+    'posts_per_page' => 3,
+);
+// ランダム表示時の見出し
+
+echo "こちらもおススメ！！！";
+
+if ($do_search) {
+    $the_query_rand = new WP_Query($args_rand);
+
+    if ($the_query_rand->have_posts()) {
+        while ($the_query_rand->have_posts()) {
+            $the_query_rand->the_post();
+            //とりあえずタイトル（店名）だけ出力
+            // ここにサムネイル表記を書いていく
+?>
+
+            <section class="menu">
+
+                <a href="<?php the_permalink(); ?>">
+                    <figure class="menu_pic">
+                        <!-- 投稿にアイキャッチがあるかどうかの判定 -->
+                        <?php if (has_post_thumbnail()) : ?>
+                            <!-- 投稿にアイキャッチがある場合、出力、画像サイズ指定 -->
+                            <?php the_post_thumbnail('medium'); ?>
+                        <?php else : ?>
+                            <!-- 画像指定して引っ張ってきている？とりあえずNoimage指定？ -->
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                        <?php endif; ?>
+                    </figure>
+                    <!-- 記事タイトル引っ張ってきて表示 -->
+                    <h3 class="menu_title"><?php the_title(); ?></h3>
+                    <div class="menu_desc">
+                        <!-- 投稿文引っ張ってきて表示 -->
+                        <?php the_excerpt(); ?>
+                    </div>
+                </a>
+            </section>
+<?php
+            echo "<br>";
+        }
+    } else {
+        echo "検索結果がありません";
+    }
+}
+wp_reset_postdata();
+
+
+
+?>
+
 
 
 <?php get_footer(); ?>
