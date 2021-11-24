@@ -176,7 +176,9 @@
 /* -----------------------------------------
 -------------スライダーのためのcss-----------
 ------------------------------------------- */
-
+.shop-slide-flex img {
+  height: auto;
+}
 /*--------------矢印の設定--------------*/
 /*---------戻る、次へ矢印の位置---------*/
 .slick-prev,
@@ -239,7 +241,7 @@
     flex-wrap: wrap;
   }
   .gallery {
-    width: 60%;
+    width: 65%;
     max-height: 100%;
     min-height: 100%;
   }
@@ -252,17 +254,18 @@
   .choice-btn {
     display: flex;
     flex-wrap: wrap;
-    width: 39%;
+    width: 34%;
     display: flex;
     flex-wrap: wrap;
   }
   .choice-btn-li {
     width: 50% !important;
+    height: auto;
   }
 }
 /* ---------角丸設定---------- */
 .gallery-img {
-  border-radius: 10px 0 0 10px;
+  /* border-radius: 10px 0 0 10px; */
 }
 /*.choice-btn-img {
   border-radius: 50px;
@@ -475,6 +478,10 @@
 /* -------------------------------------
 --------------おすすめ記事--------------
 --------------------------------------- */
+
+.shop-recom {
+  background-color: var(--sub-color);
+}
 
 /* ----------アイキャッチbg色---------- */
 .eye-honkaku {
