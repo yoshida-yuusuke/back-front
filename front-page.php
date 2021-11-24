@@ -6,7 +6,7 @@
     <div class="mv-logo">
       <img class="mv-logo-img" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_maincolor.png" alt="" />
     </div>
-
+    <div class="scrolldown2"><span>Scroll</span></div>
   </section>
 
   <!-- ------------------------------------------
@@ -43,7 +43,7 @@
 
     <ul class="home-kind-ul">
       <li class="kind-item-flex">
-        <div class="home-kind-tarai home-kind-item ">
+        <div class="home-kind-tarai home-kind-item slide-in">
           <div class="kind-tarai-cnt">
             <p class="home-kind-txt">
               もちもち<br />
@@ -58,15 +58,15 @@
           <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/tarai'); ?>"></a>
         </div>
 
-        <div class="kind-pict-tarai kind-pict"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_tarai.png" alt="阿波土柱"></div>
+        <div class="kind-pict-tarai kind-pict slide-in"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_tarai02.png" alt="阿波土柱"></div>
         </div>
       </li>
 
-      <div class="kind-item-flex">
+      <li class="kind-item-flex">
 
-        <div class="kind-pict-naruto kind-pict"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_naruto.png" alt="鳴門海峡"></div>
+        <div class="kind-pict-naruto kind-pict slide-in"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_naruto02.png" alt="鳴門海峡"></div>
 
-        <li class=" home-kind-naru home-kind-item ">
+        <div class=" home-kind-naru home-kind-item slide-in">
           <div class="kind-naru-cnt">
             <p class="home-kind-txt">
               ちゅるちゅる食感が<br />
@@ -78,24 +78,30 @@
               </button></h3>
           </div>
           <a class="home-kind-link" href=" <?php echo home_url('/archives/shop_type/naruchuru'); ?>"></a>
-        </li>
+</div>
 
-      </div>
+</li>
 
+<li class="kind-item-flex">
 
-      <li class="home-kind-honkaku home-kind-item ">
+      <div class="home-kind-honkaku home-kind-item slide-in">
         <div class="kind-honkaku-cnt">
           <p class="home-kind-txt">
             うどん激戦区<br />
             徳島の職人こだわりザ・うどん
           </p>
-          <button class="home-kind-btn">
-            <h3 class="home-kind-title">本格派うどん</h3>
-          </button>
+            <h3 class="home-kind-title"><button class="home-kind-btn">本格派うどん
+          </button></h3>
         </div>
         <a class="home-kind-link" href="<?php echo home_url('/archives/shop_type/honkakuha'); ?>"></a>
-      </li>
+</div>
+
+<div class="kind-pict-honkaku kind-pict slide-in"><img src="<?php echo get_template_directory_uri() ?>/assets/img/img_front_honkaku02.png" alt="阿波踊り"></div>
+
+</li>
+
     </ul>
+
   </section>
 
   <!-- ------------------------------------------

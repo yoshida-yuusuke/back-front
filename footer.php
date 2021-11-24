@@ -58,7 +58,7 @@
         <div class="search-form-tab"><span class="serch-title">店舗検索</span></div>
 
         <div class="search-form">
-          <form id="entryForm" action="#" method="post">
+          <form id="entryForm" action="<?php echo home_url('/search-shop/'); ?>" method="get">
 
             <!-- --------------------------------------------
   -------------スマホタブレットテーブル-------------

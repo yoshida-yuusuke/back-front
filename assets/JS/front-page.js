@@ -3,7 +3,7 @@
 //--------------スライドショー--------------
 //-----------------------------------------
 
-let scrollAnimationElm = document.querySelectorAll(".home-kind-item");
+let scrollAnimationElm = document.querySelectorAll(".slide-in");
 let scrollAnimationFunc = function(){
 for(let i = 0; i < scrollAnimationElm.length; i++){
     let triggerMargin = 300;
@@ -16,12 +16,15 @@ window.addEventListener("load", scrollAnimationFunc)
 window.addEventListener("scroll", scrollAnimationFunc)
 
 
+
+
+
 // ---------------------------------------
 //---------アクセスアコーディオン-----------
 //-----------------------------------------
 
 
-$('.btn-access,.home-access-title,.access-btn-txt').on('click', function () {//タイトル要素をクリックしたら
+$('.btn-access,.home-access-title').on('click', function () {//タイトル要素をクリックしたら
     var findElm = $(this).next(".box");//直後のアコーディオンを行うエリアを取得し
     $(findElm).slideToggle();//アコーディオンの上下動作
 
