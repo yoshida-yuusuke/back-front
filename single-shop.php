@@ -1,5 +1,6 @@
 <!-- header.phpをインクルードする -->
 <?php get_header(); ?>
+<?php $terms = array(); ?>
 
 <div class="shingle-shop-wrap">
 	<?php if (have_posts()) : ?>
@@ -14,13 +15,11 @@
 						<ul class="top-ul">
 							<?php
 							$terms = get_the_terms(get_the_ID(), 'shop_tag');
-							foreach ($terms as $term) :
-								if (!empty($terms)) {
-									foreach ($terms as $term) :
-										echo '<li class="top-ul-tag">#' . $term->name . '</li>';
-									endforeach;
-								}
-							endforeach;
+							if (!empty($terms)) {
+								foreach ($terms as $term) :
+									echo '<li class="top-ul-tag">#' . $term->name . '</li>';
+								endforeach;
+							}
 							?>
 						</ul>
 					</div>
