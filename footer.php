@@ -10,7 +10,8 @@
         <div class="footer-navsns-wrap">
           <ul class="footer-nav">
             <li class="footer-nav-item"><a href="<?php echo home_url('/noodle/'); ?>">徳島の麺類事情</a></li>
-            <li class="footer-nav-item"><a href="#">お店紹介</li>
+            <li class="footer-nav-item">
+              お店紹介</li>
             <ul class="footer-nav-shop">
               <li class="nav-item-shop"><a href="<?php echo home_url('/archives/shop_type/naruchuru'); ?>">なるちゅるうどん</a></li>
               <li class="nav-item-shop"><a href="<?php echo home_url('/archives/shop_type/tarai'); ?>">たらいうどん</a></li>

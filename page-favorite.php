@@ -20,31 +20,33 @@
         </div>
     </div>
 
+    <!-- //ユーザーがお気に入りにした記事のIDを取得 -->
+    <?php $favorite_post_ids = wpfp_get_user_meta(); ?>
     <section class="recom-wrap favo-bgcolor">
         <div class="recom-title">
             <h2 class="h2-font">あなたのお気に入り記事</h2>
-            <p>20件の記事をお気に入りしました。</p>
         </div>
-        <div class="recom-cont">
 
-            <?php
-            //メニューの投稿タイプ
-            //taxonomyの取得
 
-            //ユーザーがお気に入りにした記事のIDを取得
-            $favorite_post_ids = wpfp_get_user_meta();
+        <?php
+        //メニューの投稿タイプ
+        //taxonomyの取得
 
-            //ユーザーがお気に入りにした店舗紹介記事のIDを取得
-            $args = array(
-                'post_type' => array('shop', 'post'),   //店舗と特集記事
-                'post__in' => $favorite_post_ids,       //お気に入り記事のID
-            );
 
-            // 記事の取得
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts()) :
-                $count = 0;
-            ?>
+        //ユーザーがお気に入りにした店舗紹介記事のIDを取得
+        $args = array(
+            'post_type' => array('shop', 'post'),   //店舗と特集記事
+            'post__in' => $favorite_post_ids,       //お気に入り記事のID
+        );
+
+        // 記事の取得
+        $the_query = new WP_Query($args);
+        if ($the_query->have_posts()) :
+            $count = 0;
+        ?>
+
+            <p><?php echo ($the_query->found_posts); ?>件の記事をお気に入りしました。</p><br><br>
+            <div class="recom-cont">
                 <?php while ($the_query->have_posts()) : $the_query->the_post();
                     $count++;
                 ?>
@@ -53,9 +55,9 @@
                     </div>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
-            <?php else : '検索結果がありませんでした'; ?>
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php else : '検索結果がありませんでした'; ?>
+        <?php endif; ?>
     </section>
 
 
