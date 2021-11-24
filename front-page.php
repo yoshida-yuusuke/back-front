@@ -3,6 +3,9 @@
 
 <main>
   <section class="section-mv">
+    <div class="mv-wrap">
+      <img class="mv-img" src="<?php echo get_template_directory_uri() ?>/assets/img/img_mv.jpg" alt="阿波うどん運動">
+    </div>
     <div class="mv-logo">
       <img class="mv-logo-img" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_maincolor.png" alt="" />
     </div>

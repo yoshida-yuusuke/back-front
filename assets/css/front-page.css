@@ -46,8 +46,17 @@ h2 {
 .section-mv {
   position: relative;
   height: 100vh;
-  background-image: url(../img/mv.JPG);
+  /* background-image: url(../img/MVtest.jpg); */
   background-size: cover;
+}
+
+.mv-img {
+  position: absolute;
+  height: 100%;
+  /* width: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover; */
 }
 
 /* div */
@@ -58,6 +67,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(240, 240, 240, 0.5);
   width: 240px;
   transform: translate(-50%, -50%);
 }
@@ -65,7 +75,14 @@ h2 {
 .mv-logo-img {
   width: 100%;
 }
+
 @media screen and (min-width: 600px) {
+  .mv-logo {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
   .mv-logo {
     width: 450px;
   }
@@ -73,25 +90,25 @@ h2 {
 
 /* スクロール */
 
-.scrolldown2{
+.scrolldown2 {
   /*描画位置※位置は適宜調整してください*/
-position:absolute;
-bottom:100px;
-left:50%;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
 }
 
 /*Scrollテキストの描写*/
-.scrolldown2 span{
+.scrolldown2 span {
   /*描画位置*/
-position: absolute;
-left:10px;
-bottom:10px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
   /*テキストの形状*/
-color: var(--txt-color);
-font-size: 0.7rem;
-letter-spacing: 0.05em;
-/*縦書き設定*/
--ms-writing-mode: tb-rl;
+  color: var(--txt-color);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
@@ -101,47 +118,56 @@ letter-spacing: 0.05em;
   content: "";
   /*描画位置*/
   position: absolute;
-  bottom:0;
-  left:-4px;
+  bottom: 0;
+  left: -4px;
   /*丸の形状*/
-width:10px;
-height:10px;
-border-radius: 50%;
-background-color: var(--txt-color);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--txt-color);
   /*丸の動き1.6秒かけて透過し、永遠にループ*/
-animation:
-  circlemove 1.6s ease-in-out infinite,
-  cirlemovehide 1.6s ease-out infinite;
+  animation: circlemove 1.6s ease-in-out infinite,
+    cirlemovehide 1.6s ease-out infinite;
 }
 
 /*下からの距離が変化して丸の全体が上から下に動く*/
-@keyframes circlemove{
-    0%{bottom:45px;}
-   100%{bottom:-5px;}
+@keyframes circlemove {
+  0% {
+    bottom: 45px;
+  }
+  100% {
+    bottom: -5px;
+  }
 }
 
 /*上から下にかけて丸が透過→不透明→透過する*/
-@keyframes cirlemovehide{
-    0%{opacity:0}
-   50%{opacity:1;}
-  80%{opacity:0.9;}
-100%{opacity:0;}
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* 線の描写 */
-.scrolldown2:after{
-content:"";
+.scrolldown2:after {
+  content: "";
   /*描画位置*/
-position: absolute;
-bottom:0;
-left:0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   /*線の形状*/
-width:2px;
-height: 50px;
-background-color: var(--txt-color);
+  width: 2px;
+  height: 50px;
+  background-color: var(--txt-color);
 }
-
-
 
 /* -------------------------
 -------intro--------
@@ -215,7 +241,7 @@ background-color: var(--txt-color);
   width: 100%;
 }
 
-.kind-pict{
+.kind-pict {
   display: none;
 }
 
@@ -294,22 +320,22 @@ background-color: var(--txt-color);
 
 /* ----------タブレット版kindレイアウト---------------*/
 
-@media screen and (min-width:600px) {
+@media screen and (min-width: 600px) {
   .home-kind-item {
     height: 250px;
-    }
+  }
 
-    .kind-tarai-cnt {
-      transform: translateY(80px);
-    }
+  .kind-tarai-cnt {
+    transform: translateY(80px);
+  }
 
-    .kind-naru-cnt {
-      transform: translate(-10px, 100px);
-    }
-    
-    .kind-honkaku-cnt {
-      transform: translateY(130px);
-    }
+  .kind-naru-cnt {
+    transform: translate(-10px, 100px);
+  }
+
+  .kind-honkaku-cnt {
+    transform: translateY(130px);
+  }
 }
 /* ----------pc版kindレイアウト---------------*/
 
@@ -331,7 +357,6 @@ background-color: var(--txt-color);
     justify-content: space-between;
     width: 100%;
   }
-
 
   .kind-pict {
     display: block;
@@ -374,7 +399,7 @@ background-color: var(--txt-color);
 
   /*-----------スライドショーアニメーション---------*/
 
-  .slide-in{
+  .slide-in {
     opacity: 0;
     transition: 1.5s all;
   }
@@ -400,7 +425,6 @@ background-color: var(--txt-color);
   .kind-pict {
     transform: translate(0, 100px);
   }
-
 }
 
 /* -------------------------
@@ -430,7 +454,7 @@ background-color: var(--txt-color);
   transition: 0.5s;
 }
 
-.btn-access.close .access-btn-txt::after{
+.btn-access.close .access-btn-txt::after {
   vertical-align: middle;
   transform: rotate(-45deg);
   transition: 0.5s;
@@ -523,7 +547,7 @@ dd {
 
 @media screen and (min-width: 1025px) {
   .home-map-img {
-    max-width: 1000px;
+    max-width: 800px;
   }
 
   .access-wrap-pc {
