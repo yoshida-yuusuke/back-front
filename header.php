@@ -41,6 +41,8 @@
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } elseif (is_404()) { ?>
     <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
+  <?php } else { ?>
+    <link href="<?php echo get_template_directory_uri() ?>/assets/css/archive.css" rel="stylesheet">
   <?php } ?>
 
 
