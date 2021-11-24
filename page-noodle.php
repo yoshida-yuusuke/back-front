@@ -31,7 +31,7 @@
         </h2>
         <div class="noodle-intro-wrap">
             <div class="noodle-tokushima-img-wrap">
-                <img class="noodle-tokushima-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_noodle_1.png" alt="徳島のうどん" />
+                <img class="noodle-tokushima-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/bg_page-noodle_tokushima.jpg" alt="徳島のうどん" />
             </div>
             <div class="noodle-intro-txt">
                 <p class="bold">むかしむかしせっせと働く阿波の民がおりました。</p>
@@ -49,7 +49,8 @@
     <!---------- noodle-about ---------->
     <section class="noodle-about">
         <div class="noodle-deco-img-wrap">
-            <img class="noodle-deco-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_noodle.jpg" alt="おいしいうどん" />
+            <!-- かざり画像 -->
+            <img class="noodle-deco-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_page-noodle_decoration.JPG" alt="おいしいうどん" />
         </div>
 
         <h3 class="h3-font">「たらい」と「なるちゅる」</h3>

@@ -38,6 +38,7 @@
 
 .tag-wrap {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tag {

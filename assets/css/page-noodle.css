@@ -243,11 +243,11 @@
 .noodle-naruchuru-wrap {
   padding: 0 45px;
   text-align: left;
-  background: url(../img/IMG_1304.jpg);
+  background: url(../img/bg_page-noodle_naruto.jpg);
   background-size: cover;
   /* ↓ 同じく背景画像の透過風加工 */
-  background-color: rgba(255, 255, 255, 0.8);
-  background-blend-mode: lighten;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  /* background-blend-mode: lighten; */
 }
 @media screen and (min-width: 600px) {
   .noodle-naruchuru-wrap {
@@ -265,11 +265,11 @@
 .noodle-tarai-wrap {
   padding: 0 45px;
   text-align: left;
-  background: url(../img/IMG_1304.jpg);
+  background: url(../img/bg_page-noodle_tarai.jpg);
   background-size: cover;
   /* ↓ 背景画像の透過風加工です、正規の画像に差し替え次第削除 */
-  background-color: rgba(255, 255, 255, 0.8);
-  background-blend-mode: lighten;
+  /* background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten; */
 }
 @media screen and (min-width: 600px) {
   .noodle-tarai-wrap {
