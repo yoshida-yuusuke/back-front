@@ -37,10 +37,17 @@
 
 					<!-- 5番目だったら、archive-article-bigのクラスを付与する -->
 					<div class="archive-article<?php if ($count % 5 == 0) echo " archive-article-big"; ?>">
+						<!--画像表示-->
 						<div class="archive-article-img">
 							<a href="<?php the_permalink(); ?>">
-								<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="記事のサムネイル画像です" />
+								<?php $img = get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>
+								<?php if (!empty($img)) { ?>
+									<img src="<?php echo $img; ?>" alt="記事のサムネイル画像です" />
+								<?php } else { ?>
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/img/thumb_noimage.jpg">
+								<?php } ?>
 							</a>
+
 							<!-- <button class="article-good">❤︎</button> -->
 						</div>
 						<a href="<?php the_permalink(); ?>" class="article-link">
