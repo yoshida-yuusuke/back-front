@@ -57,7 +57,7 @@
       <div id="searchForm-js" class="searchForm-js">
         <div class="search-form-tab"><span class="serch-title">店舗検索</span></div>
 
-        <div class="search-form">
+        <div class="search-form search-form-sp">
           <form id="entryForm" action="<?php echo home_url('/search-shop/'); ?>" method="get">
 
             <!-- --------------------------------------------
@@ -67,50 +67,67 @@
               <tr class="footer-select-tr">
                 <th class="footer-select-th">エリア</th>
                 <td class="footer-select-td">
-                  <select name="area">
+                  <select name="shop_area">
                     <option value="" selected>エリアを選択　　　　　</option>
-                    <option value="naruto">鳴門市</option>
-                    <option value="awa">阿波市</option>
-                    <option value="tokushima">徳島市周辺</option>
+                    <option value="narutoshi">鳴門市</option>
+                    <option value="awashi">阿波市</option>
+                    <option value="tokushimashi">徳島市周辺</option>
                   </select>
                 </td>
               </tr>
               <tr class="footer-select-tr">
                 <th class="footer-select-th">種　類</th>
                 <td class="footer-select-td">
-                  <select name="udon">
+                  <select name="shop_type">
                     <option value="" selected>うどんの種類を選択　　</option>
-                    <option value="naru">なるちゅるうどん</option>
+                    <option value="naruchuru">なるちゅるうどん</option>
                     <option value="tarai">たらいうどん</option>
-                    <option value="honkaku">本格派うどん</option>
+                    <option value="honkakuha">本格派うどん</option>
                   </select>
                 </td>
               </tr>
             </table>
-
-            <!-- ----------------------------------------------
+            <ul class="search-form-ul">
+              <?php
+              $tags = get_terms('shop_tag');
+              foreach ($tags as $tag) :
+                $checked = "";
+              ?>
+                <li class="search-form-tag">
+                  <label>
+                    <input type="checkbox" name="shop_tag[]" value="<?php echo esc_attr($tag->slug); ?>" /><?php echo esc_attr($tag->name); ?>
+                  </label>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+            <input class="search-form-btn" type="submit" value="検　索" />
+          </form>
+        </div>
+        <!-- ----------------------------------------------
   ----------------------pcテーブル-------------------
 --------------------------------------------------- -->
+        <div class="search-form search-form-pc">
+          <form id="entryForm" action="<?php echo home_url('/search-shop/'); ?>" method="get">
 
             <div class="form-pc-flex">
               <table class="search-form-pc">
                 <tr>
                   <th class="footer-select-th">エリア</th>
                   <td class="footer-select-td">
-                    <select name="area">
+                    <select name="shop_area">
                       <option value="" selected>エリアを選択　　　　　</option>
-                      <option value="naruto">鳴門市</option>
-                      <option value="awa">阿波市</option>
-                      <option value="tokushima">徳島市周辺</option>
+                      <option value="narutoshi">鳴門市</option>
+                      <option value="awashi">阿波市</option>
+                      <option value="tokushimashi">徳島市周辺</option>
                     </select>
                   </td>
                   <th class="footer-select-th">種　類</th>
                   <td class="footer-select-td">
-                    <select name="udon">
+                    <select name="shop_type">
                       <option value="" selected>うどんの種類を選択　　</option>
-                      <option value="naru">なるちゅるうどん</option>
+                      <option value="naruchuru">なるちゅるうどん</option>
                       <option value="tarai">たらいうどん</option>
-                      <option value="honkaku">本格派うどん</option>
+                      <option value="honkakuha">本格派うどん</option>
                     </select>
                   </td>
                 </tr>
@@ -130,51 +147,6 @@
                   </li>
                 <?php endforeach; ?>
 
-                <!-- <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li>
-                <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li>
-                <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li>
-                <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li>
-                <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li> -->
-                <!-- <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li>
-                <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li>
-                <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li>
-                <li class="search-form-tag">
-                  <label>
-                    <input type="checkbox" name="tag" value="テキスト" />テキスト
-                  </label>
-                </li> -->
               </ul>
             </div>
 

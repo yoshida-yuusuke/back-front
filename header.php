@@ -98,17 +98,17 @@
       <span class="snsul-sp-title">SNS</span>
       <ul class="hamburger-sns-ul">
         <li class="sp-sns-item">
-          <a href="#">
+          <a href="https://twitter.com/awa_udon">
             <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon_footer_twi.png" alt="Twitter" />
           </a>
         </li>
         <li class="sp-sns-item">
-          <a href="#">
+          <a href="https://www.pinterest.jp/awaudonundou/_saved/">
             <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon_footer_pint.png" alt="Pintarest" />
           </a>
         </li>
         <li class="sp-sns-item">
-          <a href="#">
+          <a href="https://instagram.com/awa_udon?utm_medium=copy_link">
             <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon_footer_insta.png" alt="instagram" />
           </a>
         </li>
@@ -137,9 +137,9 @@
           <li class="nav-pc-item"><a href="<?php echo home_url('/archives/course'); ?>"> モデルコース </a></li>
           <li class="nav-pc-item"><a href="<?php echo home_url('/archives/category/special'); ?>"> 特集 </a></li>
           <li class="header-fav-btn">
-            <a href="#">
+            <button class="header-fav-btn" type="button" onclick="location.href='<?php echo home_url('/favorite/') ?>'">
               <img src="<?php echo get_template_directory_uri() ?>/assets/img/icon_header_mypage.png" alt="" />
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
