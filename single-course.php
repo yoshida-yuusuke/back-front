@@ -93,7 +93,11 @@
           </div>
           <div class="location-flex">
             <!--★★★-->
-            <img class="course-img course-<?php echo $clsnum; ?>-img" src="<?php echo $url ?>" src="<?php echo $url ?>" alt="<?php the_field('location-name' . $i); ?>" />
+            <?php if (!empty($image)) { ?>
+              <img class="course-img course-<?php echo $clsnum; ?>-img" src="<?php echo $url ?>" src="<?php echo $url ?>" alt="<?php the_field('location-name' . $i); ?>" />
+            <?php } else { ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/thumb_noimage.jpg">
+            <?php } ?>
             <div class="course-txt-wrap course-txt-wrap-<?php echo $clsnum; ?>">
               <p class="course-number-pc"><?php echo $i; //(PC限定)数字
                                           ?></p>
