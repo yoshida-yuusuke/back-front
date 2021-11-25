@@ -195,14 +195,15 @@ $do_search = true;
                         'taxonomy' => 'shop_area',
                         'field' => 'slug',
                         'terms' => $shop_area_slug //検索条件で選択された「地域」
+                    ),
+                    array(
+                        'taxonomy' => 'shop_tag',
+                        'field' => 'slug',
+                        'terms' => $get_tags,
+                        'operator' => 'IN'
                     )
                 ),
-                array(
-                    'taxonomy' => 'shop_tag',
-                    'field' => 'slug',
-                    'terms' => $get_tags,
-                    'operator' => 'IN'
-                )
+
             );
         } else {
             $args = array(
