@@ -10,11 +10,11 @@
     <h2 class="h2-font top-img-title"><?php single_tag_title(); ?></h2>
     <ul class="tag-wrap">
       <!-- このページのタグはベタ打ちする？ -->
-      <li class="tag">#タグ</li>
-      <li class="tag">#タグ</li>
-      <li class="tag">#タグ</li>
-      <li class="tag">#タグ</li>
-      <li class="tag">#タグ</li>
+      <li class="tag">#うどん巡り</li>
+      <li class="tag">#徳島観光</li>
+      <li class="tag">#鳴門のうずしお</li>
+      <li class="tag">#阿波の土柱</li>
+      <li class="tag">#汽車</li>
     </ul>
   </div>
 </div>

@@ -45,6 +45,7 @@
   margin-right: 15px;
   color: var(--white-color);
   font-size: 10px;
+  font-weight: normal;
   text-align: center;
 }
 
@@ -70,8 +71,8 @@
 ----記事一覧----
 -------------------- */
 
-img{
-height:auto;
+img {
+  height: auto;
 }
 
 .archive-wrap {
