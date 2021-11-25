@@ -57,6 +57,10 @@
   color: var(--white-color);
 }
 
+.page-header-img {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 /* -------------topimg---------------- */
 .writer-top {
   position: relative;
