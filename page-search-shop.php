@@ -326,7 +326,7 @@ $do_search = true;
             $args_rand = array(
                 'post_type' => 'shop',
                 'orderby' => 'rand',
-                'posts_per_page' => 3,
+                'posts_per_page' => 4,
             );
 
             $the_query = new WP_Query($args_rand);
