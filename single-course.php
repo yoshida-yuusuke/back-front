@@ -109,7 +109,7 @@
                   ?>
                 </p>
               </div>
-              <button type="button" onclick="location.href='<?php the_field('link' . $i); ?>" class="btn-orange">
+              <button type="button" onclick="location.href='<?php the_field('link' . $i); ?>'" class="btn-orange">
                 詳細をチェックする
               </button>
             </div>
