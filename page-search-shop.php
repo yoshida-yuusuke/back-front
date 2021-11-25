@@ -190,6 +190,7 @@ $do_search = true;
 
                 //タクソノミー「shop_area」の検索
                 'tax_query' => array(
+                    'relation' => 'AND',
                     array(
                         'taxonomy' => 'shop_area',
                         'field' => 'slug',
@@ -253,7 +254,7 @@ $do_search = true;
 
     <section class="recom-wrap favo-bgcolor">
         <div class="recom-title">
-               <h2 class="h2-font">検索結果</h2>
+            <h2 class="h2-font">検索結果</h2>
         </div>
         <p><b>指定した条件</b><br><?php echo $str_cond; ?></p><br>
 
@@ -267,7 +268,7 @@ $do_search = true;
             if ($the_query->have_posts()) :
                 $count = 0;
             ?>
-                
+
 
                 <div class="recom-cont">
 
