@@ -89,8 +89,9 @@ p {
 
 /* -------パンくずリスト-------- */
 .pkz {
-  background-color: black;
+  margin-top: 50px; /*ヘッダー分下におろす*/
   height: 33px;
+  background-color: black;
   font-size: 12px;
   font-weight: normal;
   color: var(--white-color);
