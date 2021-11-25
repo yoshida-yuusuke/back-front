@@ -588,6 +588,7 @@ dd {
 
 .home-model {
   position: relative;
+  max-width: 800px;
   height: 250px;
   text-align: center;
   margin-top: 40px;
@@ -602,13 +603,6 @@ dd {
   font-size: 18px;
 }
 
-@media screen and (min-width: 600px) {
-  .home-model {
-    margin: 80px 100px;
-    height: auto;
-  }
-}
-
 .home-model-txt {
   padding: 16px 20% 0;
 }
@@ -618,9 +612,21 @@ dd {
 }
 
 @media screen and (min-width: 600px) {
+  .home-model {
+    margin: 80px auto;
+    height: auto;
+  }
+
   .home-model-txt {
     text-align: center;
     font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .home-model {
+    max-width: 1500px;
+    margin: 80px auto;
   }
 }
 
