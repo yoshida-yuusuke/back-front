@@ -35,10 +35,9 @@ $do_search = true;
 	--------------------->
     <div class="page-header">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_page-favorite.jpg" alt="検索結果のイメージ画像です" class="page-header-img" />
-        <div class="page-header-txt-wrap page-header-txt-wrap-favorite">
-            <h2 class="h2-font top-img-title favorite-catchcopy">
-                徳島で見つける、<br />
-                あなた好みのうどん。
+        <div class="page-header-txt-wrap">
+            <h2 class="h2-font top-img-title ">
+                徳島で見つける、あなた好みのうどん。
             </h2>
         </div>
     </div>
@@ -62,7 +61,7 @@ $do_search = true;
             $s_term = get_term_by('slug', $value, 'shop_tag');
             $str_cond = $str_cond . $s_term->name . ",";
         }
-    }    
+    }
     ?>
 
     <?php
@@ -70,7 +69,7 @@ $do_search = true;
 
     //A. 種類と地域の両方が選択されている場合
     // if文の追加、各セクターごとに条件分岐を作る。下に追加しているがそれの読み解き
-    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     if ($get_tags) {
         $args = array(
             'post_type' => 'shop', //カスタム投稿「shop」
@@ -252,100 +251,100 @@ $do_search = true;
     ?>
 
 
-<section class="recom-wrap favo-bgcolor">
+    <section class="recom-wrap favo-bgcolor">
 
-    <?php
-    //検索実行
-    if ($do_search) {?>
-
-        <div class="recom-title">
-            <h2 class="h2-font">検索結果</h2>
-        </div>
         <?php
-        // 記事の取得
-        $the_query = new WP_Query($args);
-        if ($the_query->have_posts()) :
-            $count = 0;
-        ?>
-            <p><b>指定した条件</b><br><?php echo $str_cond;?></p><br>
+        //検索実行
+        if ($do_search) { ?>
 
-            <div class="recom-cont">
-
-                <?php while ($the_query->have_posts()) : $the_query->the_post();
-                    $count++;
-                ?>
-                    <div class="recom-article">
-                        <?php get_template_part('template-parts/loop', 'shop'); ?>
-                    </div>
-                <?php endwhile; ?>
-
+            <div class="recom-title">
+                <h2 class="h2-font">検索結果</h2>
             </div>
-           
+            <?php
+            // 記事の取得
+            $the_query = new WP_Query($args);
+            if ($the_query->have_posts()) :
+                $count = 0;
+            ?>
+                <p><b>指定した条件</b><br><?php echo $str_cond; ?></p><br>
 
-        <!----------------------
+                <div class="recom-cont">
+
+                    <?php while ($the_query->have_posts()) : $the_query->the_post();
+                        $count++;
+                    ?>
+                        <div class="recom-article">
+                            <?php get_template_part('template-parts/loop', 'shop'); ?>
+                        </div>
+                    <?php endwhile; ?>
+
+                </div>
+
+
+                <!----------------------
                 ページネーション
                 ---------------------->
-                <?php if (function_exists('wp_pagenavi')) {?>
-                <div class="pagenation-wrap">
-                <?php if ($analyze == true) {
-                        wp_pagenavi(array('query' => $the_query));
-                    }?>
-                </div>
-            <?php } ?>
+                <?php if (function_exists('wp_pagenavi')) { ?>
+                    <div class="pagenation-wrap">
+                        <?php if ($analyze == true) {
+                            wp_pagenavi(array('query' => $the_query));
+                        } ?>
+                    </div>
+                <?php } ?>
 
 
-            <?php wp_reset_postdata(); ?>
-        <?php else : echo '<p>検索結果がありませんでした</p>'; ?>
-            <?php $analyze = false; ?>
-        <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php else : echo '<p>検索結果がありませんでした</p>'; ?>
+                <?php $analyze = false; ?>
+            <?php endif; ?>
 
 
-    <?php } else {
-        echo "<p>検索条件が指定されていません。</p>";
-        // 検索条件が指定されてない場合の変数代入
-        $analyze = false;
-    }
-    ?>
-</section>
+        <?php } else {
+            echo "<p>検索条件が指定されていません。</p>";
+            // 検索条件が指定されてない場合の変数代入
+            $analyze = false;
+        }
+        ?>
+    </section>
 
 </main>
 
 
-<?php if( $analyze == false ): ?>
+<?php if ($analyze == false) : ?>
 
-			<!----------------------
+    <!----------------------
        ----- おすすめ記事-----
     ------------------------->
-			<!-- おすすめrecom -->
-			<section class="recom-wrap shop-recom">
-				<div class="recom-title">
-					<h2 class="recom-title-p">こちらの記事もおすすめです</h2>
-				</div>
-				<div class="recom-cont">
+    <!-- おすすめrecom -->
+    <section class="recom-wrap shop-recom">
+        <div class="recom-title">
+            <h2 class="recom-title-p">こちらの記事もおすすめです</h2>
+        </div>
+        <div class="recom-cont">
 
-					<?php
-                    $args_rand = array(
-                        'post_type' => 'shop',
-                        'orderby' => 'rand',
-                        'posts_per_page' => 3,
-                    );
+            <?php
+            $args_rand = array(
+                'post_type' => 'shop',
+                'orderby' => 'rand',
+                'posts_per_page' => 3,
+            );
 
-					$the_query = new WP_Query($args_rand);
-					if ($the_query->have_posts()) :
-					?> <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-							<div class="recom-article">
+            $the_query = new WP_Query($args_rand);
+            if ($the_query->have_posts()) :
+            ?> <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                    <div class="recom-article">
 
-								<?php get_template_part('template-parts/loop', 'shop'); ?>
-							</div>
+                        <?php get_template_part('template-parts/loop', 'shop'); ?>
+                    </div>
 
-						<?php endwhile; ?>
-						<?php wp_reset_postdata(); ?>
-					<?php else : '検索結果がありませんでした'; ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php else : '検索結果がありませんでした'; ?>
 
-					<?php endif; ?>
-				</div>
-			</section>
+            <?php endif; ?>
+        </div>
+    </section>
 
-<?php endif; ?>            
+<?php endif; ?>
 
 <?php get_footer(); ?>
