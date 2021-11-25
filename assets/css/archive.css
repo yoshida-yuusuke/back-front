@@ -15,9 +15,8 @@
 .page-header-txt-wrap {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
+  transform: translateY(-50%);
+  margin: 0 45px;
 }
 
 .top-img-title {
@@ -49,11 +48,12 @@
   text-align: center;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 600px) {
   .page-header-txt-wrap {
-    width: 60%;
+    margin: 0 20%;
   }
-
+}
+@media screen and (min-width: 1025px) {
   /* お気に入り記事一覧のみ使用 */
   .page-header-txt-wrap-favorite {
     width: auto;

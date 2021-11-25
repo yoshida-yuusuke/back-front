@@ -12,10 +12,9 @@
         --------------------->
     <div class="page-header">
         <img src="<?php echo get_template_directory_uri() ?>/assets/img/img_page-favorite.jpg" alt="お気に入り記事一覧のイメージ画像です" class="page-header-img" />
-        <div class="page-header-txt-wrap page-header-txt-wrap-favorite">
-            <h2 class="h2-font top-img-title favorite-catchcopy">
-                徳島で見つける、<br />
-                あなた好みのうどん。
+        <div class="page-header-txt-wrap">
+            <h2 class="h2-font top-img-title">
+                徳島で見つける、あなた好みのうどん。
             </h2>
         </div>
     </div>
@@ -32,10 +31,13 @@
         //メニューの投稿タイプ
         //taxonomyの取得
 
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         //ユーザーがお気に入りにした店舗紹介記事のIDを取得
         $args = array(
             'post_type' => array('shop', 'post'),   //店舗と特集記事
+            'paged' => $paged,
+            // ページネーションを受け取る？
             'post__in' => $favorite_post_ids,       //お気に入り記事のID
         );
 
@@ -58,18 +60,19 @@
             </div>
         <?php else : '検索結果がありませんでした'; ?>
         <?php endif; ?>
-    </section>
 
 
-    <!----------------------
+        <!----------------------
         ページネーション
         ---------------------->
-    <div class="pagenation-wrap">
-        <?php if (function_exists('wp_pagenavi')) {
-            wp_pagenavi();
-        }
-        ?>
-    </div>
+        <div class="pagenation-wrap">
+            <?php if (function_exists('wp_pagenavi')) {
+                wp_pagenavi(array('query' => $the_query));
+            }
+            ?>
+        </div>
+    </section>
+
 
 </main>
 
