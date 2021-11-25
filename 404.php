@@ -25,7 +25,6 @@
 
 	<section class="archive-wrap">
 		<div class="notfound-title">
-			<!-- <h2 class="pageTitle">404 NOT FOUND<span>ERROR</span></h2> -->
 			<h2 class="h2-font">Not Found</h2>
 			<p class="notfound-txt">お探しの記事は見つかりませんでした。</p>
 		</div>
@@ -56,7 +55,6 @@
 							<a href="<?php the_permalink(); ?>">
 								<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" alt="記事のサムネイル画像です" />
 							</a>
-							<!-- <button class="article-good">❤︎</button> -->
 						</div>
 						<a href="<?php the_permalink(); ?>" class="article-link">
 							<p class="article-title"><?php the_title(); ?></p>
@@ -67,7 +65,7 @@
 			<?php endif; ?>
 		</div>
 
-		</div>
+
 		<!-- 記事内容(archive-list)終わり -->
 	</section>
 

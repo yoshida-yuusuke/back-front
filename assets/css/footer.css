@@ -81,7 +81,6 @@
 
 @media screen and (min-width: 600px) {
   .footer {
-    padding-top: 40;
     font-size: 15px;
   }
 
@@ -158,7 +157,7 @@
   height: 60px;
   bottom: 0;
   right: 10px;
-opacity: 0;
+  opacity: 0;
 }
 
 .active {
@@ -287,7 +286,7 @@ opacity: 0;
   background-color: var(--white-color);
   color: var(--txt-color);
   box-shadow: 2px 0 3px rgba(100, 100, 100, 0.5);
-  cursor:pointer
+  cursor: pointer;
 }
 
 .serch-title::after {
@@ -304,7 +303,7 @@ opacity: 0;
   transition: 0.5s;
 }
 
-.search-form-tab.active .serch-title::after{
+.search-form-tab.active .serch-title::after {
   vertical-align: text-top;
   transform: rotate(135deg);
   transition: 0.5s;

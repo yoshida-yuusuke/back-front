@@ -48,7 +48,6 @@
 								<?php } ?>
 							</a>
 
-							<!-- <button class="article-good">❤︎</button> -->
 						</div>
 						<a href="<?php the_permalink(); ?>" class="article-link">
 							<p class="article-title"><?php the_title(); ?></p>
@@ -69,13 +68,6 @@
 			<?php if (function_exists('wp_pagenavi')) {
 				wp_pagenavi(array('query' => $the_query));
 			} ?>
-			<!-- <ul class="pagenation">
-			<li class="pagenation-number">1</li>
-			<li class="pagenation-number">2</li>
-			<li class="pagenation-number">3</li>
-			<li class="pagenation-number">4</li>
-			</ul> -->
-
 		</div>
 	</div>
 
