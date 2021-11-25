@@ -59,7 +59,7 @@
         <div class="search-form-tab"><span class="serch-title">店舗検索</span></div>
 
         <div class="search-form search-form-sp">
-          <form id="entryForm" action="<?php echo home_url('/search-shop/'); ?>" method="get">
+          <form id="entryForm" action="<?php echo home_url('/search-shop/'); ?>" method="post">
 
             <!-- --------------------------------------------
   -------------スマホタブレットテーブル-------------
@@ -108,7 +108,7 @@
   ----------------------pcテーブル-------------------
 --------------------------------------------------- -->
         <div class="search-form search-form-pc">
-          <form id="entryForm" action="<?php echo home_url('/search-shop/'); ?>" method="get">
+          <form id="entryForm" action="<?php echo home_url('/search-shop/'); ?>" method="post">
 
             <div class="form-pc-flex">
               <table class="search-form-pc">

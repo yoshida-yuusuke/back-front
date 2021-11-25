@@ -7,12 +7,12 @@
 
 <?php
 //送信で送られてきた、検索条件で選択された「種類」と「地域」の値（スラッグ）を取得する
-$shop_type_slug = (isset($_GET["shop_type"]) && $_GET["shop_type"] != "" ? $_GET["shop_type"] : "");
-$shop_area_slug = (isset($_GET["shop_area"]) && $_GET["shop_area"] != "" ? $_GET["shop_area"] : "");
+$shop_type_slug = (isset($_POST["shop_type"]) && $_POST["shop_type"] != "" ? $_POST["shop_type"] : "");
+$shop_area_slug = (isset($_POST["shop_area"]) && $_POST["shop_area"] != "" ? $_POST["shop_area"] : "");
 // 新たに引っ張ってきた変数
 $get_tags
-    = (!empty($_GET["shop_tag"]) ? $_GET["shop_tag"] : "");
-// $shop_tag_slug[] = ($_GET["shop_tag"] != "" ? $_GET["shop_tag"] : "");
+    = (!empty($_POST["shop_tag"]) ? $_POST["shop_tag"] : "");
+// $shop_tag_slug[] = ($_POST["shop_tag"] != "" ? $_POST["shop_tag"] : "");
 
 //スラッグからカテゴリー（タクソノミー）の名前を取得する
 if ($shop_type_slug != "") {
@@ -252,21 +252,22 @@ $do_search = true;
 
 
     <section class="recom-wrap favo-bgcolor">
+        <div class="recom-title">
+               <h2 class="h2-font">検索結果</h2>
+        </div>
+        <p><b>指定した条件</b><br><?php echo $str_cond; ?></p><br>
 
         <?php
         //検索実行
         if ($do_search) { ?>
 
-            <div class="recom-title">
-                <h2 class="h2-font">検索結果</h2>
-            </div>
             <?php
             // 記事の取得
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()) :
                 $count = 0;
             ?>
-                <p><b>指定した条件</b><br><?php echo $str_cond; ?></p><br>
+                
 
                 <div class="recom-cont">
 
