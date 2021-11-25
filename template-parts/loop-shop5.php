@@ -4,7 +4,7 @@
             <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('medium'); ?>
             <?php else : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/noimage_600x400.png" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/thumb_noimage.jpg" alt="">
             <?php endif; ?>
         </figure>
         <h3 class="menu_title"><?php the_title(); ?></h3>
