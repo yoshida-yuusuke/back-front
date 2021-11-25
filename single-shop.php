@@ -324,7 +324,7 @@
 
 				<!------------ #食べレポ ------------------>
 				<section class="shop-report shop-sec">
-					<h2 class="h2-font index-mark2 shop-space-bottom">＃食べレポ</h2>
+					<h2 class="h2-font index-mark2 shop-space-bottom">食べレポ</h2>
 
 					<!--------Instagram記事埋め込み---------->
 					<div class="shop-report-cont">
