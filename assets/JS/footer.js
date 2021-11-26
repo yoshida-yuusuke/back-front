@@ -35,9 +35,9 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
  });
 
   //スクロールしてトップへ戻る
-btn.on("click", function () {
-  $("body,html").animate({
-    scrollTop: 0,
-  });
-});
+// btn.on("click", function () {
+//   $("body,html").animate({
+//     scrollTop: 0,
+//   });
+// });
  });

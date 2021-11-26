@@ -24,6 +24,10 @@
 -----以下、本体装飾------
 ---------------------- */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--white-color);
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体",

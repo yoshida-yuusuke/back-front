@@ -9,14 +9,16 @@
     <div class="mv-logo">
       <img class="mv-logo-img" src="<?php echo get_template_directory_uri() ?>/assets/img/logo_maincolor.png" alt="" />
     </div>
-    <div class="scrolldown2"><span>Scroll</span></div>
+    <a href="#intro">
+      <div class="scrolldown2"><span>Scroll</span></div>
+    </a>
   </section>
 
   <!-- ------------------------------------------
 ------------------サイトイントロ-----------------
 ---------------------------------------------->
 
-  <section class="home-section home-intro">
+  <section id="intro" class="home-section home-intro">
     <h2 class="catchcopy h2-font">
       <span class="catchcopy-bg">
         徳島で見つける、<br />
