@@ -15,7 +15,7 @@
 	--------------------->
 	<div class="page-header">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_404_header.jpg" alt="404のイメージ画像です" class="page-header-img" />
-		<div class="page-header-txt-wrap page-header-txt-wrap-favorite">
+		<div class="page-header-txt-wrap">
 			<h2 class="h2-font top-img-title favorite-catchcopy">
 				徳島で見つける、<br />
 				あなた好みのうどん。
