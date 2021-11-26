@@ -7,6 +7,20 @@
     <!-- ---------------------------------------------
 -------以下に各ページのマークアップをお願いします。-------
 --------------------------------------------------->
+
+<?php
+//ユーザーがお気に入りにした記事のIDを取得 
+//Cookieからお気に入り登録した投稿のIDを取得
+$cookie_arr = $_COOKIE['wp-favorite-posts'];
+$favorite_post_ids = array();
+if( is_array($cookie_arr) ){
+    foreach ($cookie_arr as $i => $cookie_item) :
+        array_push($favorite_post_ids, $i);
+    endforeach;
+}
+?>
+<?php //$favorite_post_ids = wpfp_get_user_meta(); ?>
+
     <!--------------------
           トップの画像
         --------------------->
@@ -19,13 +33,14 @@
         </div>
     </div>
 
-    <!-- //ユーザーがお気に入りにした記事のIDを取得 -->
-    <?php $favorite_post_ids = wpfp_get_user_meta(); ?>
     <section class="recom-wrap favo-bgcolor">
         <div class="recom-title">
             <h2 class="h2-font">あなたのお気に入り記事</h2>
         </div>
 
+<?php if( empty($favorite_post_ids) ){?>
+    <p>お気に入りが登録されていません</p><br><br>
+<?php } else {?>
 
         <?php
         //メニューの投稿タイプ
@@ -43,11 +58,17 @@
 
         // 記事の取得
         $the_query = new WP_Query($args);
-        if ($the_query->have_posts()) :
+
+        $fav_count = (is_null($the_query->found_posts) || empty($the_query->found_posts) ? 0 : $the_query->found_posts);
+        if( $fav_count == 0 ) :?>
+            <p>お気に入りが登録されていません</p><br><br>
+        <?php else: ?>
+            <p><?php echo $fav_count; ?>件の記事をお気に入りしました。</p><br><br>
+        <?php endif; ?> 
+
+        <?php if ($the_query->have_posts()) :
             $count = 0;
         ?>
-
-            <p><?php echo ($the_query->found_posts); ?>件の記事をお気に入りしました。</p><br><br>
             <div class="recom-cont">
                 <?php while ($the_query->have_posts()) : $the_query->the_post();
                     $count++;
@@ -71,6 +92,9 @@
             }
             ?>
         </div>
+
+<?php } ?>
+
     </section>
 
 
