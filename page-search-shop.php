@@ -7,12 +7,12 @@
 
 <?php
 //送信で送られてきた、検索条件で選択された「種類」と「地域」の値（スラッグ）を取得する
-$shop_type_slug = (isset($_POST["shop_type"]) && $_POST["shop_type"] != "" ? $_POST["shop_type"] : "");
-$shop_area_slug = (isset($_POST["shop_area"]) && $_POST["shop_area"] != "" ? $_POST["shop_area"] : "");
+$shop_type_slug = (isset($_GET["shop_type"]) && $_GET["shop_type"] != "" ? $_GET["shop_type"] : "");
+$shop_area_slug = (isset($_GET["shop_area"]) && $_GET["shop_area"] != "" ? $_GET["shop_area"] : "");
 // 新たに引っ張ってきた変数
 $get_tags
-    = (!empty($_POST["shop_tag"]) ? $_POST["shop_tag"] : "");
-// $shop_tag_slug[] = ($_POST["shop_tag"] != "" ? $_POST["shop_tag"] : "");
+    = (!empty($_GET["shop_tag"]) ? $_GET["shop_tag"] : "");
+// $shop_tag_slug[] = ($_GET["shop_tag"] != "" ? $_GET["shop_tag"] : "");
 
 //スラッグからカテゴリー（タクソノミー）の名前を取得する
 if ($shop_type_slug != "") {
