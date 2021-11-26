@@ -27,7 +27,7 @@
     <!---------- noodle-intro ---------->
     <section class="noodle-intro">
         <h2 class="h2-font">
-            <span class="line-bg">徳島の麺類事情</span>
+            <span class="line-bg">徳島の麺事情</span>
         </h2>
         <div class="noodle-intro-wrap">
             <div class="noodle-tokushima-img-wrap">
