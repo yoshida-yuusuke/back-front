@@ -159,14 +159,14 @@
       <!-- -----------------topへ戻るボタン-------------------- -->
 
       <!--------------- sp版 --------------------->
-      <a href="#">
+      <a class="goTop" href="#">
         <div id="page-top" class="backTop-sp js-backTop">
           <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_sp.png" alt="TOPへ戻る">
         </div>
       </a>
 
       <!-- -----------------pc版---------------->
-      <a href="#">
+      <a class="goTop" href="#">
         <div id="page-top" class="backTop js-backTop">
           <div class="backTop-wrap">
             <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_01.png" alt="TOPへ戻る" class="backTop-btn" />
