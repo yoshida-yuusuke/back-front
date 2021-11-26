@@ -162,24 +162,22 @@ min-width: 200px;
 
 /*-------- 移動アイコン ----------*/
 
-.move-icon-wrap {
+/* .move-icon-wrap {
   display: inline-block;
-}
-
-.move-icon-arrow-sp{
-  margin-top: 20px;
-}
-
+} */
 
 .move-icon-arrow-sp {
+  margin-top: 20px;
   width: 50px;
   object-fit: contain;
+  transform: translate(-30%,0);
+
 }
 
 .move-icon-time {
-  /* float: right; */
-  margin-left: 15px;
   padding-top: 15%;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .course-1,

@@ -54,6 +54,24 @@
 						<div class="archive-article-img">
 							<a href="<?php the_permalink(); ?>">
 								<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" alt="記事のサムネイル画像です" />
+								
+								<!-- アイキャッチです -->
+								<?php
+								$cats = get_the_terms(get_the_ID(), 'shop_type');
+								$taxonomy_name = '';
+								foreach ($cats as $cat) :
+									$cat->slug;
+									$taxonomy_name = $cat->slug;
+								endforeach;
+								$category = array('なるちゅる', 'たらい', '本格派');
+								//termに対応したインデックス配列を表示
+								if ($taxonomy_name == 'naruchuru') {
+									echo '<div class="article-eye naruto">' . $category[0] . '</div>';
+								} elseif ($taxonomy_name == 'tarai') {
+									echo '<div class="article-eye tarai">' . $category[1] . '</div>';
+								} else {
+									echo '<div class="article-eye honkaku">' . $category[2] . '</div>';
+								} ?>
 							</a>
 						</div>
 						<a href="<?php the_permalink(); ?>" class="article-link">
