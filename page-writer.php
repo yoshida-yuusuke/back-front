@@ -70,7 +70,7 @@
                         </div>
                         <div class="member-cont">
                             <p class="member-name">S.Sato</p>
-                            <p class="member-txt">テキパキ仕事をこなすできるゲームオタク。好きなうどんは。</p>
+                            <p class="member-txt">テキパキ仕事をこなすできるゲームオタク。好きなうどんはきつねうどん。</p>
                         </div>
                     </li>
                     <li class="member-li">
