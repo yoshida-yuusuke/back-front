@@ -51,7 +51,7 @@
 						</div>
 						<a href="<?php the_permalink(); ?>" class="article-link">
 							<p class="article-title"><?php the_title(); ?></p>
-							<p class="article-txt"><?php the_excerpt(); ?></p>
+							<!-- <p class="article-txt"><?php the_excerpt(); ?></p> -->
 						</a>
 					</div>
 
