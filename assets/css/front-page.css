@@ -288,7 +288,7 @@ h2 {
 
 .home-kind-tarai {
   text-align: left;
-  background-image: url(../img/bg_front_tarai.jpg);
+  background-image: url(../img/bg_front_kind_tarai.jpg);
 }
 
 .kind-tarai-cnt {
@@ -300,7 +300,7 @@ h2 {
 
 .home-kind-naru {
   text-align: right;
-  background-image: url(../img/bg_front_naru.jpg);
+  background-image: url(../img/bg_front_kind_naru.jpg);
 }
 
 .kind-naru-cnt {
@@ -311,7 +311,7 @@ h2 {
 
 .home-kind-honkaku {
   text-align: center;
-  background-image: url(../img/bg_front_honkaku.jpg);
+  background-image: url(../img/bg_front_kind_honkaku.jpg);
 }
 
 .kind-honkaku-cnt {
