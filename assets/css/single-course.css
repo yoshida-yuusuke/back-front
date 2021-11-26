@@ -116,6 +116,7 @@ min-width: 200px;
 
 .course-title-wrap {
   text-align: center;
+  padding: 0 15px;
 }
 
 .course-number-sp {
@@ -166,12 +167,9 @@ min-width: 200px;
 }
 
 .move-icon-arrow-sp{
-  transform: translate(60%, 0);
+  margin-top: 20px;
 }
 
-.move-icon-time{
-  transform: translate(30%, 0);
-}
 
 .move-icon-arrow-sp {
   width: 50px;
@@ -179,7 +177,7 @@ min-width: 200px;
 }
 
 .move-icon-time {
-  float: right;
+  /* float: right; */
   margin-left: 15px;
   padding-top: 15%;
 }
@@ -235,7 +233,7 @@ min-width: 200px;
     top: 20%;
     right: 0;
     max-width: 600px;
-    width: 60%;
+    min-width: 500px;
     padding: 0 80px 5px;
     border-radius: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.081);
@@ -277,24 +275,31 @@ min-width: 200px;
   /*------- 移動アイコンpc ----------*/
   .move-icon-wrap {
     margin-top: 100px;
+    text-align: center;
   }
   .move-icon-arrow-pc {
     width: 100px;
   }
 
-  .move-icon-time {
+
+  .move-icon-time{
     margin-left: 0;
+
+    margin-right: 15px;
+    /* padding-top: 15%; */
+    padding-top: 5%;
   }
 
-  .move-icon-time-right {
-    float: right;
-    margin-right: 15px;
-    padding-top: 15%;
+  .course-1 .move-icon-time{
+      float: right;
+  }
+
+  .course-2 .move-icon-time{
+      float: left;
   }
 
   .course-1,
-  .course-2,
-  .course-3 {
+  .course-2{
     position: relative;
     margin-bottom: 50px;
   }
@@ -305,13 +310,19 @@ min-width: 200px;
     text-align: right;
   }
 
-  .course-3 {
-    margin-bottom: 150px;
-  }
 
-  .flag {
-    transform: translate(100%, 0);
+    /* ここからゴールの旗 */
+    .flag {
     width: 50%;
     margin-top: 300px;
   }
+  /* 記事ごとにflagを囲んでいるセクションが違うので、どの記事でも旗が真ん中になるように設定 */
+  .course-1 .flag{
+    transform: translate(100%, 0);
+  }
+  .course-2 .flag{
+    transform: translate(-100%, 0);
+  }
+
+
 }

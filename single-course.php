@@ -46,7 +46,7 @@
 
       <div class="tokushima-map-wrap">
         <div class="tokushima-map-ul-wrap">
-              <?php the_content(); ?>
+          <?php the_content(); ?>
         </div>
       </div>
     </section>
@@ -114,6 +114,7 @@
 
           <!---------- 移動アイコン ここから ------------>
           <div class="move-icon-wrap">
+            <p class="move-icon-time"><?php the_field('time' . $i); ?></p>
             <?php
             $access = strtolower(get_field('access-type' . $i)); //小文字に変換
             $num = $i % 2 + 1; //ロケーションが奇数個目だったら2、偶数個目だったら1
@@ -132,7 +133,7 @@
             <?php endif; ?>
 
             <?php if ($access != 'goal') : ?>
-              <p class="move-icon-time move-icon-time-right"><?php the_field('time' . $i); ?></p>
+              <!-- <p class="move-icon-time move-icon-time-right"><?php the_field('time' . $i); ?></p> -->
             <?php endif; ?>
           </div>
           <!---------- 移動アイコン ここまで ------------>
