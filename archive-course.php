@@ -10,7 +10,7 @@
           トップの画像
         --------------------->
 	<div class="page-header">
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_archive-course.JPG" alt="モデルコース一覧のイメージ画像です" class="page-header-img" />
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_archive_course_header.jpg" alt="モデルコース一覧のイメージ画像です" class="page-header-img" />
 		<div class="page-header-txt-wrap">
 			<h2 class="h2-font top-img-title">モデルコース一覧</h2>
 		</div>
