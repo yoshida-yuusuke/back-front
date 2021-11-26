@@ -72,7 +72,8 @@
 }
 
 .copyright {
-  font-weight: bold;
+  font-weight: normal;
+  letter-spacing: 0;
 }
 
 /* -------------------------

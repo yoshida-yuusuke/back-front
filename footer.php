@@ -48,7 +48,7 @@
       </div>
 
       <div class="copyright-wrap">
-        <small class="copyright">copyright</small>
+        <small class="copyright">Copyright🄫2021 hachisu All Rights Reserved.</small>
       </div>
 
       <!-- ---------------------------------------------
