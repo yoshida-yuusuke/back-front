@@ -10,7 +10,7 @@
 			  トップの画像
 			--------------------->
 	<div class="page-header">
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_archive-shop_naruto.JPG" alt="なるちゅるうどん店舗一覧のイメージ画像です" class="page-header-img" />
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_taxonomy_shop_type_header.jpg" alt="店舗一覧のイメージ画像です" class="page-header-img" />
 		<div class="page-header-txt-wrap">
 			<h2 class="h2-font top-img-title">
 				<!-- なるちゅるうどん店舗一覧 -->

@@ -5,7 +5,7 @@
           トップの画像
         --------------------->
 <div class="page-header">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-spe.jpg" alt="特集一覧のイメージ画像です。" class="page-header-img" />
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_index_header.jpg" alt="特集一覧のイメージ画像です。" class="page-header-img" />
   <div class="page-header-txt-wrap">
     <h2 class="h2-font top-img-title"><?php single_tag_title(); ?></h2>
     <ul class="tag-wrap">
