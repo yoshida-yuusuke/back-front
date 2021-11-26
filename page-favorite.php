@@ -11,7 +11,11 @@
 <?php
 //ユーザーがお気に入りにした記事のIDを取得 
 //Cookieからお気に入り登録した投稿のIDを取得
-$cookie_arr = $_COOKIE['wp-favorite-posts'];
+$cookie_arr = array();
+if (isset($_COOKIE['wp-favorite-posts'])){
+    $cookie_arr = $_COOKIE['wp-favorite-posts'];
+}
+
 $favorite_post_ids = array();
 if( is_array($cookie_arr) ){
     foreach ($cookie_arr as $i => $cookie_item) :
