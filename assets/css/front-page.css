@@ -626,7 +626,8 @@ dd {
 @media screen and (min-width: 1025px) {
   .home-model {
     max-width: 1500px;
-    margin: 80px auto;
+    height: 400px;
+    margin: 80px auto 0;
   }
 }
 
