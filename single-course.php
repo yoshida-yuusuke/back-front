@@ -46,11 +46,7 @@
 
       <div class="tokushima-map-wrap">
         <div class="tokushima-map-ul-wrap">
-          <ul class="tokushima-map-ul">
-            <li>
               <?php the_content(); ?>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -78,7 +74,7 @@
           $clsnum = 2;
         }
       ?>
-        <!------------ コース１ ------------->
+        <!------------ コース内容 ------------->
 
         <a id="corse-<?php echo $i; ?>"></a>
 

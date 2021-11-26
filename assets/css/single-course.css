@@ -82,11 +82,12 @@
 }
 
 .tokushima-map-ul {
-  min-width: 300px;
+min-width: 200px;
   margin: 0 auto;
   font-size: 12px;
   font-weight: normal;
   text-align: left;
+  line-height: 3;
 }
 
 .tokushima-map-ul p {
@@ -100,10 +101,7 @@
 
   .tokushima-map-ul {
     min-width: 300px;
-    margin: 0 auto;
     font-size: 20px;
-    text-align: left;
-    line-height: 3;
   }
 }
 
@@ -165,7 +163,14 @@
 
 .move-icon-wrap {
   display: inline-block;
-  transform: translate(15%, 0);
+}
+
+.move-icon-arrow-sp{
+  transform: translate(60%, 0);
+}
+
+.move-icon-time{
+  transform: translate(30%, 0);
 }
 
 .move-icon-arrow-sp {
@@ -201,7 +206,6 @@
 }
 
 .flag {
-  transform: translate(-40%, 0);
   width: 30%;
   margin-top: 100px;
 }
