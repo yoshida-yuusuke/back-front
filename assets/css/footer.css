@@ -328,7 +328,7 @@
 }
 
 .searchForm-js {
-  bottom: -510px; /*タグだけ見えるようにフォームを隠す*/
+  bottom: -76vh; /*タグだけ見えるようにフォームを隠す*/
   width: 100%;
   color: var(--txt-color);
 }
@@ -343,7 +343,7 @@
   }
 
   .searchForm-js {
-    bottom: -370px;
+    bottom: -56vh;
   }
 }
 
@@ -426,7 +426,7 @@
 
   .searchForm-js {
     height: 35vh;
-    bottom: -280px;
+    bottom: -32vh;
   }
 
   .form-pc-flex {

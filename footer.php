@@ -159,21 +159,23 @@
       <!-- -----------------topへ戻るボタン-------------------- -->
 
       <!--------------- sp版 --------------------->
-      <div id="page-top" class="backTop-sp js-backTop">
-        <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_sp.png" alt="TOPへ戻る">
-      </div>
-
+      <a href="#">
+        <div id="page-top" class="backTop-sp js-backTop">
+          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_sp.png" alt="TOPへ戻る">
+        </div>
+      </a>
 
       <!-- -----------------pc版---------------->
-      <div id="page-top" class="backTop js-backTop">
-        <div class="backTop-wrap">
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_01.png" alt="TOPへ戻る" class="backTop-btn" />
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_02.png" alt="TOPへ戻る" class="backTop-bottom" />
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_03.png" alt="TOPへ戻る" class="backTop-bottom-2" />
-          <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_hover.png" alt="" class="backTop-top" />
+      <a href="#">
+        <div id="page-top" class="backTop js-backTop">
+          <div class="backTop-wrap">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_01.png" alt="TOPへ戻る" class="backTop-btn" />
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_02.png" alt="TOPへ戻る" class="backTop-bottom" />
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_03.png" alt="TOPへ戻る" class="backTop-bottom-2" />
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/btn_gotop_udon_hover.png" alt="" class="backTop-top" />
+          </div>
         </div>
-      </div>
-
+      </a>
 
     </footer>
 
