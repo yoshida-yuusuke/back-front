@@ -4,10 +4,6 @@
 タイトル画像
 --------------*/
 
-.page-header {
-  position: relative;
-}
-
 .page-header-img {
   filter: brightness(50%);
 }
