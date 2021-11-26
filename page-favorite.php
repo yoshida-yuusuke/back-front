@@ -19,12 +19,17 @@
         </div>
     </div>
 
-    <!-- //ユーザーがお気に入りにした記事のIDを取得 -->
+<!-- //ユーザーがお気に入りにした記事のIDを取得 -->
     <?php $favorite_post_ids = wpfp_get_user_meta(); ?>
     <section class="recom-wrap favo-bgcolor">
         <div class="recom-title">
             <h2 class="h2-font">あなたのお気に入り記事</h2>
         </div>
+
+<?php if( empty($favorite_post_ids) ){
+    echo '<p>お気に入りが登録されていません</p>';
+}
+else {?>
 
 
         <?php
@@ -43,11 +48,16 @@
 
         // 記事の取得
         $the_query = new WP_Query($args);
-        if ($the_query->have_posts()) :
+
+        if( $the_query->found_posts > 0 ):?>
+            <p><?php echo ($the_query->found_posts); ?>件の記事をお気に入りしました。</p><br><br>
+        <?php else:?>
+            <p>お気に入りが登録されていません</p><br><br>
+        <?php endif;?>
+
+        <?php if ($the_query->have_posts()) :
             $count = 0;
         ?>
-
-            <p><?php echo ($the_query->found_posts); ?>件の記事をお気に入りしました。</p><br><br>
             <div class="recom-cont">
                 <?php while ($the_query->have_posts()) : $the_query->the_post();
                     $count++;
@@ -58,7 +68,7 @@
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
-        <?php else : '検索結果がありませんでした'; ?>
+        <?php else : '<p>お気に入りが登録されていません</p>'; ?>
         <?php endif; ?>
 
 
@@ -71,8 +81,10 @@
             }
             ?>
         </div>
-    </section>
 
+<?php } ?>
+
+    </section>
 
 </main>
 
