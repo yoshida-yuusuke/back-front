@@ -156,8 +156,8 @@
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 0;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   opacity: 0;
 }
 
@@ -175,8 +175,8 @@
   .backTop {
     display: block;
     position: fixed;
-    bottom: 0;
-    right: 10px;
+    bottom: 10px;
+    right: 20px;
     width: 80px;
     height: 80px;
     opacity: 0;
@@ -278,9 +278,9 @@
 -------------------------- */
 
 .search-form-tab {
-  width: 100px;
-  height: 30px;
-  padding-top: 5px;
+  width: 120px;
+  height: 50px;
+  padding-top: 10px;
   border-radius: 10px 10px 0 0;
   font-size: 14px;
   font-weight: bold;
@@ -329,23 +329,13 @@
 }
 
 .searchForm-js {
-  bottom: -76vh; /*タグだけ見えるようにフォームを隠す*/
+  bottom: -74vh; /*タグだけ見えるようにフォームを隠す*/
   width: 100%;
   color: var(--txt-color);
 }
 
 .searchForm-js.panelactive {
   bottom: 0;
-}
-
-@media screen and (min-width: 600px) {
-  .searchForm-js {
-    height: 60vh;
-  }
-
-  .searchForm-js {
-    bottom: -56vh;
-  }
 }
 
 /* ----------検索フォーム装飾--------- */
@@ -372,7 +362,6 @@
 
 .footer-select-td {
   margin-top: 10px;
-  outline: 1px solid var(--pkz-color);
   text-align: left;
 }
 
@@ -401,6 +390,14 @@
 /* -------検索フォームタブレット版----------*/
 
 @media screen and (min-width: 600px) {
+  .searchForm-js {
+    height: 60vh;
+  }
+
+  .searchForm-js {
+    bottom: -53vh;
+  }
+
   .footer-select-th {
     padding-right: 80px;
     font-size: 16px;
@@ -427,7 +424,7 @@
 
   .searchForm-js {
     height: 35vh;
-    bottom: -32vh;
+    bottom: -30vh;
   }
 
   .form-pc-flex {
