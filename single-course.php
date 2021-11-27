@@ -3,27 +3,6 @@
 <?php get_template_part('template-parts/breadcrumb'); ?>
 </div>
 
-<style>
-  /* 追加したクラス「location-flex」 */
-  .location-flex {
-    display: block;
-  }
-
-  @media screen and (min-width: 1025px) {
-    .location-flex {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      flex-direction: row;
-    }
-
-    /* 偶数個目のlocation-flexは左右入れ替え */
-    .course-1:nth-of-type(2n) .location-flex {
-      flex-direction: row-reverse;
-    }
-  }
-</style>
-
 <main class="main">
   <!---------------------
           topの画像
@@ -146,6 +125,11 @@
     <!--div.course-cont-wrap-->
   </div>
   <!--div.course-wrap -->
+
+  <!------------------ 一覧に戻るボタン -------------------------->
+  <div class="course-archiveback">
+    <button class="btn-orange course-archiveback-btn" type="button" onclick="location.href='<?php echo esc_url(home_url()) ?>/archives/course'">一覧に戻る </button>
+  </div>
 
 </main>
 
