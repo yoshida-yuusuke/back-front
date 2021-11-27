@@ -97,6 +97,12 @@ h2 {
   left: 50%;
 }
 
+@media screen and (max-widht: 599px) {
+  .scrolldown2 {
+    bottom: 25vh;
+  }
+}
+
 /*Scrollテキストの描写*/
 .scrolldown2 span {
   /*描画位置*/
@@ -473,7 +479,8 @@ h2 {
   transition: 0.3s;
 }
 
-.home-model-h2,.home-model-txt{
+.home-model-h2,
+.home-model-txt {
   text-shadow: 4px 2px 4px var(--txt-color);
 }
 
