@@ -473,6 +473,10 @@ h2 {
   transition: 0.3s;
 }
 
+.home-model-h2,.home-model-txt{
+  text-shadow: 4px 2px 4px var(--txt-color);
+}
+
 .home-access-wrap {
   display: none;
 }

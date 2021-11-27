@@ -180,7 +180,7 @@
 ---------------------------------------------->
 
   <section class="home-section home-model">
-    <h2 class="h2-font">モデルコース</h2>
+    <h2 class="h2-font home-model-h2">モデルコース</h2>
     <div class="home-model-wrap">
       <p class="home-model-txt">
         徳島とうどんを満喫する６つのモデルコースをご紹介
