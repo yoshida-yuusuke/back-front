@@ -346,7 +346,7 @@
 .says {
   position: relative;
   max-width: calc(100% - 135px);
-  margin: 0 10px 0 25px;
+  margin: 0 10px 4px 25px;
   padding: 0.6rem 1.1rem;
   border: solid 2px var(--white-color);
   border-radius: 1.2rem;

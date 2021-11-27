@@ -39,16 +39,22 @@
 .tag {
   margin-right: 15px;
   color: var(--white-color);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: normal;
   text-align: center;
 }
 
+/* タブレット以上 */
 @media screen and (min-width: 600px) {
   .page-header-txt-wrap {
     margin: 0 20%;
   }
+
+  .tag {
+  font-size: 14px;
 }
+}
+
 @media screen and (min-width: 1025px) {
   /* お気に入り記事一覧のみ使用 */
   .page-header-txt-wrap-favorite {
@@ -58,7 +64,7 @@
 
   .tag {
     margin-right: 35px;
-    font-size: 22px;
+    font-size: 18px;
     padding-top: 10px;
   }
 }
@@ -149,6 +155,11 @@ img {
   display: inline-block;
 }
 
+/* 本文を16pxにする */
+.article-link p:not(.article-title) {
+  font-size: 14px;
+}
+
 .article-title {
   margin-bottom: 3px;
   font-weight: bold;
@@ -157,7 +168,7 @@ img {
   font-size: 12px;
 }
 
-/* タブレット版 */
+/* タブレット以上 */
 @media screen and (min-width: 600px) {
   .archive-wrap {
     padding: 80px 20%;
@@ -181,6 +192,10 @@ img {
 
   .article-good {
     font-size: 50px;
+  }
+
+  .article-link p:not(.article-title) {
+    font-size: 16px;
   }
 
   .article-txt {
@@ -317,7 +332,6 @@ img {
     padding: 50px 20% 150px;
   }
 }
-
 
 /* -----------背景画像の修正------------- */
 .favo-bgcolor {
