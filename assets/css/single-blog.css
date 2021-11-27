@@ -90,12 +90,40 @@
   }
 }
 
+/* ------目次------- */
+
+.has-large-font-size {
+  font-size: 24px !important;
+}
+
+ul.has-medium-font-size a {
+  font-size: 16px;
+}
+
+ul.has-medium-font-size li {
+  padding-bottom: 10px;
+}
+
+@media screen and (min-width: 1025px) {
+  .has-large-font-size {
+    font-size: 26px !important;
+  }
+
+  ul.has-medium-font-size a {
+    font-size: 20px;
+  }
+}
+
 /*---------------
  ----記事内容----
  ---------------*/
 .article-wrap img {
-  width: 100%;
+  width: auto;
   height: auto;
+}
+
+.wp-block-image {
+  text-align: center;
 }
 
 .cont-img {
@@ -194,8 +222,4 @@
 
 .news_title {
   font-size: 20px;
-}
-
-.recom-wrap img {
-  height: auto;
 }
