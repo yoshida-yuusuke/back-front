@@ -104,8 +104,10 @@ img {
 }
 
 .archive-article-img {
+  overflow: hidden;
   position: relative;
   margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 /* アイキャッチ（画像についてるタグ） */
@@ -115,6 +117,7 @@ img {
   top: 0;
   left: 0;
   padding: 5px 10px;
+  border-radius: 5px;
   background-color: var(--naru-color);
   color: rgb(253, 253, 253);
   font-size: 16px;
@@ -315,11 +318,6 @@ img {
   }
 }
 
-/* -----------記事のサムネイル角丸------------- */
-.archive-article-img {
-  overflow: hidden;
-  border-radius: 5px;
-}
 
 /* -----------背景画像の修正------------- */
 .favo-bgcolor {
