@@ -10,6 +10,14 @@
 @media screen and (min-width: 1025px) {
 }
 
+/* リンクをホバーしたら透過させる */
+.sns-btn-wrap.show:hover,
+.shop-archiveback.show:hover,
+.shop-basic-table.show:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
 /* --------全体の横余白---Padding----- */
 .shop-container {
   padding: 0 45px;
