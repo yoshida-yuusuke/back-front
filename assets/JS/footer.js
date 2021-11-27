@@ -9,6 +9,7 @@ $(".search-form-tab").click(function () {//ボタンがクリックされたら
   $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#searchForm-js").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
 });
+
 $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
     $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
     $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
@@ -34,10 +35,10 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
    }
  });
 
-  //スクロールしてトップへ戻る
-// btn.on("click", function () {
-//   $("body,html").animate({
-//     scrollTop: 0,
-//   });
-// });
+//   スクロールしてトップへ戻る
+//  btn.on("click", function () {
+//    $("body,html").animate({
+//      scrollTop: 0,
+//    });
+//  });
  });
