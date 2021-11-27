@@ -113,7 +113,8 @@
 
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
-			<?php else : '検索結果がありませんでした'; ?>
+			<?php else : ?>
+				<p>投稿がありません</p><br><br>
 			<?php endif; ?>
 
 		</div>
