@@ -133,6 +133,7 @@
 .course-img {
   display: block;
   margin-top: 13px;
+  height: auto;
 }
 
 .course-2-img {
@@ -200,10 +201,10 @@
   margin: 0 auto;
 }
 
-.flag {
+/* .flag {
   width: 30%;
   margin-top: 100px;
-}
+} */
 
 @media screen and (max-width: 1024px) {
   .course-number-pc,
@@ -213,7 +214,7 @@
 }
 @media screen and (min-width: 1025px) {
   .course-cont-wrap {
-    padding: 0 20% 150px;
+    padding: 0 20% 0px;
     text-align: left;
   }
   .course-img {
@@ -307,17 +308,17 @@
   }
 
   /* ここからゴールの旗 */
-  .flag {
+  /* .flag {
     width: 50%;
     margin-top: 300px;
-  }
+  } */
   /* 記事ごとにflagを囲んでいるセクションが違うので、どの記事でも旗が真ん中になるように設定 */
-  .course-1 .flag {
+  /* .course-1 .flag {
     transform: translate(100%, 0);
   }
   .course-2 .flag {
     transform: translate(-100%, 0);
-  }
+  } */
 }
 
 /* ================================= */
@@ -347,7 +348,7 @@
 .course-archiveback {
   text-align: center;
 }
-/* --------店舗一覧に戻るボタン------- */
+/* --------一覧に戻るボタン------- */
 .course-archiveback-btn {
   width: 177px;
   height: 49px;
@@ -362,4 +363,20 @@
     font-size: 20px;
     margin-bottom: 100px;
   }
+}
+
+/* --------ゴール旗------- */
+.course-arrow {
+  width: 20px;
+  height: 75px;
+  margin: 40px auto;
+}
+
+.flag {
+  display: none;
+  visibility: none;
+}
+.flag-wrap {
+  width: 20%;
+  margin: 0 auto;
 }

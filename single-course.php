@@ -121,8 +121,14 @@
 
       <?php } ?>
 
+      <div class="course-arrow">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon_page-noodle_arrow.png" alt="" class="course-arrow-img">
+      </div>
+
     </div>
     <!--div.course-cont-wrap-->
+    <div class="flag-wrap"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/model/icon_single-course_goalflag.png" alt="" class="flag-img"></div>
+
   </div>
   <!--div.course-wrap -->
 
