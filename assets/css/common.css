@@ -92,6 +92,12 @@ p {
 }
 
 /* -------パンくずリスト-------- */
+
+.fas {
+  padding-left: 3px;
+  padding-right: 5px;
+}
+
 .pkz {
   margin-top: 50px; /*ヘッダー分下におろす*/
   height: 33px;
