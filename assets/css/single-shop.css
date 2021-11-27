@@ -106,7 +106,7 @@
 
 /*------------top内のテキスト--------- */
 .top-logo {
-  padding-top: 34px;
+  padding-top: 30px;
 }
 
 /*--------タイトル-------- */
@@ -116,7 +116,7 @@
 }
 @media screen and (min-width: 1025px) {
   .top-logo {
-    padding-top: 40px;
+    padding-top: 33px;
   }
   .top-title {
     font-size: 40px;
@@ -126,6 +126,7 @@
 /* -------タグリスト------- */
 .top-ul {
   display: flex;
+  flex-wrap: wrap;
   padding-top: 6px;
 }
 .top-ul-tag {
@@ -135,19 +136,19 @@
   vertical-align: middle;
   text-align: center;
 }
-.top-ul li + li {
-  margin-left: 15px;
+.top-ul li {
+  margin-right: 15px;
 }
 @media screen and (min-width: 1025px) {
   .top-ul {
-    padding-top: 8px;
+    padding-top: 0px;
   }
   .top-ul-tag {
-    padding: 10px 0 0;
+    padding: 8px 0 0;
     font-size: 22px;
   }
-  .top-ul li + li {
-    margin-left: 35px;
+  .top-ul li {
+    margin-right: 35px;
   }
 }
 
