@@ -30,7 +30,7 @@
             </div>
 
             <!------------- メンバーリスト一覧------------------->
-            <div class="writer-member writer-group">
+            <div class="writer-member writer-group writer-space-bottom">
                 <ul class="member-ul">
 
                     <!------------- メンバーごとli開始------------------->
@@ -128,7 +128,7 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/avater_morioka.JPG" alt="" class="member-img">
                         </div>
                         <div class="member-cont">
-                            <p class="member-name">ヨガミキ</p>
+                            <p class="member-name">yogamm</p>
                             <p class="member-txt">健康オタク。特にヨガと温泉がお気に入り。好きなうどんはざるうどん。</p>
                         </div>
                     </li>
