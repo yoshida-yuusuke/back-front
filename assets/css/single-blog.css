@@ -223,3 +223,11 @@ ul.has-medium-font-size li {
 .news_title {
   font-size: 20px;
 }
+
+.archive-article-img img {
+  height: auto;
+}
+
+.article-title {
+  font-weight: bold;
+}
