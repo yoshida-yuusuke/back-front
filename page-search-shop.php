@@ -261,12 +261,17 @@ $do_search = true;
 
         <?php
         //検索実行
+        $num = 0;
+        $all_num = 0;
         if ($do_search) { ?>
 
             <?php
             // 記事の取得
             $the_query = new WP_Query($args);
-            if ($the_query->have_posts()) :
+            $num = $the_query->post_count;
+            $all_num = $the_query->found_posts; ?>
+            <p><?php echo $all_num; ?>件中<?php echo $num; ?>件の記事を表示しています。</p><br><br>
+            <?php if ($the_query->have_posts()) :
                 $count = 0;
             ?>
 
