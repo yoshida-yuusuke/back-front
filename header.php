@@ -12,6 +12,7 @@
 うどんに出会ってください。">
   <title>阿波うどん運動</title>
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/img/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri() ?>/assets/img/apple-touch-icon.png" />
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/reset.css" />
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/common.css" />
   <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/css/header.css" />
