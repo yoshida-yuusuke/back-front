@@ -638,7 +638,7 @@ dd {
   .home-model {
     max-width: 1500px;
     height: 400px;
-    margin: 80px auto 0;
+    margin: 80px auto;
   }
 }
 

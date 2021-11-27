@@ -119,7 +119,7 @@
     padding-top: 40px;
   }
   .top-title {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 
@@ -162,7 +162,8 @@
 }
 .shop-intro-catchcopy {
   margin-top: 11px;
-  font-size: 12px;
+  font-size: 18px;
+  font-weight: 500;
   line-height: 1.6;
 }
 @media screen and (min-width: 1025px) {
@@ -170,7 +171,7 @@
     font-size: 35px;
   }
   .shop-intro-catchcopy {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
