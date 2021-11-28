@@ -35,9 +35,10 @@ $do_search = true;
 	--------------------->
     <div class="page-header">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_page-favorite.jpg" alt="検索結果のイメージ画像です" class="page-header-img" />
-        <div class="page-header-txt-wrap">
+        <div class="pagefav-header-txt-wrap">
             <h2 class="h2-font top-img-title ">
-                徳島で見つける、あなた好みのうどん。
+                徳島で見つける、<br />
+                あなた好みのうどん。
             </h2>
         </div>
     </div>
