@@ -501,15 +501,12 @@
   background-color: var(--sub-color);
 }
 
-/* ----------アイキャッチbg色---------- */
-.eye-honkaku {
-  background-color: var(--honkaku-color);
-}
-.eye-naru {
-  background-color: var(--naru-color);
-}
-.eye-tarai {
-  background-color: var(--tarai-color);
+/* -------リンクホバーの動作追加--------- */
+.shop-recom a:hover p,
+.shop-recom a:hover img,
+.shop-recom a:hover .recom-eye {
+  opacity: 0.5;
+  transition: 0.3s;
 }
 
 /* 5つ目の記事を大きく表示 */
