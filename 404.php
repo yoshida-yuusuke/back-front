@@ -26,7 +26,7 @@
 	<section class="archive-wrap">
 		<div class="notfound-title">
 			<h2 class="h2-font">Not Found</h2>
-			<p class="notfound-txt">お探しの記事は見つかりませんでした。</p>
+			<p class="notfound-txt">お探しのページは見つかりませんでした。</p>
 		</div>
 
 
@@ -54,7 +54,7 @@
 						<div class="archive-article-img">
 							<a href="<?php the_permalink(); ?>">
 								<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" alt="記事のサムネイル画像です" />
-								
+
 								<!-- アイキャッチです -->
 								<?php
 								$cats = get_the_terms(get_the_ID(), 'shop_type');

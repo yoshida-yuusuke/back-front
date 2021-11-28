@@ -303,15 +303,12 @@
 /* --------------------------------------
 ----------店の特徴メーター領域-----------
 --------------------------------------- */
-.shop-meter-cont {
-  height: 123px;
-}
+
 .shop-meter-img {
   height: 100%;
 }
 @media screen and (min-width: 1025px) {
   .shop-meter-cont {
-    height: 315px;
     padding-left: 75px;
   }
 }
