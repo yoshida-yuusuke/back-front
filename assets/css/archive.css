@@ -51,8 +51,8 @@
   }
 
   .tag {
-  font-size: 14px;
-}
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -336,4 +336,11 @@ img {
 /* -----------背景画像の修正------------- */
 .favo-bgcolor {
   background-color: transparent;
+}
+
+/* -------リンクホバーの動作追加--------- */
+a:hover p,
+a:hover img {
+  opacity: 0.5;
+  transition: 0.3s;
 }
