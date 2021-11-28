@@ -77,7 +77,7 @@
         </h1>
       </div>
 
-      <button id="humbugerarea" class="openbtn">
+      <button id="hambugerarea" class="openbtn">
         <span></span>
         <span></span>
         <span></span>
@@ -86,23 +86,25 @@
 
     <!-------------- ハンバーガーメニュー中身 --------------->
 
-    <nav id="humbugerIn" class="hamburger-inner-nav humbugerIn">
-      <ul class="nav-sp-ul">
-        <li class="nav-sp-item">
-          <a href="<?php echo home_url('/noodle/'); ?>"> 徳島の麺事情 </a>
-        </li>
-        <li class="nav-sp-item"><a href="#"> お店紹介 </a></li>
-        <li class="nav-sp-item nav-sp-shop"><a href="<?php echo home_url('/archives/shop_type/tarai'); ?>"> たらいうどん</a></li>
-        <li class="nav-sp-item nav-sp-shop">
-          <a href="<?php echo home_url('/archives/shop_type/naruchuru'); ?>"> なるちゅるうどん</a>
-        </li>
-        <li class="nav-sp-item nav-sp-shop">
-          <a href="<?php echo home_url('/archives/shop_type/honkakuha'); ?>"> 本格派うどん</a>
-        </li>
-        <li class="nav-sp-item nav-sp-sh-sp-item"><a href="<?php echo home_url('/archives/course'); ?>"> モデルコース</a></li>
+    <nav id="hambugerIn" class="hamburger-inner-nav hambugerIn">
+      <div class="hambuger-flex">
+        <ul class="nav-sp-ul">
+          <li class="nav-sp-item">
+            <a href="<?php echo home_url('/noodle/'); ?>"> 徳島の麺事情 </a>
+          </li>
+          <li class="nav-sp-item"><a href="#"> お店紹介 </a></li>
+          <li class="nav-sp-item nav-sp-shop"><a href="<?php echo home_url('/archives/shop_type/tarai'); ?>"> たらいうどん</a></li>
+          <li class="nav-sp-item nav-sp-shop">
+            <a href="<?php echo home_url('/archives/shop_type/naruchuru'); ?>"> なるちゅるうどん</a>
+          </li>
+          <li class="nav-sp-item nav-sp-shop">
+            <a href="<?php echo home_url('/archives/shop_type/honkakuha'); ?>"> 本格派うどん</a>
+          </li>
+          <li class="nav-sp-item nav-sp-sh-sp-item"><a href="<?php echo home_url('/archives/course'); ?>"> モデルコース</a></li>
 
-        <li class=" nav-sp-item"><a href=<?php echo home_url('/archives/category/special'); ?>"> 特集 </a></li>
-      </ul>
+          <li class=" nav-sp-item"><a href=<?php echo home_url('/archives/category/special'); ?>"> 特集 </a></li>
+        </ul>
+      </div>
       <span class="snsul-sp-title">SNS</span>
       <ul class="hamburger-sns-ul">
         <li class="sp-sns-item">

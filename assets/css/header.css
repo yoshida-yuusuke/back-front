@@ -72,7 +72,7 @@
   left: 14px;
   height: 3px;
   border-radius: 2px;
-  background: #fff;
+  background: var(--white-color);
   width: 45%;
 }
 
@@ -119,6 +119,11 @@
   background-color: var(--white-color);
   transform: translateX(100%);
   transition: 0.5s;
+}
+
+.hamburger-flex {
+  display: flex;
+  justify-content: center;
 }
 
 .nav-sp-ul {
