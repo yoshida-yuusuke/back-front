@@ -11,7 +11,7 @@
 				<div class="shop-top">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/tl_single_shop_top.jpg" alt="" class="shop-top-img">
 					<div class="top-logo shop-container">
-						<h2 class="top-title">店舗情報</h2>
+						<h2 class="h2-font top-title">店舗情報</h2>
 						<ul class="top-ul">
 							<?php
 							$terms = get_the_terms(get_the_ID(), 'shop_tag');

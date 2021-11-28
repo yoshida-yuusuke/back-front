@@ -12,7 +12,7 @@
             <div class="writer-top page-header-img">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_privacy_header.jpg" alt="プライバシーポリシーのイメージ画像です。" class="writer-top-img">
                 <div class="top-logo writer-container">
-                    <h2 class="top-title"><?php the_title(); ?></h2>
+                    <h2 class="h2-font top-title"><?php the_title(); ?></h2>
                 </div>
             </div>
         </div>
