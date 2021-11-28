@@ -121,10 +121,10 @@
   transition: 0.5s;
 }
 
-.hamburger-flex {
+/* .hamburger-flex {
   display: flex;
   justify-content: center;
-}
+} */
 
 .nav-sp-ul {
   height: 75vh;
