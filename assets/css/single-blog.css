@@ -63,6 +63,10 @@
   margin: 15px 10px 0;
 }
 
+.icon img {
+  height: auto;
+}
+
 .writer-text {
   margin: 10px 0;
 }

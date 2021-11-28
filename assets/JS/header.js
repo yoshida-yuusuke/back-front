@@ -3,8 +3,8 @@ $(".openbtn").click(function () {
 });
 
 function humbuger() {
-  document.getElementById("humbugerIn").classList.toggle("fadeIn");
+  document.getElementById("hambugerIn").classList.toggle("fadeIn");
 }
-document.getElementById("humbugerarea").addEventListener("click", function () {
+document.getElementById("hambugerarea").addEventListener("click", function () {
   humbuger();
 });
