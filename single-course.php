@@ -84,7 +84,13 @@
                   ?>
                 </p>
               </div>
-              <button type="button" onclick="location.href='<?php the_field('link' . $i); ?>'" class="btn-orange">
+              <?php
+              $onclick_str = "location.href='" . get_field('link' . $i) . "'";
+              if(get_field('spot-type'.$i)=='spot') {
+                $onclick_str = "window.open('" . get_field('link' . $i) . "')";
+              }
+              ?>
+              <button type="button" onclick="<?php echo $onclick_str;?>" class="btn-orange">
                 詳細をチェックする
               </button>
             </div>
