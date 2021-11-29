@@ -53,10 +53,15 @@
 /*---------------
 コースの概要
 --------------*/
+.course-wrap{
+  padding-bottom: 40px;
+}
+
 .course-routr {
   padding-top: 77px;
   text-align: center;
 }
+
 .course-subtitle {
   display: inline-block;
   background: linear-gradient(transparent 70%, var(--title-color) 10%);
@@ -110,7 +115,7 @@
  -------------------------*/
 
 .course-cont-wrap {
-  padding: 43px 0 75px;
+  padding: 43px 0 60px;
   text-align: center;
 }
 
@@ -361,15 +366,15 @@
     width: 315px;
     height: 60px;
     font-size: 20px;
-    margin: 100px auto;
+    margin-bottom: 100px;
   }
 }
 
 /* --------ゴール旗------- */
 .course-arrow {
   width: 20px;
-  height: 75px;
-  margin: 40px auto;
+  /* height: 75px; */
+  margin: 40px auto 0;
 }
 
 .flag {
@@ -377,6 +382,23 @@
   visibility: none;
 }
 .flag-wrap {
-  width: 20%;
-  margin: 0 auto;
+  width: 30%;
+  margin: 0 auto 40px;
+}
+
+
+@media screen and (min-width: 1025px) {
+.flag-wrap {
+  width: 15%;
+}
+
+.course-arrow {
+  width: 35px;
+  margin-bottom:100px;
+}
+
+.course-wrap{
+  padding-bottom: 100px;
+}
+
 }
