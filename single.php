@@ -10,8 +10,11 @@
     --------------------->
   <div class="page-header">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img_single-blog.JPG" alt="特集詳細のイメージ画像です" class="page-header-img" />
-    <h2 class="h2-font top-img-title blog-cont">徳島で見つける、
-      あなた好みのうどん。</h2>
+    <div class="pagefav-header-txt-wrap">
+      <h2 class="h2-font top-img-title ">
+        徳島で見つける、<br />
+        あなた好みのうどん。</h2>
+    </div>
     <!-- <?php if (have_posts()) : ?>
       <?php while (have_posts()) : ?>
         <?php the_post(); ?>

@@ -9,6 +9,14 @@
   width: 100%;
 }
 
+.pagefav-header-txt-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
 .page-header-img {
   /* height: 113px; */
   filter: brightness(50%);
@@ -19,16 +27,6 @@
   top: 50%;
   transform: translateY(-50%);
   color: white;
-}
-
-.blog-cont {
-  padding: 0 45px 0;
-}
-/* タブレット以上 */
-@media screen and (min-width: 600px) {
-  .blog-cont {
-    padding: 0 20% 0;
-  }
 }
 
 /*-------------------
